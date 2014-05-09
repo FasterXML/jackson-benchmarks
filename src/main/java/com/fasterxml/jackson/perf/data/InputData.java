@@ -4,9 +4,9 @@ import java.io.*;
 
 public enum InputData
 {
-    CITM_CATALOG_WS("citm_catalog_ws.json"),
-    WEBXML_WS("webxml_ws.json"),
-    MENU_WS("menu_ws.json"),
+    CITM_CATALOG_WS("json/citm_catalog_ws.json"),
+    WEBXML_WS("json/webxml_ws.json"),
+    MENU_WS("json/menu_ws.json"),
     ;
 
     private final byte[] _json;
