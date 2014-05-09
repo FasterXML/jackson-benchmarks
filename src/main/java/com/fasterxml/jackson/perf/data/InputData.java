@@ -1,8 +1,8 @@
-package com.fasterxml.jackson.perf;
+package com.fasterxml.jackson.perf.data;
 
 import java.io.*;
 
-public enum TestFiles
+public enum InputData
 {
     CITM_CATALOG_WS("citm_catalog_ws.json"),
     WEBXML_WS("webxml_ws.json"),
@@ -11,7 +11,7 @@ public enum TestFiles
 
     private final byte[] _json;
     
-    private TestFiles(String filename) {
+    private InputData(String filename) {
         try {
             _json = _read(filename);
         } catch (IOException e) {

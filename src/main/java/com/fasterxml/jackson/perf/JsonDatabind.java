@@ -10,6 +10,7 @@ import org.openjdk.jmh.logic.BlackHole;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.perf.data.InputData;
 
 @State(Scope.Thread) // or Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
@@ -23,16 +24,16 @@ public class JsonDatabind // extends PerfBase
 
     @GenerateMicroBenchmark
     public void citmCatalogWS(BlackHole bh) throws Exception {
-        bh.consume(process(TestFiles.CITM_CATALOG_WS.jsonBytes()));
+        bh.consume(process(InputData.CITM_CATALOG_WS.jsonBytes()));
     }
 
     @GenerateMicroBenchmark
     public void webxmlWS(BlackHole bh) throws Exception {
-        bh.consume(process(TestFiles.WEBXML_WS.jsonBytes()));
+        bh.consume(process(InputData.WEBXML_WS.jsonBytes()));
     }
 
     @GenerateMicroBenchmark
     public void menuWS(BlackHole bh) throws Exception {
-        bh.consume(process(TestFiles.MENU_WS.jsonBytes()));
+        bh.consume(process(InputData.MENU_WS.jsonBytes()));
     }
 }
