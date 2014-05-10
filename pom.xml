@@ -18,8 +18,10 @@
 
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <version.jackson>2.4.0-rc3</version.jackson>
+<!--
+        <version.jackson>2.3.3</version.jackson>
+-->
+        <version.jackson>2.4.0-rc4-SNAPSHOT</version.jackson>
     </properties>
 
     <dependencies>

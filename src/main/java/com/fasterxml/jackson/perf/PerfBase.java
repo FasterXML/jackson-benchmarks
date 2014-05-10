@@ -37,22 +37,28 @@ public abstract class PerfBase
     
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-    public void readCitmCatalog(BlackHole bh) throws Exception {
-        bh.consume(readUntyped(CONV.bytes(InputData.CITM_CATALOG_WS)));
+    public void readTreeCitmCatalog(BlackHole bh) throws Exception {
+        bh.consume(read(CONV.bytes(InputData.CITM_CATALOG_WS), UNTYPED_READER));
     }
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-    public void readWebxml(BlackHole bh) throws Exception {
-        bh.consume(readUntyped(CONV.bytes(InputData.WEBXML_WS)));
+    public void readTreeWebxml(BlackHole bh) throws Exception {
+        bh.consume(read(CONV.bytes(InputData.WEBXML_WS), UNTYPED_READER));
     }
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-    public void readMenu(BlackHole bh) throws Exception {
-        bh.consume(readUntyped(CONV.bytes(InputData.MENU_WS)));
+    public void readTreeMenu(BlackHole bh) throws Exception {
+        bh.consume(read(CONV.bytes(InputData.MENU_WS), UNTYPED_READER));
     }
 
+    @GenerateMicroBenchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    public void readTreeMediaItem(BlackHole bh) throws Exception {
+        bh.consume(read(CONV.bytesForMediaItem(), UNTYPED_READER));
+    }
+    
     /*
     /**********************************************************************
     /* Typed reading tests
@@ -61,8 +67,8 @@ public abstract class PerfBase
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-    public void readMediaItem(BlackHole bh) throws Exception {
-        bh.consume(readUntyped(CONV.bytesForMediaItem()));
+    public void readPojoMediaItem(BlackHole bh) throws Exception {
+        bh.consume(read(CONV.bytesForMediaItem(), MEDIA_ITEM_READER));
     }
 
     /*
@@ -71,7 +77,7 @@ public abstract class PerfBase
     /**********************************************************************
      */
 
-    private Object readUntyped(byte[] input) throws IOException {
-        return UNTYPED_READER.readValue(input);
+    private final Object read(byte[] input, ObjectReader reader) throws IOException {
+        return reader.readValue(input);
     }
 }
