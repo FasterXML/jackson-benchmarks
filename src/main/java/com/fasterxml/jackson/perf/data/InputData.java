@@ -4,9 +4,12 @@ import java.io.*;
 
 public enum InputData
 {
+    // Data for untyped testing:
+    
     CITM_CATALOG_WS("json/citm_catalog_ws.json"),
     WEBXML_WS("json/webxml_ws.json"),
     MENU_WS("json/menu_ws.json"),
+
     ;
 
     private final byte[] _json;
