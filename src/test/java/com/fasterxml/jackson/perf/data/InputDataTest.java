@@ -7,7 +7,7 @@ public class InputDataTest extends TestCase
     public void testByteInput() throws Exception
     {
         for (InputData data : InputData.values()) {
-            assertNotNull(data.jsonBytes());
+            assertNotNull(data.bytes());
         }
     }
 }

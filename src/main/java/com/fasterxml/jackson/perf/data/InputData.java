@@ -10,7 +10,7 @@ public enum InputData
     ;
 
     private final byte[] _json;
-    
+
     private InputData(String filename) {
         try {
             _json = _read(filename);
@@ -19,7 +19,7 @@ public enum InputData
         }
     }
 
-    public byte[] jsonBytes() { return _json; }
+    public byte[] bytes() { return _json; }
     
     private static byte[] _read(String filename) throws IOException
     {
