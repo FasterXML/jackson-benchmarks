@@ -16,7 +16,7 @@ public class SmileDatabindVanilla
     
     private static final ObjectMapper MAPPER = new ObjectMapper(_sf);
 
-    private final static InputConverter SMILES = new InputConverter(MAPPER);
+    private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
 
     public SmileDatabindVanilla() {
         super(SMILES, MAPPER);

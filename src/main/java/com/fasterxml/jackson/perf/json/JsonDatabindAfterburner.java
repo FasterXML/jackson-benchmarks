@@ -22,7 +22,7 @@ public class JsonDatabindAfterburner
     }
 
     // pass non-null ObjectMapper: will remove whitespace, if any
-    private final static InputConverter NO_OP = new InputConverter(MAPPER);
+    private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);
 
     public JsonDatabindAfterburner() {
         super(NO_OP, MAPPER);

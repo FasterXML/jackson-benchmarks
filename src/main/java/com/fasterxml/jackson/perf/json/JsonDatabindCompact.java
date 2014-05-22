@@ -18,7 +18,7 @@ public class JsonDatabindCompact
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
-    private final static InputConverter NO_OP = new InputConverter(MAPPER);
+    private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);
 
     public JsonDatabindCompact() {
         super(NO_OP, MAPPER);

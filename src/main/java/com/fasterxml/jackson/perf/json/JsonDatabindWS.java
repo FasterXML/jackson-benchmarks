@@ -18,7 +18,7 @@ public class JsonDatabindWS
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     // pass null ObjectMapper: input used exactly as is
-    private final static InputConverter NO_OP = new InputConverter(null);
+    private final static InputConverter NO_OP = InputConverter.nopConverter(MAPPER);
 
     public JsonDatabindWS() {
         super(NO_OP, MAPPER);

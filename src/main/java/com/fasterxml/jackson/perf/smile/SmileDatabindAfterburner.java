@@ -20,7 +20,7 @@ public class SmileDatabindAfterburner
         MAPPER.registerModule(new AfterburnerModule());
     }
 
-    private final static InputConverter SMILES = new InputConverter(MAPPER);
+    private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
 
     public SmileDatabindAfterburner() {
         super(SMILES, MAPPER);
