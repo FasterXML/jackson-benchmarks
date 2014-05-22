@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.data.InputData;
 
-public class PerfBaseFull extends PerfBaseLimited
+public abstract class PerfBaseFull extends PerfBaseLimited
 {
     protected final ObjectReader UNTYPED_READER;
 
