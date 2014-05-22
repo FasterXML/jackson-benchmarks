@@ -7,13 +7,13 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.perf.PerfBase;
+import com.fasterxml.jackson.perf.PerfBaseFull;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
 @State(Scope.Thread) // or Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonDatabindWS
-    extends PerfBase
+    extends PerfBaseFull
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
