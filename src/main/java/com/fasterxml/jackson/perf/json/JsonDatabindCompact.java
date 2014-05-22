@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.PerfBaseFull;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
-@State(Scope.Thread) // or Group or Benchmark
+@State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonDatabindCompact
     extends PerfBaseFull

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.PerfBaseLimited;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
-@State(Scope.Thread) // or Group or Benchmark
+@State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonDatabindAfterburner
     extends PerfBaseLimited

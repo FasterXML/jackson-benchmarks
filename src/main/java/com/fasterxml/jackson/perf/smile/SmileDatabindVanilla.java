@@ -8,7 +8,7 @@ import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.perf.PerfBaseFull;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
-@State(Scope.Thread) // or Group or Benchmark
+@State(Scope.Group) // Thread, Group or Benchmark
 public class SmileDatabindVanilla
     extends PerfBaseFull
 {
