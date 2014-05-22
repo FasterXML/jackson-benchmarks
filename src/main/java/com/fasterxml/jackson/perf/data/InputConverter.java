@@ -41,13 +41,13 @@ public class InputConverter
 
     protected final byte[] _mediaItemBytes;
     
-    public InputConverter(ObjectMapper targetMapper, boolean skipConversion)
+    public InputConverter(ObjectMapper targetMapper)
     {
         EnumMap<InputData, byte[]> data = new EnumMap<>(InputData.class);
 
         try {
             // special case, mostly just to support non-converted JSON
-            if (skipConversion) {
+            if (targetMapper == null) {
                 for (InputData input : InputData.values()) {
                     data.put(input, input.bytes());
                 }

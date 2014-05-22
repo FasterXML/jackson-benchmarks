@@ -12,13 +12,14 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-public abstract class PerfBaseLimited
+public abstract class PerfBaseLimitedJackson
+	implements PerfTestLimited
 {
     protected final InputConverter CONV;
 
     protected final ObjectReader MEDIA_ITEM_READER;
 
-    protected PerfBaseLimited(InputConverter conv, ObjectMapper mapper)
+    protected PerfBaseLimitedJackson(InputConverter conv, ObjectMapper mapper)
     {
         CONV = conv;
         MEDIA_ITEM_READER = mapper.reader(MediaItem.class);
@@ -32,6 +33,7 @@ public abstract class PerfBaseLimited
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
     public void readPojoMediaItem(BlackHole bh) throws Exception {
         bh.consume(read(CONV.bytesForMediaItem(), MEDIA_ITEM_READER));
     }

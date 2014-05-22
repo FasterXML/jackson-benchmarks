@@ -7,18 +7,18 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.perf.PerfBaseFull;
+import com.fasterxml.jackson.perf.PerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonDatabindCompact
-    extends PerfBaseFull
+    extends PerfBaseFullJackson
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    // false -> convert, removing ws
-    private final static InputConverter NO_OP = new InputConverter(MAPPER, false);
+    // pass non-null ObjectMapper: will remove whitespace, if any
+    private final static InputConverter NO_OP = new InputConverter(MAPPER);
 
     public JsonDatabindCompact() {
         super(NO_OP, MAPPER);

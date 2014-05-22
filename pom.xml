@@ -53,6 +53,11 @@
         <artifactId>jackson-module-afterburner</artifactId>
         <version>${version.jackson.latest}</version>
       </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.jr</groupId>
+        <artifactId>jackson-jr-objects</artifactId>
+        <version>${version.jackson.latest}</version>
+      </dependency>
     </dependencies>
 
     <build>
