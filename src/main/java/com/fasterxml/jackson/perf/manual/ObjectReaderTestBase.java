@@ -17,7 +17,7 @@ abstract class ObjectReaderTestBase
     private double[] timeMsecs;
 
     protected abstract int targetSizeMegs();
-    
+
     protected void testFromBytes(ObjectMapper mapper1, String desc1,
             Object inputValue1, Class<?> inputClass1,
             ObjectMapper mapper2, String desc2,
