@@ -10,6 +10,7 @@ import org.openjdk.jmh.logic.BlackHole;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
+import com.fasterxml.jackson.perf.util.NopOutputStream;
 
 public abstract class WritePerfBasicJackson
 	implements WritePerfTestBasic
@@ -43,7 +44,9 @@ public abstract class WritePerfBasicJackson
     /**********************************************************************
      */
 
-    protected final byte[] write(MediaItem item, ObjectWriter w) throws IOException {
-        return w.writeValueAsBytes(item);
+    protected final int write(MediaItem item, ObjectWriter w) throws IOException {
+    	NopOutputStream out = new NopOutputStream();
+    	w.writeValue(out, item);
+    	return out.size();
     }
 }

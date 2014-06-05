@@ -3,6 +3,7 @@ package com.fasterxml.jackson.perf.manual;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.perf.util.NopOutputStream;
 
 abstract class ObjectWriterTestBase<T1,T2>
 {
