@@ -6,12 +6,12 @@ import org.openjdk.jmh.annotations.Scope;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
-import com.fasterxml.jackson.perf.PerfBaseLimitedJackson;
+import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class CBORDatabindAfterburner
-    extends PerfBaseLimitedJackson
+    extends ReadPerfBaseBasicJackson
 {
     private final static CBORFactory _cf = new CBORFactory();
     

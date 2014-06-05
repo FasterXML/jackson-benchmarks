@@ -5,12 +5,12 @@ import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-import com.fasterxml.jackson.perf.PerfBaseFullJackson;
+import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class SmileDatabindVanilla
-    extends PerfBaseFullJackson
+    extends ReadPerfBaseFullJackson
 {
     private final static SmileFactory _sf = new SmileFactory();
     

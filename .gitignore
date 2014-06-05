@@ -6,6 +6,7 @@ syntax: glob
 *.off
 *.old
 .DS_Store
+jmh.out
 
 # building
 target

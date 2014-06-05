@@ -7,24 +7,23 @@ import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.logic.BlackHole;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.model.MediaItem;
+import com.fasterxml.jackson.perf.model.MediaItems;
 
-public abstract class PerfBaseLimitedJackson
-	implements PerfTestLimited
+public abstract class WritePerfBasicJackson
+	implements WritePerfTestBasic
 {
-    protected final InputConverter CONV;
+    protected final ObjectWriter MEDIA_ITEM_WRITER;
 
-    protected final ObjectReader MEDIA_ITEM_READER;
-
-    protected PerfBaseLimitedJackson(InputConverter conv, ObjectMapper mapper)
-    {
-        CONV = conv;
-        MEDIA_ITEM_READER = mapper.reader(MediaItem.class);
-    }
+    protected final MediaItem item;
     
+    protected WritePerfBasicJackson(ObjectMapper mapper)
+    {
+    	MEDIA_ITEM_WRITER = mapper.writerWithType(MediaItem.class);
+    	item = MediaItems.stdMediaItem();
+    }
+
     /*
     /**********************************************************************
     /* Typed reading tests
@@ -34,8 +33,8 @@ public abstract class PerfBaseLimitedJackson
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readPojoMediaItem(BlackHole bh) throws Exception {
-        bh.consume(read(CONV.bytesForMediaItem(), MEDIA_ITEM_READER));
+    public void writePojoMediaItem(BlackHole bh) throws Exception {
+        bh.consume(write(item, MEDIA_ITEM_WRITER));
     }
 
     /*
@@ -44,7 +43,7 @@ public abstract class PerfBaseLimitedJackson
     /**********************************************************************
      */
 
-    protected final Object read(byte[] input, ObjectReader reader) throws IOException {
-        return reader.readValue(input);
+    protected final byte[] write(MediaItem item, ObjectWriter w) throws IOException {
+        return w.writeValueAsBytes(item);
     }
 }

@@ -10,13 +10,13 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.data.InputData;
 
-public abstract class PerfBaseFullJackson
-	extends PerfBaseLimitedJackson
-	implements PerfTestFull
+public abstract class ReadPerfBaseFullJackson
+	extends ReadPerfBaseBasicJackson
+	implements ReadPerfTestFull
 {
     protected final ObjectReader UNTYPED_READER;
 
-    protected PerfBaseFullJackson(InputConverter conv, ObjectMapper mapper)
+    protected ReadPerfBaseFullJackson(InputConverter conv, ObjectMapper mapper)
     {
         super(conv, mapper);
         UNTYPED_READER = mapper.reader(Object.class);

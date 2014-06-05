@@ -7,13 +7,13 @@ import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.logic.BlackHole;
 
 import com.fasterxml.jackson.jr.ob.JSON;
-import com.fasterxml.jackson.perf.PerfTestLimited;
+import com.fasterxml.jackson.perf.ReadPerfTestBasic;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JacksonJrDatabind
-	implements PerfTestLimited
+	implements ReadPerfTestBasic
 {
 //    @State(Scope.Group) // Thread, Group or Benchmark
     private static final JSON json = JSON.std;
