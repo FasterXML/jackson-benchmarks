@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.perf.manual;
 
-import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
@@ -15,9 +14,8 @@ public class MediaItemReadCBOR extends ManualMediaItemReadBase
 
 	public static void main(String[] args) throws Exception
     {
-    	JsonFactory f = new CBORFactory();
         String desc = "CBOR";
-        ObjectMapper m = new ObjectMapper(f);
+        ObjectMapper m = new ObjectMapper(new CBORFactory());
         if (USE_AFTERBURNER) {
         	m.registerModule(new AfterburnerModule());
         	desc += "+Afterburner";
