@@ -1,0 +1,13 @@
+
+2.4.0:
+
+
+Benchmark                                                Mode   Samples    Mean      Mean error    Units
+c.f.j.p.cbor.CBORDatabindAfterburner.readPojoMediaItem   thrpt    100    993778.485  6357.845    ops/s
+c.f.j.p.cbor.CBORDatabindVanilla.readPojoMediaItem       thrpt    100    803104.944  4619.437    ops/s
+c.f.j.p.json.JacksonJrDatabind.readPojoMediaItem         thrpt    100    654747.685  3626.487    ops/s
+c.f.j.p.json.JsonDatabindAfterburner.readPojoMediaItem   thrpt    100    861250.952  5127.564    ops/s
+c.f.j.p.json.JsonDatabindCompact.readPojoMediaItem       thrpt    100    701122.194  5409.838    ops/s
+c.f.j.p.json.JsonDatabindWS.readPojoMediaItem            thrpt    100    732341.116  4362.093    ops/s
+c.f.j.p.smile.SmileDatabindAfterburner.readPojoMediaItem thrpt    100   1205179.628  7956.196    ops/s
+c.f.j.p.smile.SmileDatabindVanilla.readPojoMediaItem     thrpt    100    867179.507  5927.299    ops/s
