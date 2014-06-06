@@ -21,8 +21,8 @@ public abstract class WritePerfBasicJackson
     
     protected WritePerfBasicJackson(ObjectMapper mapper)
     {
-    	MEDIA_ITEM_WRITER = mapper.writerWithType(MediaItem.class);
-    	item = MediaItems.stdMediaItem();
+        MEDIA_ITEM_WRITER = mapper.writerWithType(MediaItem.class);
+        item = MediaItems.stdMediaItem();
     }
 
     /*
@@ -44,9 +44,10 @@ public abstract class WritePerfBasicJackson
     /**********************************************************************
      */
 
-    protected final int write(MediaItem item, ObjectWriter w) throws IOException {
-    	NopOutputStream out = new NopOutputStream();
-    	w.writeValue(out, item);
-    	return out.size();
+    @SuppressWarnings("resource")
+    protected final int write(MediaItem value, ObjectWriter w) throws IOException {
+        NopOutputStream out = new NopOutputStream();
+        w.writeValue(out, value);
+        return out.size();
     }
 }
