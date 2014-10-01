@@ -5,4 +5,4 @@ This project contains simple set of performance micro-benchmarks, using excellen
 
 # Status
 
-Highly experimental.
+Somewhat experimental. But has been used with success in optimizing Jackson 2.4 release!
