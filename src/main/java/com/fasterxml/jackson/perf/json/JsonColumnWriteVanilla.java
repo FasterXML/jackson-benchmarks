@@ -13,7 +13,6 @@ public class JsonColumnWriteVanilla extends WritePerfBasicJackson
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
     static {
-        MAPPER.registerModule(new AfterburnerModule());
         MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
     }
 
