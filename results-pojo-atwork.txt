@@ -1,0 +1,37 @@
+# With 2.4.0 baseline:
+
+Benchmark                                                    Mode   Samples         Mean   Mean error    Units
+
+Benchmark                                                   Mode   Samples         Mean   Mean error    Units
+
+c.f.j.p.s.SmileColumnReadAfterburner.readPojoMediaItem      thrpt        75  1832532.696    26107.546    ops/s
+c.f.j.p.s.SmileColumnReadVanilla.readPojoMediaItem          thrpt        75  1330387.286    15450.623    ops/s
+c.f.j.p.s.SmileDatabindAfterburner.readPojoMediaItem        thrpt        75  1379838.939    19108.118    ops/s
+c.f.j.p.s.SmileDatabindVanilla.readPojoMediaItem            thrpt        75  1129986.892    18867.018    ops/s
+
+c.f.j.p.cbor.CBORColumnReadAfterburner.readPojoMediaItem    thrpt        75  1663392.869    28130.750    ops/s
+c.f.j.p.cbor.CBORColumnReadVanilla.readPojoMediaItem        thrpt        75  1387284.409    18412.818    ops/s
+c.f.j.p.cbor.CBORDatabindAfterburner.readPojoMediaItem      thrpt        21  1151407.167    14585.626    ops/s
+c.f.j.p.cbor.CBORDatabindVanilla.readPojoMediaItem          thrpt        21  1007361.887    23423.247    ops/s
+
+c.f.j.p.json.JsonColumnReadAfterburner.readPojoMediaItem    thrpt        75  1396731.522    15201.552    ops/s
+c.f.j.p.json.JsonColumnReadVanilla.readPojoMediaItem        thrpt        75  1182163.165     9706.170    ops/s
+c.f.j.p.json.JsonDatabindAfterburner.readPojoMediaItem      thrpt        21  1036787.761    11223.528    ops/s
+c.f.j.p.json.JsonDatabindVanilla.readPojoMediaItem          thrpt        21   875237.225     8627.707    ops/s
+c.f.j.p.json.JsonDatabindWS.readPojoMediaItem               thrpt        21   896015.010    18573.045    ops/s
+
+Benchmark                                                   Mode   Samples         Mean   Mean error    Units
+
+c.f.j.p.cbor.CBORColumnWriteAfterburner.writePojoMediaItem  thrpt        75  3130125.106    32234.730    ops/s
+c.f.j.p.cbor.CBORColumnWriteVanilla.writePojoMediaItem      thrpt        75  2766466.874    43220.728    ops/s
+c.f.j.p.c.CBORWriteAfterburner.writePojoMediaItem           thrpt       105  2269893.311    18797.542    ops/s
+c.f.j.p.c.CBORWriteVanilla.writePojoMediaItem               thrpt       105  1981272.043    21283.093    ops/s
+
+c.f.j.p.j.JsonColumnWriteAfterburner.writePojoMediaItem     thrpt        75  2184697.549    23386.629    ops/s
+c.f.j.p.j.JsonColumnWriteVanilla.writePojoMediaItem         thrpt        75  2407332.579    21000.545    ops/s
+c.f.j.p.j.JsonWriteAfterburner.writePojoMediaItem           thrpt        75  1787018.702    17341.791    ops/s
+c.f.j.p.j.JsonWriteVanilla.writePojoMediaItem               thrpt        75  1668169.562    14907.480    ops/s
+c.f.j.p.json.JacksonJrDatabind.readPojoMediaItem            thrpt        21   828060.186     9476.579    ops/s
+
+c.f.j.p.s.SmileWriteAfterburner.writePojoMediaItem          thrpt        75  1858530.654    22996.719    ops/s
+c.f.j.p.s.SmileWriteVanilla.writePojoMediaItem              thrpt        75  1598166.833    28393.942    ops/s
