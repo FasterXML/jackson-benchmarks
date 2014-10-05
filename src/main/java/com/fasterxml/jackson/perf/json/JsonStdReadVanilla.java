@@ -12,15 +12,15 @@ import com.fasterxml.jackson.perf.data.InputConverter;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
-public class JsonDatabindWS
+public class JsonStdReadVanilla
     extends ReadPerfBaseFullJackson
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    // pass null ObjectMapper: input used exactly as is
-    private final static InputConverter NO_OP = InputConverter.nopConverter(MAPPER);
+    // pass non-null ObjectMapper: will remove whitespace, if any
+    private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);
 
-    public JsonDatabindWS() {
+    public JsonStdReadVanilla() {
         super(NO_OP, MAPPER);
     }
 }

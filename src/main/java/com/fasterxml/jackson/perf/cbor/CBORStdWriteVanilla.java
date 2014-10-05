@@ -8,7 +8,7 @@ import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 
 @State(Scope.Group) // Thread, Group or Benchmark
-public class CBORWriteVanilla
+public class CBORStdWriteVanilla
     extends WritePerfBasicJackson
 {
     private static final ObjectMapper MAPPER;
@@ -18,7 +18,7 @@ public class CBORWriteVanilla
     	MAPPER = new ObjectMapper(f);
     }
 
-    public CBORWriteVanilla() {
+    public CBORStdWriteVanilla() {
         super(MAPPER);
     }
 }
