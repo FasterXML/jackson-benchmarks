@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 public class MinimalInputConverter
@@ -22,9 +23,12 @@ public class MinimalInputConverter
     public static MinimalInputConverter minimalConverter(ObjectMapper targetMapper,
     		FormatSchema schema)
     {
+    	ObjectWriter w = targetMapper.writer();
+    	if (schema != null) {
+    		w = w.withSchema(schema);
+    	}
         try {
-	        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
-	        return new MinimalInputConverter( mib);
+	        return new MinimalInputConverter(w.writeValueAsBytes(MediaItems.stdMediaItem()));
         } catch (IOException e) {
         	throw new RuntimeException(e);
         }
