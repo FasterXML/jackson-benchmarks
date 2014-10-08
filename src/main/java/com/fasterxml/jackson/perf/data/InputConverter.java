@@ -9,16 +9,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 public class InputConverter
+	extends MinimalInputConverter
 {
     protected final EnumMap<InputData, byte[]> _data;
-
-    protected final byte[] _mediaItemBytes;
 
     protected InputConverter(EnumMap<InputData, byte[]> genericData,
     		byte[] mib)
 	{
+    	super(mib);
     	_data = genericData;
-    	_mediaItemBytes = mib;
 	}
 
     public static InputConverter nopConverter(ObjectMapper targetMapper)
@@ -37,7 +36,7 @@ public class InputConverter
         	throw new RuntimeException(e);
         }
     }
-    
+
     public static InputConverter stdConverter(ObjectMapper targetMapper)
     {
         EnumMap<InputData, byte[]> data = new EnumMap<>(InputData.class);
@@ -45,7 +44,7 @@ public class InputConverter
         final JsonFactory jsonF = new JsonFactory();
         final JsonFactory targetF = targetMapper.getFactory();
 
-    	try {
+        try {
 	        for (InputData input : InputData.values()) {
 	            JsonParser in = jsonF.createParser(input.bytes());
 	            bytes.reset();
@@ -66,9 +65,5 @@ public class InputConverter
 
     public byte[] bytes(InputData type) {
         return _data.get(type);
-    }
-
-    public byte[] bytesForMediaItem() {
-        return _mediaItemBytes;
     }
 }
