@@ -16,9 +16,9 @@ public class CBORStdReadVanilla
     
     private static final ObjectMapper MAPPER = new ObjectMapper(_cf);
 
-    private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
+    private final static InputConverter CBORS = InputConverter.stdConverter(MAPPER);
 
     public CBORStdReadVanilla() {
-        super(SMILES, MAPPER);
+        super(CBORS, MAPPER);
     }
 }
