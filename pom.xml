@@ -43,7 +43,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-avro</artifactId>
-        <version>${version.jackson}</version>
+        <version>${version.jackson.latest}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -55,13 +55,13 @@
         <artifactId>jackson-dataformat-smile</artifactId>
         <version>${version.jackson}</version>
       </dependency>
-<!--
+
       <dependency>
         <groupId>org.komamitsu</groupId>
         <artifactId>jackson-dataformat-msgpack</artifactId>
         <version>0.0.4-SNAPSHOT</version>
       </dependency>
--->
+
       <dependency>
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-afterburner</artifactId>

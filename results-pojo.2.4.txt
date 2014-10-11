@@ -2,15 +2,19 @@
 2.5.0-SNAPSHOT
 
 
-Benchmark                                               Mode   Samples         Mean   Mean error    Units
-c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem      thrpt       100  1030822.412    10211.756    ops/s
-c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem          thrpt       100   791853.570     5927.676    ops/s
+Benchmark                                                 Mode   Samples         Mean   Mean error    Units
+c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem       thrpt       100  1030822.412    10211.756    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem           thrpt       100   791853.570     5927.676    ops/s
+c.f.j.p.a.AvroStdReadAfterburner.readPojoMediaItem       thrpt        45   945348.304    12367.271    ops/s
+c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem           thrpt        45   736136.840    15893.620    ops/s
+c.f.j.p.m.MsgpackStdReadAfterburner.readPojoMediaItem    thrpt        45   317139.956    20601.593    ops/s
+c.f.j.p.m.MsgpackStdReadVanilla.readPojoMediaItem        thrpt        45   271179.420     1293.668    ops/s
 
 Benchmark                                                Mode   Samples         Mean   Mean error    Units
-c.f.j.p.m.MsgpackStdReadAfterburner.readPojoMediaItem    thrpt        15   376977.136    55835.668    ops/s
-c.f.j.p.m.MsgpackStdReadVanilla.readPojoMediaItem        thrpt        15   270682.767     3219.570    ops/s
-c.f.j.p.m.MsgpackStdWriteAfterburner.writePojoMediaItem  thrpt        15   401429.523    10944.714    ops/s
-c.f.j.p.m.MsgpackStdWriteVanilla.writePojoMediaItem      thrpt        15   412705.676    19430.392    ops/s
+c.f.j.p.a.AvroStdWriteAfterburner.writePojoMediaItem     thrpt        45   650238.494     9216.789    ops/s
+c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem         thrpt        45   561459.423     6526.326    ops/s
+c.f.j.p.m.MsgpackStdWriteAfterburner.writePojoMediaItem  thrpt        45   398987.595     8794.755    ops/s
+c.f.j.p.m.MsgpackStdWriteVanilla.writePojoMediaItem      thrpt        45   400758.417     8379.673    ops/s
 
 2.4.3
 

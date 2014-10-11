@@ -7,6 +7,7 @@ import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.logic.BlackHole;
 
+import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
@@ -19,9 +20,17 @@ public abstract class WritePerfBasicJackson
 
     protected final MediaItem item;
     
-    protected WritePerfBasicJackson(ObjectMapper mapper)
+    protected WritePerfBasicJackson(ObjectMapper mapper) {
+    	this(mapper, null);
+    }
+
+    protected WritePerfBasicJackson(ObjectMapper mapper, FormatSchema schema)
     {
-        MEDIA_ITEM_WRITER = mapper.writerWithType(MediaItem.class);
+        ObjectWriter w = mapper.writerWithType(MediaItem.class);
+        if (schema != null) {
+        	w = w.withSchema(schema);
+        }
+        MEDIA_ITEM_WRITER = w;
         item = MediaItems.stdMediaItem();
     }
 
