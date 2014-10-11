@@ -55,6 +55,17 @@
         <artifactId>jackson-dataformat-smile</artifactId>
         <version>${version.jackson}</version>
       </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-xml</artifactId>
+        <version>${version.jackson}</version>
+      </dependency>
+      <!-- also need a GOOD Stax impl; JDK one sucks goat balls. Aalto fastest. -->
+      <dependency>
+        <groupId>com.fasterxml</groupId>
+        <artifactId>aalto-xml</artifactId>
+        <version>0.9.9</version>
+      </dependency>
 
       <dependency>
         <groupId>org.komamitsu</groupId>
