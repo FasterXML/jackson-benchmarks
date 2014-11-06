@@ -1,23 +1,28 @@
-
 2.5.0-SNAPSHOT
 
-
 Benchmark                                                 Mode   Samples         Mean   Mean error    Units
+c.f.j.p.s.SmileStdReadAfterburner.readPojoMediaItem      thrpt        98  1218247.267    12158.020    ops/s
 c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem       thrpt       100  1030822.412    10211.756    ops/s
-c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem           thrpt       100   791853.570     5927.676    ops/s
-c.f.j.p.a.AvroStdReadAfterburner.readPojoMediaItem       thrpt        45   945348.304    12367.271    ops/s
-c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem           thrpt        45   736136.840    15893.620    ops/s
-c.f.j.p.m.MsgpackStdReadAfterburner.readPojoMediaItem    thrpt        45   317139.956    20601.593    ops/s
-c.f.j.p.m.MsgpackStdReadVanilla.readPojoMediaItem        thrpt        45   271179.420     1293.668    ops/s
+c.f.j.p.a.AvroStdReadAfterburner.readPojoMediaItem       thrpt        95   944278.768    10925.333    ops/s
+c.f.j.p.j.JsonStdReadAfterburner.readPojoMediaItem       thrpt        49   867194.549     8230.178    ops/s
+c.f.j.p.m.MsgpackStdReadAfterburner.readPojoMediaItem    thrpt        95   313211.431    11494.680    ops/s
 c.f.j.p.x.XMLStdReadAfterburner.readPojoMediaItem        thrpt        45   332087.368     3400.015    ops/s
+
+c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem          thrpt        98   903158.722     8861.453    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem           thrpt       100   791853.570     5927.676    ops/s
+c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem           thrpt        95   730204.134     9748.497    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem           thrpt        49   701167.035     6777.125    ops/s
+c.f.j.p.j.JsonStdReadWS.readPojoMediaItem                thrpt        49   728689.211    10632.692    ops/s
+c.f.j.p.m.MsgpackStdReadVanilla.readPojoMediaItem        thrpt        95   273113.150     6371.447    ops/s
 c.f.j.p.x.XMLStdReadVanilla.readPojoMediaItem            thrpt        45   317712.490     2894.853    ops/s
 
-Benchmark                                                Mode   Samples         Mean   Mean error    Units
+Benchmark                                                 Mode   Samples         Mean   Mean error    Units
 c.f.j.p.a.AvroStdWriteAfterburner.writePojoMediaItem     thrpt        45   650238.494     9216.789    ops/s
-c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem         thrpt        45   561459.423     6526.326    ops/s
 c.f.j.p.m.MsgpackStdWriteAfterburner.writePojoMediaItem  thrpt        45   398987.595     8794.755    ops/s
-c.f.j.p.m.MsgpackStdWriteVanilla.writePojoMediaItem      thrpt        45   400758.417     8379.673    ops/s
 c.f.j.p.x.XMLStdWriteAfterburner.writePojoMediaItem      thrpt        45   652099.935     9491.855    ops/s
+
+c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem         thrpt        45   561459.423     6526.326    ops/s
+c.f.j.p.m.MsgpackStdWriteVanilla.writePojoMediaItem      thrpt        45   400758.417     8379.673    ops/s
 c.f.j.p.x.XMLStdWriteVanilla.writePojoMediaItem          thrpt        45   576797.377    10763.757    ops/s
 
 2.4.3
