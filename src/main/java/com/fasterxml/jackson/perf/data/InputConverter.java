@@ -22,7 +22,7 @@ public class InputConverter
 
     public static InputConverter nopConverter(ObjectMapper targetMapper)
     {
-        EnumMap<InputData, byte[]> data = new EnumMap<>(InputData.class);
+        EnumMap<InputData, byte[]> data = new EnumMap<InputData, byte[]>(InputData.class);
 
         // special case, mostly just to support non-converted JSON
         for (InputData input : InputData.values()) {
@@ -39,7 +39,7 @@ public class InputConverter
 
     public static InputConverter stdConverter(ObjectMapper targetMapper)
     {
-        EnumMap<InputData, byte[]> data = new EnumMap<>(InputData.class);
+        EnumMap<InputData, byte[]> data = new EnumMap<InputData, byte[]>(InputData.class);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream(4000);
         final JsonFactory jsonF = new JsonFactory();
         final JsonFactory targetF = targetMapper.getFactory();
