@@ -21,9 +21,9 @@ public class AvroStdReadVanilla
     static {
 	    AvroSchemaGenerator gen = new AvroSchemaGenerator();
 	    try {
-	    	MAPPER.acceptJsonFormatVisitor(MediaItem.class, gen);
+	        MAPPER.acceptJsonFormatVisitor(MediaItem.class, gen);
 	    } catch (Exception e) {
-	    	throw new RuntimeException(e);
+	        throw new RuntimeException(e);
 	    }
 	    _mediaItemSchema = gen.getGeneratedSchema();
     }

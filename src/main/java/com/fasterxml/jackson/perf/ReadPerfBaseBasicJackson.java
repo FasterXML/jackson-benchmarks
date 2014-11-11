@@ -27,7 +27,7 @@ public abstract class ReadPerfBaseBasicJackson
     protected ReadPerfBaseBasicJackson(MinimalInputConverter conv, ObjectMapper mapper,
     		FormatSchema schema)
     {
-    	MINIMAL_CONV = conv;
+        MINIMAL_CONV = conv;
         ObjectReader r = mapper.reader(MediaItem.class);
         if (schema != null) {
         	r = r.with(schema);
