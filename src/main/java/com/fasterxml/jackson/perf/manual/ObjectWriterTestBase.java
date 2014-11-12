@@ -10,7 +10,7 @@ abstract class ObjectWriterTestBase<T1,T2>
     protected int hash;
 
     protected abstract int targetSizeMegs();
-
+    
     protected void test(ObjectMapper mapper,
             String desc1, T1 inputValue1, Class<? extends T1> inputClass1,
             String desc2, T2 inputValue2, Class<? extends T2> inputClass2)
@@ -28,8 +28,8 @@ abstract class ObjectWriterTestBase<T1,T2>
         }
 
         final ObjectWriter writer0 = mapper.writer().with(SerializationFeature.EAGER_SERIALIZER_FETCH);
-        final ObjectWriter writer1 = writer0.withType(inputClass1);
-        final ObjectWriter writer2 = writer0.withType(inputClass2);
+        final ObjectWriter writer1 = withSchema(writer0.withType(inputClass1));
+        final ObjectWriter writer2 = withSchema(writer0.withType(inputClass2));
         
         int i = 0;
         int roundsDone = 0;
@@ -104,6 +104,10 @@ abstract class ObjectWriterTestBase<T1,T2>
         }
     }
 
+    protected ObjectWriter withSchema(ObjectWriter w) {
+        return w;
+    }
+    
     protected double testSer(int REPS, Object value, ObjectWriter writer) throws Exception
     {
         final NopOutputStream out = new NopOutputStream();
