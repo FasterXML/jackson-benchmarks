@@ -27,15 +27,18 @@ c.f.j.p.c.CBORColumnReadVanilla.readPojoMediaItem        thrpt        75  140348
 
 Benchmark                                                 Mode   Samples         Mean   Mean error    Units
 
-c.f.j.p.c.CBORStdWriteAfterburner.writePojoMediaItem     thrpt        95  2300999.014    15371.084    ops/s
-c.f.j.p.c.CBORStdWriteVanilla.writePojoMediaItem         thrpt        95  2113613.931    17094.233    ops/s
+c.f.j.p.c.CBORStdWriteAfterburner.writePojoMediaItem     thrpt       195  2316090.525    10976.696    ops/s
+c.f.j.p.p.ProtobufStdWriteAfterburner.writePojoMediaItem thrpt        45  1952863.297    20646.185    ops/s
 c.f.j.p.s.SmileStdWriteAfterburner.writePojoMediaItem    thrpt       150  1858868.094    14312.672    ops/s
-c.f.j.p.s.SmileStdWriteVanilla.writePojoMediaItem        thrpt       150  1602120.921    13757.391    ops/s
 c.f.j.p.j.JsonStdWriteAfterburner.writePojoMediaItem     thrpt        45  1817567.249    14522.987    ops/s
-c.f.j.p.j.JsonStdWriteVanilla.writePojoMediaItem         thrpt        45  1688260.303    14606.058    ops/s
 c.f.j.p.a.AvroStdWriteAfterburner.writePojoMediaItem     thrpt        45   794060.153     7648.951    ops/s
-c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem         thrpt        45   738836.812     8262.250    ops/s
 c.f.j.p.x.XMLStdWriteAfterburner.writePojoMediaItem      thrpt        95   759651.957     5891.997    ops/s
+
+c.f.j.p.c.CBORStdWriteVanilla.writePojoMediaItem         thrpt        95  2113613.931    17094.233    ops/s
+c.f.j.p.p.ProtobufStdWriteVanilla.writePojoMediaItem     thrpt        45  1779338.499    10649.821    ops/s
+c.f.j.p.s.SmileStdWriteVanilla.writePojoMediaItem        thrpt       150  1602120.921    13757.391    ops/s
+c.f.j.p.j.JsonStdWriteVanilla.writePojoMediaItem         thrpt        45  1688260.303    14606.058    ops/s
+c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem         thrpt        45   738836.812     8262.250    ops/s
 c.f.j.p.x.XMLStdWriteVanilla.writePojoMediaItem          thrpt        95   687384.517     6451.897    ops/s
 
 c.f.j.p.s.SmileColumnWriteAfterburner.writePojoMediaItem thrpt        95  3031141.425    20877.043    ops/s
