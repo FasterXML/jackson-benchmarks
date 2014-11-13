@@ -18,8 +18,8 @@ abstract class ObjectWriterTestBase<T1,T2>
     {
         final int REPS;
         {
-            final byte[] input1 = mapper.writeValueAsBytes(inputValue1);
-            final byte[] input2 = mapper.writeValueAsBytes(inputValue2);
+            final byte[] input1 = withSchema(mapper.writer()).writeValueAsBytes(inputValue1);
+            final byte[] input2 = withSchema(mapper.writer()).writeValueAsBytes(inputValue2);
             
             // Let's try to guestimate suitable size, N megs of output
             REPS = (int) ((double) (targetSizeMegs() * 1000 * 1000) / (double) input1.length);
@@ -107,7 +107,7 @@ abstract class ObjectWriterTestBase<T1,T2>
     protected ObjectWriter withSchema(ObjectWriter w) {
         return w;
     }
-    
+
     protected double testSer(int REPS, Object value, ObjectWriter writer) throws Exception
     {
         final NopOutputStream out = new NopOutputStream();

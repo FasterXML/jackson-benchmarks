@@ -26,16 +26,26 @@ public class MediaItemWriteProtobuf
             System.err.println("Usage: java ...");
             System.exit(1);
         }
-        String desc = "CBOR";
+        String desc = "Protobuf";
         MediaItem input = MediaItems.stdMediaItem();
         ObjectMapper m = new ObjectMapper(new ProtobufFactory());
         if (USE_AFTERBURNER) {
             m.registerModule(new AfterburnerModule());
             desc += "+Afterburner";
         }
-        new MediaItemWriteProtobuf().test(m,
-        		desc+"#1", input, MediaItem.class,
-        		desc+"#2", input, MediaItem.class);
+        try {
+            new MediaItemWriteProtobuf().test(m,
+            		desc+"#1", input, MediaItem.class,
+            		desc+"#2", input, MediaItem.class);
+        } catch (Exception e) {
+            System.err.println("Fail!");
+            Throwable t = e;
+            while (t.getCause() != null) {
+                t = t.getCause();
+            }
+            t.printStackTrace();
+            System.exit(1);
+        }
     }
 
     @Override
