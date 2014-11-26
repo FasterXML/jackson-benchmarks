@@ -14,3 +14,17 @@ c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem           thrpt        95   36743
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem        thrpt        35   382138.961     6937.444    ops/s
 c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem          thrpt        35   165242.119     2931.978    ops/s
 c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem  thrpt        35   162168.508     1506.598    ops/s
+
+2.5.0-SNAPSHOT, write
+
+c.f.j.p.c.CBORStdWriteAfterburner.writePojoMediaItem    thrpt        95   936105.870     8071.344    ops/s
+c.f.j.p.s.SmileStdWriteAfterburner.writePojoMediaItem   thrpt        95   763774.960     6821.514    ops/s
+c.f.j.p.j.JsonStdWriteAfterburner.writePojoMediaItem    thrpt        95   709170.626     3381.558    ops/s
+c.f.j.p.x.XMLStdWriteAfterburner.writePojoMediaItem     thrpt        95   377481.642     2781.745    ops/s
+c.f.j.p.a.AvroStdWriteAfterburner.writePojoMediaItem    thrpt        95   337466.310     3050.833    ops/s
+
+c.f.j.p.c.CBORStdWriteVanilla.writePojoMediaItem        thrpt        35   736310.803    10403.193    ops/s
+c.f.j.p.s.SmileStdWriteVanilla.writePojoMediaItem       thrpt        35   552300.694     8141.005    ops/s
+c.f.j.p.j.JsonStdWriteVanilla.writePojoMediaItem        thrpt        35   600371.134     3909.445    ops/s
+c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem        thrpt        35   299774.147     3421.704    ops/s
+
