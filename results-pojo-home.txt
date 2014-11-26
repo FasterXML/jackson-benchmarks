@@ -19,7 +19,7 @@ c.f.j.p.x.XMLStdReadVanilla.readPojoMediaItem            thrpt        45   31771
 Benchmark                                                 Mode   Samples         Mean   Mean error    Units
 
 c.f.j.p.c.CBORStdWriteAfterburner.writePojoMediaItem     thrpt        95  1667920.280    15605.323    ops/s
-c.f.j.p.p.ProtobufStdWriteAfterburner.writePojoMediaItem thrpt        95  1437237.318    26666.462    ops/s
+c.f.j.p.p.ProtobufStdWriteAfterburner.writePojoMediaItem thrpt        95  1451410.075    17909.553    ops/s
 c.f.j.p.s.SmileStdWriteAfterburner.writePojoMediaItem    thrpt       195  1381260.515    12884.676    ops/s
 c.f.j.p.j.JsonStdWriteAfterburner.writePojoMediaItem     thrpt        95  1316252.211    14002.988    ops/s
 c.f.j.p.a.AvroStdWriteAfterburner.writePojoMediaItem     thrpt        45   650238.494     9216.789    ops/s
@@ -27,7 +27,7 @@ c.f.j.p.m.MsgpackStdWriteAfterburner.writePojoMediaItem  thrpt        45   39898
 c.f.j.p.x.XMLStdWriteAfterburner.writePojoMediaItem      thrpt        45   652099.935     9491.855    ops/s
 
 c.f.j.p.c.CBORStdWriteVanilla.writePojoMediaItem         thrpt        95  1417387.108    13390.737    ops/s
-c.f.j.p.p.ProtobufStdWriteVanilla.writePojoMediaItem     thrpt        95  1229255.731     9132.066    ops/s
+c.f.j.p.p.ProtobufStdWriteVanilla.writePojoMediaItem     thrpt       195  1223309.042     8861.322    ops/s
 c.f.j.p.s.SmileStdWriteVanilla.writePojoMediaItem        thrpt       195  1141622.600     8115.831    ops/s
 c.f.j.p.j.JsonStdWriteVanilla.writePojoMediaItem         thrpt       195  1131662.129     6830.336    ops/s
 c.f.j.p.a.AvroStdWriteVanilla.writePojoMediaItem         thrpt        45   561459.423     6526.326    ops/s

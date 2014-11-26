@@ -1,0 +1,28 @@
+2.4.4, read
+
+Benchmark                                             Mode   Samples         Mean   Mean error    Units
+c.f.j.p.s.SmileStdReadAfterburner.readPojoMediaItem   thrpt        95   636807.258     3259.547    ops/s
+c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem    thrpt        95   510278.706     3361.267    ops/s
+c.f.j.p.j.JsonStdReadAfterburner.readPojoMediaItem    thrpt        95   448285.717     3293.929    ops/s
+c.f.j.p.x.XMLStdReadAfterburner.readPojoMediaItem     thrpt        95   174748.708     1610.997    ops/s
+
+c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem       thrpt        95   469865.272     2959.308    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem        thrpt        95   412890.685     3227.472    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem        thrpt        95   361094.770     4526.797    ops/s
+c.f.j.p.x.XMLStdReadVanilla.readPojoMediaItem         thrpt        95   165858.146     1590.210    ops/s
+
+2.4.4, write
+
+Benchmark
+                                                         Mode   Samples         Mean   Mean error    Units
+c.f.j.p.c.CBORStdWriteAfterburner.writePojoMediaItem    thrpt        95   962682.029     5554.231    ops/s
+c.f.j.p.s.SmileStdWriteAfterburner.writePojoMediaItem   thrpt        95   769828.247     6122.406    ops/s
+c.f.j.p.j.JsonStdWriteAfterburner.writePojoMediaItem    thrpt        95   736172.301     5865.351    ops/s
+c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem   thrpt        35   374709.890     4672.949    ops/s
+c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMe  thrpt        35   210474.296     3531.418    ops/s
+
+c.f.j.p.c.CBORStdWriteVanilla.writePojoMediaItem        thrpt        95   740243.594     6828.141    ops/s
+c.f.j.p.s.SmileStdWriteVanilla.writePojoMediaItem       thrpt        95   569336.905     4317.030    ops/s
+c.f.j.p.j.JsonStdWriteVanilla.writePojoMediaItem        thrpt        95   595532.873     4795.981    ops/s
+c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem       thrpt        35   318801.228     7987.794    ops/s
+c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMedia   thrpt        35   217435.154     2721.188    ops/s
