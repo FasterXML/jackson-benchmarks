@@ -26,9 +26,9 @@ public abstract class WritePerfBasicJackson
 
     protected WritePerfBasicJackson(ObjectMapper mapper, FormatSchema schema)
     {
-        ObjectWriter w = mapper.writerWithType(MediaItem.class);
+        ObjectWriter w = mapper.writerFor(MediaItem.class);
         if (schema != null) {
-        	w = w.withSchema(schema);
+        	w = w.with(schema);
         }
         MEDIA_ITEM_WRITER = w;
         item = MediaItems.stdMediaItem();

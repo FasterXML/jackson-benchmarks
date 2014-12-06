@@ -33,24 +33,28 @@ public abstract class ReadPerfBaseFullJackson
     
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
     public void readTreeCitmCatalog(BlackHole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.CITM_CATALOG_WS), UNTYPED_READER));
     }
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
     public void readTreeWebxml(BlackHole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.WEBXML_WS), UNTYPED_READER));
     }
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
     public void readTreeMenu(BlackHole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.MENU_WS), UNTYPED_READER));
     }
 
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
     public void readTreeMediaItem(BlackHole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytesForMediaItem(), UNTYPED_READER));
     }

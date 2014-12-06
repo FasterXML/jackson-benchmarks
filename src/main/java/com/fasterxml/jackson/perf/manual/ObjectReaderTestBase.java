@@ -69,10 +69,8 @@ abstract class ObjectReaderTestBase
                 byteInput1.length, byteInput2.length, REPS);
         System.out.print("Warming up");
 
-        final ObjectReader jsonReader = mapper1.reader()
-                .withType(inputClass1);
-        final ObjectReader arrayReader = mapper2.reader()
-                .withType(inputClass2);
+        final ObjectReader jsonReader = mapper1.reader().forType(inputClass1);
+        final ObjectReader arrayReader = mapper2.reader().forType(inputClass2);
         
         int i = 0;
         final int TYPES = 2;
@@ -112,10 +110,10 @@ abstract class ObjectReaderTestBase
 
         final ObjectReader jsonReader = mapper1.reader()
                 .with(DeserializationFeature.EAGER_DESERIALIZER_FETCH)
-                .withType(inputClass1);
+                .forType(inputClass1);
         final ObjectReader arrayReader = mapper2.reader()
                 .with(DeserializationFeature.EAGER_DESERIALIZER_FETCH)
-                .withType(inputClass2);
+                .forType(inputClass2);
         
         int i = 0;
         final int TYPES = 2;

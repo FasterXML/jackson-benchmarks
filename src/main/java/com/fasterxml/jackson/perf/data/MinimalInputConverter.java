@@ -25,7 +25,7 @@ public class MinimalInputConverter
     {
     	ObjectWriter w = targetMapper.writer();
     	if (schema != null) {
-    		w = w.withSchema(schema);
+    		w = w.with(schema);
     	}
         try {
 	        return new MinimalInputConverter(w.writeValueAsBytes(MediaItems.stdMediaItem()));

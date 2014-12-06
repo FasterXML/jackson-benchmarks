@@ -28,8 +28,8 @@ abstract class ObjectWriterTestBase<T1,T2>
         }
 
         final ObjectWriter writer0 = mapper.writer().with(SerializationFeature.EAGER_SERIALIZER_FETCH);
-        final ObjectWriter writer1 = withSchema(writer0.withType(inputClass1));
-        final ObjectWriter writer2 = withSchema(writer0.withType(inputClass2));
+        final ObjectWriter writer1 = withSchema(writer0.forType(inputClass1));
+        final ObjectWriter writer2 = withSchema(writer0.forType(inputClass2));
         
         int i = 0;
         int roundsDone = 0;

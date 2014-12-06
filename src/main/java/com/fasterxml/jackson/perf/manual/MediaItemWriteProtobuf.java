@@ -19,7 +19,7 @@ public class MediaItemWriteProtobuf
 
     public static void main(String[] args) throws Exception
     {
-//    	final boolean USE_AFTERBURNER = true;
+//        final boolean USE_AFTERBURNER = true;
         final boolean USE_AFTERBURNER = false;
 
         if (args.length != 0) {
@@ -50,6 +50,6 @@ public class MediaItemWriteProtobuf
 
     @Override
     protected ObjectWriter withSchema(ObjectWriter w) {
-        return w.withSchema(SCHEMA);
+        return w.with(SCHEMA);
     }
 }
