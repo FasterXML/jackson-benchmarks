@@ -3,7 +3,7 @@ package com.fasterxml.jackson.perf.model;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"uri","title","width","height","size"})
-public class Photo
+public class Image
 {
     private String _uri;
     private String _title;
@@ -11,8 +11,8 @@ public class Photo
     private int _height;
     private Size _size;
 
-    public Photo() {}
-    public Photo(String uri, String title, int w, int h, Size s)
+    public Image() {}
+    public Image(String uri, String title, int w, int h, Size s)
     {
       _uri = uri;
       _title = title;

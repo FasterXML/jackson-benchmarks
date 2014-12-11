@@ -20,9 +20,9 @@ public class MediaItems
         content.addPerson("Steve Jobs");
 
         MediaItem item = new MediaItem(content);
-        item.addPhoto(new Photo("http://javaone.com/keynote_large.jpg", "Javaone Keynote",
+        item.addPhoto(new Image("http://javaone.com/keynote_large.jpg", "Javaone Keynote",
                 1024, 768, Size.LARGE));
-        item.addPhoto(new Photo("http://javaone.com/keynote_small.jpg", "Javaone Keynote",
+        item.addPhoto(new Image("http://javaone.com/keynote_small.jpg", "Javaone Keynote",
                 320, 240, Size.SMALL));
 
         STD_MEDIA_ITEM = item;
