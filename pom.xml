@@ -17,6 +17,7 @@
 
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.jackson.annotations>2.5.0</version.jackson.annotations>
         <version.jackson.latest>2.5.1-SNAPSHOT</version.jackson.latest>
         <version.jackson.stable>2.5.0</version.jackson.stable>
         <version.jackson>${version.jackson.stable}</version.jackson>
@@ -28,6 +29,13 @@
         <artifactId>jmh-core</artifactId>
         <version>0.4</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${version.jackson.annotations}</version>
+      </dependency>
+
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
