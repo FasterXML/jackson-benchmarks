@@ -9,29 +9,33 @@ import org.openjdk.jmh.logic.BlackHole;
 
 import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
-public abstract class WritePerfBasicJackson
+public abstract class WritePerfBasicJackson<T>
 	implements WritePerfTestBasic
 {
     protected final ObjectWriter MEDIA_ITEM_WRITER;
 
-    protected final MediaItem item;
+    protected final T item;
     
     protected WritePerfBasicJackson(ObjectMapper mapper) {
     	this(mapper, null);
     }
 
-    protected WritePerfBasicJackson(ObjectMapper mapper, FormatSchema schema)
+    @SuppressWarnings("unchecked")
+    protected WritePerfBasicJackson(ObjectMapper mapper, FormatSchema schema) {
+        this(mapper, schema, (T) MediaItems.stdMediaItem());
+    }
+
+    protected WritePerfBasicJackson(ObjectMapper mapper, FormatSchema schema, T value)
     {
-        ObjectWriter w = mapper.writerFor(MediaItem.class);
+        ObjectWriter w = mapper.writerFor(value.getClass());
         if (schema != null) {
         	w = w.with(schema);
         }
         MEDIA_ITEM_WRITER = w;
-        item = MediaItems.stdMediaItem();
+        item = value;
     }
 
     /*
@@ -53,8 +57,7 @@ public abstract class WritePerfBasicJackson
     /**********************************************************************
      */
 
-    @SuppressWarnings("resource")
-    protected final int write(MediaItem value, ObjectWriter w) throws IOException {
+    protected final int write(T value, ObjectWriter w) throws IOException {
         NopOutputStream out = new NopOutputStream();
         w.writeValue(out, value);
         return out.size();

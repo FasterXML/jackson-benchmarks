@@ -7,10 +7,11 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.protobuf.ProtobufFactory;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class ProtobufStdWriteVanilla
-    extends WritePerfBasicJackson
+    extends WritePerfBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper(new ProtobufFactory());
 

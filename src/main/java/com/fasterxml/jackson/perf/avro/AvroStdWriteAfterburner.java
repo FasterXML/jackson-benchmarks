@@ -13,7 +13,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class AvroStdWriteAfterburner
-    extends WritePerfBasicJackson
+    extends WritePerfBasicJackson<MediaItem>
 {
     private final static AvroFactory _f = new AvroFactory();
     private static final ObjectMapper MAPPER = new ObjectMapper(_f);

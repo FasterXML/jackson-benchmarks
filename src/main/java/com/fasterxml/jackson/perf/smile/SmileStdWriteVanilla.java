@@ -6,10 +6,11 @@ import org.openjdk.jmh.annotations.Scope;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class SmileStdWriteVanilla
-    extends WritePerfBasicJackson
+    extends WritePerfBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER;
     static {
