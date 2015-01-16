@@ -8,10 +8,11 @@ import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class SmileColumnReadVanilla
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private final static SmileFactory _sf = new SmileFactory();
     
@@ -23,6 +24,6 @@ public class SmileColumnReadVanilla
     private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
 
     public SmileColumnReadVanilla() {
-        super(SMILES, MAPPER);
+        super(MediaItem.class, SMILES, MAPPER);
     }
 }

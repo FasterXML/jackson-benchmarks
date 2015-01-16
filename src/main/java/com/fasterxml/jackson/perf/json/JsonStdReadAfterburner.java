@@ -10,11 +10,12 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonStdReadAfterburner
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
     static {
@@ -25,6 +26,6 @@ public class JsonStdReadAfterburner
     private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);
 
     public JsonStdReadAfterburner() {
-        super(NO_OP, MAPPER);
+        super(MediaItem.class, NO_OP, MAPPER);
     }
 }

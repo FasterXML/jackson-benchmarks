@@ -7,15 +7,15 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
-
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonColumnReadVanilla
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
     static {
@@ -26,6 +26,6 @@ public class JsonColumnReadVanilla
     private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);
 
     public JsonColumnReadVanilla() {
-        super(NO_OP, MAPPER);
+        super(MediaItem.class, NO_OP, MAPPER);
     }
 }

@@ -5,11 +5,12 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({"uri","title","width","height","format","duration","size","bitrate","persons","player","copyright"})
+@JsonPropertyOrder(alphabetic=true, value = {
+        "uri","title","width","height","format","duration","size","bitrate","persons","player","copyright"})
 public class MediaContent
 {
     public enum Player { JAVA, FLASH;  }
-    
+
     private Player _player;
     private String _uri;
     private String _title;
@@ -24,13 +25,27 @@ public class MediaContent
 
     public MediaContent() { }
 
+    protected MediaContent(MediaContent src) {
+        _player = src._player;
+        _uri = src._uri;
+        _title = src._title;
+        _width = src._width;
+        _height = src._height;
+        _format = src._format;
+        _duration = src._duration;
+        _size = src._size;
+        _bitrate = src._bitrate;
+        _persons = src._persons;
+        _copyright = src._copyright;
+    }
+
     public void addPerson(String p) {
         if (_persons == null) {
             _persons = new ArrayList<String>();
         }
         _persons.add(p);
     }
-    
+
     public Player getPlayer() { return _player; }
     public String getUri() { return _uri; }
     public String getTitle() { return _title; }

@@ -11,24 +11,24 @@ import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
-import com.fasterxml.jackson.perf.model.MediaItem;
 
-public abstract class ReadPerfBaseBasicJackson
+public abstract class ReadPerfBaseBasicJackson<T>
 	implements ReadPerfTestBasic
 {
     protected final MinimalInputConverter MINIMAL_CONV;
 
     protected final ObjectReader MEDIA_ITEM_READER;
 
-    protected ReadPerfBaseBasicJackson(MinimalInputConverter conv, ObjectMapper mapper) {
-    	this(conv, mapper, null);
+    protected ReadPerfBaseBasicJackson(Class<T> type,
+            MinimalInputConverter conv, ObjectMapper mapper) {
+        this(type, conv, mapper, null);
     }
 
-    protected ReadPerfBaseBasicJackson(MinimalInputConverter conv, ObjectMapper mapper,
-    		FormatSchema schema)
+    protected ReadPerfBaseBasicJackson(Class<T> type,
+            MinimalInputConverter conv, ObjectMapper mapper, FormatSchema schema)
     {
         MINIMAL_CONV = conv;
-        ObjectReader r = mapper.reader(MediaItem.class);
+        ObjectReader r = mapper.reader(type);
         if (schema != null) {
         	r = r.with(schema);
         }

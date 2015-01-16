@@ -12,7 +12,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class AvroStdReadVanilla
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private final static AvroFactory _f = new AvroFactory();
     private static final ObjectMapper MAPPER = new ObjectMapper(_f);
@@ -31,6 +31,6 @@ public class AvroStdReadVanilla
     private final static MinimalInputConverter AVROS = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
 
     public AvroStdReadVanilla() {
-        super(AVROS, MAPPER, _mediaItemSchema);
+        super(MediaItem.class, AVROS, MAPPER, _mediaItemSchema);
     }
 }

@@ -11,11 +11,12 @@ import com.fasterxml.jackson.dataformat.protobuf.ProtobufFactory;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class ProtobufStdReadVanilla
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper(new ProtobufFactory());
 
@@ -24,6 +25,6 @@ public class ProtobufStdReadVanilla
     private final static MinimalInputConverter CONV = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
 
     public ProtobufStdReadVanilla() {
-        super(CONV, MAPPER);
+        super(MediaItem.class, CONV, MAPPER);
     }
 }

@@ -7,13 +7,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({"content", "images"})
 public class MediaItem
 {
-    private List<Image> _images;
     private MediaContent _content;
+    private List<Image> _images;
 
     public MediaItem() { }
 
-    public MediaItem(MediaContent c)
-    {
+    public MediaItem(MediaContent c) {
         _content = c;
     }
 

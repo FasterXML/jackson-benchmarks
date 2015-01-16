@@ -7,11 +7,12 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class CBORColumnReadVanilla
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private final static CBORFactory _cf = new CBORFactory();
     
@@ -23,6 +24,6 @@ public class CBORColumnReadVanilla
     private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
 
     public CBORColumnReadVanilla() {
-        super(SMILES, MAPPER);
+        super(MediaItem.class, SMILES, MAPPER);
     }
 }

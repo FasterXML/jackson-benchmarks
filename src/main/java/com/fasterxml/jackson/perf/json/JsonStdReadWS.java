@@ -9,11 +9,12 @@ import org.openjdk.jmh.annotations.Scope;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonStdReadWS
-    extends ReadPerfBaseFullJackson
+    extends ReadPerfBaseFullJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
@@ -21,6 +22,6 @@ public class JsonStdReadWS
     private final static InputConverter NO_OP = InputConverter.nopConverter(MAPPER);
 
     public JsonStdReadWS() {
-        super(NO_OP, MAPPER);
+        super(MediaItem.class, NO_OP, MAPPER);
     }
 }

@@ -11,11 +11,12 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class MsgpackStdReadAfterburner
-    extends ReadPerfBaseFullJackson
+    extends ReadPerfBaseFullJackson<MediaItem>
 {
     private final static MessagePackFactory _f = new MessagePackFactory();
     
@@ -27,6 +28,6 @@ public class MsgpackStdReadAfterburner
     private final static InputConverter MSGPACKS = InputConverter.stdConverter(MAPPER);
 
     public MsgpackStdReadAfterburner() {
-        super(MSGPACKS, MAPPER);
+        super(MediaItem.class, MSGPACKS, MAPPER);
     }
 }

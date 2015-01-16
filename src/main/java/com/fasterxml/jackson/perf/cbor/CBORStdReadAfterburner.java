@@ -8,10 +8,11 @@ import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
+import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 public class CBORStdReadAfterburner
-    extends ReadPerfBaseBasicJackson
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private final static CBORFactory _cf = new CBORFactory();
     
@@ -23,6 +24,6 @@ public class CBORStdReadAfterburner
     private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
 
     public CBORStdReadAfterburner() {
-        super(SMILES, MAPPER);
+        super(MediaItem.class, SMILES, MAPPER);
     }
 }
