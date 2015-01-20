@@ -32,7 +32,7 @@ public abstract class WritePerfBasicJackson<T>
     {
         ObjectWriter w = mapper.writerFor(value.getClass());
         if (schema != null) {
-        	w = w.with(schema);
+            w = w.with(schema);
         }
         MEDIA_ITEM_WRITER = w;
         item = value;
