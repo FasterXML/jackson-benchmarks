@@ -3,9 +3,7 @@ package com.fasterxml.jackson.perf.avro;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
-import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.avro.*;
-import com.fasterxml.jackson.dataformat.avro.schema.AvroSchemaGenerator;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -14,18 +12,15 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class AvroStdReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private final static AvroFactory _f = new AvroFactory();
-    private static final ObjectMapper MAPPER = new ObjectMapper(_f);
+    private static final AvroMapper MAPPER = new AvroMapper();
 
     private final static AvroSchema _mediaItemSchema;
     static {
-	    AvroSchemaGenerator gen = new AvroSchemaGenerator();
-	    try {
-	        MAPPER.acceptJsonFormatVisitor(MediaItem.class, gen);
-	    } catch (Exception e) {
-	        throw new RuntimeException(e);
-	    }
-	    _mediaItemSchema = gen.getGeneratedSchema();
+         try {
+             _mediaItemSchema = MAPPER.schemaFor(MediaItem.class);
+         } catch (Exception e) {
+             throw new RuntimeException(e);
+         }
     }
 
     private final static MinimalInputConverter AVROS = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
