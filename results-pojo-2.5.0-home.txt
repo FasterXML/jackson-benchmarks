@@ -1,4 +1,4 @@
-Benchmark                                                         Mode   Samples         Mean   Mean error    Units
+Benchmark (2.5.0)                                                 Mode   Samples         Mean   Mean error    Units
 c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem          thrpt        95   628992.506     3341.569    ops/s
 c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem            thrpt        95   543351.583     2589.456    ops/s
 c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem            thrpt        95   461471.648     2727.782    ops/s
@@ -15,10 +15,12 @@ c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem                  thrpt        95
 c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem                  thrpt        95   164181.995     1062.488    ops/s
 c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem          thrpt        95   159101.781      553.500    ops/s
 
+Benchmark (2.5.0)                                                 Mode   Samples         Mean   Mean error    Units
 c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem          thrpt        95   911473.957     7809.356    ops/s
 c.f.j.p.protobuf.ProtobufStdWriteAfterburner.writePojoMediaItem  thrpt        95   810393.740     5626.512    ops/s
 c.f.j.p.json.JsonStdWriteAfterburner.writePojoMediaItem          thrpt        95   707046.809     2827.877    ops/s
 c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem        thrpt        95   761379.849     4498.917    ops/s
+c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem            thrpt        95   429282.172     2644.799    ops/s
 c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem            thrpt        95   323476.414      895.517    ops/s
 c.f.j.p.avro.AvroStdWriteAfterburner.writePojoMediaItem          thrpt        95   337271.785     1541.919    ops/s
 c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMediaItem    thrpt        95   213156.051     1037.123    ops/s
@@ -27,6 +29,7 @@ c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem              thrpt        95
 c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem      thrpt        95   643747.941     5013.964    ops/s
 c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem              thrpt        95   595575.462     3477.500    ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem            thrpt        95   553358.618     2149.849    ops/s
+c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem                thrpt        95   422786.777     2640.503    ops/s
 c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem                thrpt        95   281556.818     1063.921    ops/s
 c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem              thrpt        95   298631.831     1605.261    ops/s
 c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem        thrpt        95   217078.181     1363.236    ops/s
