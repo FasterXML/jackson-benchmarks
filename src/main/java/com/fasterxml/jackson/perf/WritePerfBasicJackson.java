@@ -57,6 +57,7 @@ public abstract class WritePerfBasicJackson<T>
     /**********************************************************************
      */
 
+    @SuppressWarnings("resource")
     protected final int write(T value, ObjectWriter w) throws IOException {
         NopOutputStream out = new NopOutputStream();
         w.writeValue(out, value);

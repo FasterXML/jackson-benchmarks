@@ -14,15 +14,15 @@ public class MediaItemReadSmile extends ManualMediaItemReadBase
 	}
 
 	public static void main(String[] args) throws Exception
-    {
-    	JsonFactory f = new SmileFactory();
-        String desc = "Smile";
-        ObjectMapper m = new ObjectMapper(f);
-        if (USE_AFTERBURNER) {
-        	m.registerModule(new AfterburnerModule());
-        	desc += "+Afterburner";
-        }
-        // true -> always use bytes
-        new MediaItemReadSmile(m, true, desc).test();
+	{
+	    JsonFactory f = new SmileFactory();
+	    String desc = "Smile";
+	    ObjectMapper m = new ObjectMapper(f);
+	    if (USE_AFTERBURNER) {
+	        m.registerModule(new AfterburnerModule());
+	        desc += "+Afterburner";
+	    }
+	    // true -> always use bytes
+	    new MediaItemReadSmile(m, true, desc).test();
     }
 }
