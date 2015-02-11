@@ -1,6 +1,6 @@
 Benchmark (2.6.0)                                               Mode   Samples         Mean   Mean error    Units
-c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem        thrpt       295   634779.848     2320.673    ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem          thrpt       295   578726.697     1624.891    ops/s
+c.f.j.p.s.SmileStdReadAfterburner.readPojoMediaItem            thrpt       295   643525.469     2300.596    ops/s
+c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem             thrpt       295   583725.941     1759.197    ops/s
 c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem          thrpt       295   532144.939     2021.576    ops/s
 c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem          thrpt       295   456988.636     1514.397    ops/s
 c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem            thrpt       295   302005.177      987.323    ops/s
@@ -8,8 +8,8 @@ c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem            thrpt       295  
 c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem    thrpt       295   184543.834      343.200    ops/s
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem          thrpt       295    32052.618      111.526    ops/s
 
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem            thrpt       295   474234.984     1826.112    ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem              thrpt       295   423852.658     1619.927    ops/s
+c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem                thrpt       295   486500.853     2467.860    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem                 thrpt       295   437237.293     1741.288    ops/s
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem              thrpt       295   411880.975     2123.313    ops/s
 c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem              thrpt       295   368231.042     2152.688    ops/s
 c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem                thrpt       295   275172.647      989.235    ops/s
