@@ -11,11 +11,13 @@ c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem          thrpt       295  
 c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem                thrpt       295   486500.853     2467.860    ops/s
 c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem                 thrpt       295   437237.293     1741.288    ops/s
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem              thrpt       295   411880.975     2123.313    ops/s
-c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem              thrpt       295   368231.042     2152.688    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem                 thrpt       295   373842.734     2254.481    ops/s
 c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem                thrpt       295   275172.647      989.235    ops/s
 c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem                thrpt       295   162101.255      362.079    ops/s
 c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem        thrpt       295   159873.443      318.047    ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem              thrpt       295    30597.408      105.994    ops/s
+
+c.f.j.p.j.JacksonJrRead.readPojoMediaItem                      thrpt       295   393543.756     1549.942    ops/s
 
 Benchmark (2.6.0)                                              Mode   Samples         Mean   Mean error    Units
 
