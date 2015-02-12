@@ -15,6 +15,8 @@ c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem                  thrpt        95
 c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem                  thrpt        95   164181.995     1062.488    ops/s
 c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem          thrpt        95   159101.781      553.500    ops/s
 
+c.f.j.p.j.JacksonJrRead.readPojoMediaItem                        thrpt       295   341333.836      930.422    ops/s
+
 Benchmark (2.5.0)                                                 Mode   Samples         Mean   Mean error    Units
 
 c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem          thrpt       295   929376.834     3984.552    ops/s
