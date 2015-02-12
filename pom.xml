@@ -18,9 +18,7 @@
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.jackson.annotations>2.5.0</version.jackson.annotations>
-        <version.jackson.latest>2.6.0-SNAPSHOT</version.jackson.latest>
-        <version.jackson.stable>2.5.0</version.jackson.stable>
-        <version.jackson>${version.jackson.latest}</version.jackson>
+        <version.jackson>2.5.0</version.jackson>
     </properties>
 
     <dependencies>
@@ -39,18 +37,12 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-<!--
-        <version>2.6.0-SNAPSHOT</version>
--->
         <version>${version.jackson}</version>
       </dependency>
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-<!--
-        <version>2.6.0-SNAPSHOT</version>
--->
         <version>${version.jackson}</version>
       </dependency>
 
@@ -93,11 +85,13 @@
 
       <!--  Then more experimental ones -->
 
+<!--
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-protobuf</artifactId>
         <version>${version.jackson}</version>
       </dependency>
+-->
 
       <dependency>
         <groupId>org.komamitsu</groupId>
@@ -113,7 +107,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.jr</groupId>
         <artifactId>jackson-jr-objects</artifactId>
-        <version>${version.jackson.stable}</version>
+        <version>${version.jackson}</version>
       </dependency>
     </dependencies>
 
