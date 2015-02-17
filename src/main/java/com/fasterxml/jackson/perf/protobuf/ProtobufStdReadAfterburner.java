@@ -28,6 +28,6 @@ public class ProtobufStdReadAfterburner
     private final static MinimalInputConverter CONV = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
 
     public ProtobufStdReadAfterburner() {
-        super(MediaItem.class, CONV, MAPPER);
+        super(MediaItem.class, CONV, MAPPER, _mediaItemSchema);
     }
 }

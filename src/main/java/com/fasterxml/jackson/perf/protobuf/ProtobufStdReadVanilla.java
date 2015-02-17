@@ -25,6 +25,6 @@ public class ProtobufStdReadVanilla
     private final static MinimalInputConverter CONV = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
 
     public ProtobufStdReadVanilla() {
-        super(MediaItem.class, CONV, MAPPER);
+        super(MediaItem.class, CONV, MAPPER, _mediaItemSchema);
     }
 }
