@@ -12,7 +12,7 @@ public class JsonStdWriteVanilla extends WritePerfBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-	public JsonStdWriteVanilla() {
-		super(MAPPER);
-	}
+    public JsonStdWriteVanilla() {
+        super(MAPPER);
+    }
 }

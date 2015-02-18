@@ -20,7 +20,7 @@ public abstract class WritePerfBasicJackson<T>
     protected final T item;
     
     protected WritePerfBasicJackson(ObjectMapper mapper) {
-    	this(mapper, null);
+        this(mapper, null);
     }
 
     @SuppressWarnings("unchecked")

@@ -20,11 +20,11 @@ public class JacksonJrRead
     
     private static byte[] _mediaItemBytes;
     static {
-    	try {
-    		_mediaItemBytes = json.asBytes(MediaItems.stdMediaItem());
-    	} catch (IOException e) {
-    		throw new RuntimeException(e);
-    	}
+        try {
+    		    _mediaItemBytes = json.asBytes(MediaItems.stdMediaItem());
+        } catch (IOException e) {
+    		    throw new RuntimeException(e);
+        }
     }
 
     public JacksonJrRead() { }
@@ -38,14 +38,14 @@ public class JacksonJrRead
     // part of 'full' test, but we don't implement that in its entirety
     @GenerateMicroBenchmark
     public void readTreeMediaItem(BlackHole bh) throws Exception {
-    	bh.consume(readTree(_mediaItemBytes));
+        bh.consume(readTree(_mediaItemBytes));
     }
-    
+
     private MediaItem read(byte[] input) throws Exception {
-    	return json.beanFrom(MediaItem.class, input);
+        return json.beanFrom(MediaItem.class, input);
     }
 
     private Object readTree(byte[] input) throws Exception {
-    	return json.anyFrom(input);
+        return json.anyFrom(input);
     }
 }
