@@ -1,18 +1,18 @@
 Benchmark (2.5.0)                                                 Mode   Samples         Mean   Mean error    Units
-c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem          thrpt        95   628992.506     3341.569    ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem            thrpt        95   543351.583     2589.456    ops/s
-c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem            thrpt        95   461471.648     2727.782    ops/s
-c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem            thrpt        95   440257.425     2312.035    ops/s
-c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem              thrpt        95   228824.889      871.053    ops/s
-c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem              thrpt        95   173841.412     1139.319    ops/s
+c.f.j.p.s.SmileStdReadAfterburner.readPojoMediaItem              thrpt       295   633860.703     1694.277    ops/s
+c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem               thrpt       295   552493.993     1333.222    ops/s
+c.f.j.p.a.AvroStdReadAfterburner.readPojoMediaItem               thrpt       145   471465.226     1815.039    ops/s
+c.f.j.p.j.JsonStdReadAfterburner.readPojoMediaItem               thrpt       145   445714.262     1942.647    ops/s
+c.f.j.p.c.CsvStdReadAfterburner.readPojoMediaItem                thrpt       145   232584.935      915.561    ops/s
+c.f.j.p.x.XMLStdReadAfterburner.readPojoMediaItem                thrpt       145   173389.071      770.378    ops/s
 c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem      thrpt        95   182224.059      703.524    ops/s
 
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem              thrpt        95   452000.657     3472.556    ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem                thrpt        95   401003.248     2004.117    ops/s
-c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem                thrpt        95   381922.873     2180.366    ops/s
-c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem                thrpt        95   360019.394     3125.239    ops/s
-c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem                  thrpt        95   212621.067     1045.749    ops/s
-c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem                  thrpt        95   164181.995     1062.488    ops/s
+c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem                  thrpt       295   463475.755     1868.381    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem                   thrpt       295   409367.527     1327.088    ops/s
+c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem                   thrpt       145   382576.259     2786.370    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem                   thrpt       145   363422.752     2027.669    ops/s
+c.f.j.p.c.CsvStdReadVanilla.readPojoMediaItem                    thrpt       145   214914.731     1470.770    ops/s
+c.f.j.p.x.XMLStdReadVanilla.readPojoMediaItem                    thrpt       145   160984.240      660.439    ops/s
 c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem          thrpt        95   159101.781      553.500    ops/s
 
 c.f.j.p.j.JacksonJrRead.readPojoMediaItem                        thrpt       295   341333.836      930.422    ops/s
@@ -20,7 +20,7 @@ c.f.j.p.j.JacksonJrRead.readPojoMediaItem                        thrpt       295
 TREE (2.5.0)
 c.f.j.p.s.SmileStdReadVanilla.readTreeMediaItem                  thrpt       295   530441.291     1421.102    ops/s
 c.f.j.p.c.CBORStdReadVanilla.readTreeMediaItem                   thrpt       295   444606.364     1168.392    ops/s
-c.f.j.p.json.JsonStdReadVanilla.readTreeMediaItem                thrpt        95   386118.559     1539.112    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readTreeMediaItem                   thrpt       295   390721.729     1085.003    ops/s
 c.f.j.p.msgpack.MsgpackStdReadVanilla.readTreeMediaItem          thrpt        95   165713.803      668.911    ops/s
 
 Benchmark (2.5.0)                                                 Mode   Samples         Mean   Mean error    Units
