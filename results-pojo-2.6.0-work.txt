@@ -1,7 +1,8 @@
-Benchmark (2.6.0-SNAPSHOT)                                  Mode   Samples         Mean   Mean error    Units
-c.f.j.p.p.ProtobufStdReadVanilla.readPojoMediaItem         thrpt       195   605142.949     2285.715    ops/s
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem        thrpt       195   603164.462     2620.381    ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem          thrpt       195   539802.772     2785.875    ops/s
+2.6.0-SNAPSHOT / 23-Mar-2015 / Multifarious
+c.f.j.p.p.ProtobufStdReadVanilla.readPojoMediaItem         thrpt       145   617808.732     1943.666    ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem        thrpt       145   619382.411     2260.731    ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem          thrpt       145   558230.683     2616.049    ops/s
+
 c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem             thrpt       195   523131.043     2873.273    ops/s
 c.f.j.p.j.JacksonJrRead.readPojoMediaItem                  thrpt       195   456784.510     2259.776    ops/s
 c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem             thrpt       195   440867.385     2263.841    ops/s
