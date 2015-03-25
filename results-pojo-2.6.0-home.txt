@@ -24,11 +24,11 @@ c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem        thrpt       495  
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem              thrpt       495    30818.842       99.144    ops/s
 
 23-Mar-2015
-c.f.j.p.s.SmileStdReadVanilla.readTreeMediaItem                thrpt       245   524026.659      901.249    ops/s
-c.f.j.p.c.CBORStdReadVanilla.readTreeMediaItem                 thrpt       245   489691.463     1048.709    ops/s
-c.f.j.p.j.JsonStdReadVanilla.readTreeMediaItem                 thrpt       245   404195.274     1491.069    ops/s
-c.f.j.p.m.MsgpackStdReadVanilla.readTreeMediaItem              thrpt       145   170343.291      864.957    ops/s
-c.f.j.p.y.YAMLStdReadVanilla.readTreeMediaItem                 thrpt       145    32293.387      169.710    ops/s
+c.f.j.p.s.SmileStdReadVanilla.readTreeMediaItem                thrpt       145   546152.015     1270.933    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readTreeMediaItem                 thrpt       145   498859.053     1541.390    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readTreeMediaItem                 thrpt       145   413686.969     1776.862    ops/s
+c.f.j.p.m.MsgpackStdReadVanilla.readTreeMediaItem              thrpt       145   168222.867      454.284    ops/s
+c.f.j.p.y.YAMLStdReadVanilla.readTreeMediaItem                 thrpt       145    32335.684      184.144    ops/s
 
 (2.6.0-SNAPSHOT)
 c.f.j.p.p.ProtobufStdWriteAfterburner.writePojoMediaItem       thrpt       295   936414.981     3698.785    ops/s
