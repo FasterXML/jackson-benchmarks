@@ -1,20 +1,21 @@
 2.5.0 (23-Mar-2015) / Multifarious
 
-c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem       thrpt        95   591071.717     2816.248    ops/s
-c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem        thrpt        95   507563.507     3810.166    ops/s
-c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem        thrpt        95   512744.628     2072.938    ops/s
-c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem        thrpt        95   433578.601     1651.365    ops/s
+c.f.j.p.s.SmileStdReadVanilla.readPojoMediaItem       thrpt       195   595763.088     1930.891    ops/s
+c.f.j.p.c.CBORStdReadVanilla.readPojoMediaItem        thrpt       195   515214.429     1943.154    ops/s
+c.f.j.p.a.AvroStdReadVanilla.readPojoMediaItem        thrpt       145   516623.837     1682.010    ops/s
+c.f.j.p.j.JsonStdReadVanilla.readPojoMediaItem        thrpt       145   437005.886     1265.545    ops/s
+c.f.j.p.j.JacksonJrRead.readPojoMediaItem             thrpt       145   436957.439     1245.360    ops/s
 c.f.j.p.c.CsvStdReadVanilla.readPojoMediaItem         thrpt        95   266994.648     1194.166    ops/s
 c.f.j.p.x.XMLStdReadVanilla.readPojoMediaItem         thrpt        95   193706.195      610.235    ops/s
 
-c.f.j.p.s.SmileStdReadAfterburner.readPojoMediaItem   thrpt        95   725297.570     2830.793    ops/s
-c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem    thrpt        95   625073.121     2865.308    ops/s
-c.f.j.p.a.AvroStdReadAfterburner.readPojoMediaItem    thrpt        95   595566.318     2786.488    ops/s
-c.f.j.p.j.JsonStdReadAfterburner.readPojoMediaItem    thrpt        95   532697.517     2508.423    ops/s
+c.f.j.p.s.SmileStdReadAfterburner.readPojoMediaItem   thrpt       195   730753.547     1624.704    ops/s
+c.f.j.p.c.CBORStdReadAfterburner.readPojoMediaItem    thrpt       195   629963.428     1828.168    ops/s
+c.f.j.p.a.AvroStdReadAfterburner.readPojoMediaItem    thrpt       145   599529.614     1572.165    ops/s
+c.f.j.p.j.JsonStdReadAfterburner.readPojoMediaItem    thrpt       145   536509.488     1662.450    ops/s
 c.f.j.p.c.CsvStdReadAfterburner.readPojoMediaItem     thrpt        95   270897.346      812.640    ops/s
 c.f.j.p.x.XMLStdReadAfterburner.readPojoMediaItem     thrpt        95   203308.252      703.356    ops/s
 
-Benchmark (2.5.0 work)                                Mode   Samples         Mean   Mean error    Units
+2.5.0 (25-Mar-2015) / Multifarious
 c.f.j.p.c.CBORStdWriteVanilla.writePojoMediaItem      thrpt       195  1122342.311     2916.570    ops/s
 c.f.j.p.s.SmileStdWriteVanilla.writePojoMediaItem     thrpt       195   841508.039     3224.270    ops/s
 c.f.j.p.j.JsonStdWriteVanilla.writePojoMediaItem      thrpt       195   876498.409     2192.087    ops/s
