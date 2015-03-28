@@ -46,6 +46,7 @@ c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem        thrpt       295
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem              thrpt       295    44565.145       52.302    ops/s
 
 Untyped (Object)
+c.f.j.p.j.JsonStdWriteVanilla.writeUntypedMediaItem              thrpt        95   594357.596     2591.680    ops/s
 
 JsonNode
 c.f.j.p.j.JsonStdWriteVanilla.writeNodeMediaItem                 thrpt        95   662503.833     2174.389    ops/s
