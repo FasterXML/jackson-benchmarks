@@ -19,9 +19,12 @@ public class JsonStdReadVanilla
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
-    private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);
+    private final static InputConverter JSON_CONV = InputConverter.stdConverter(MAPPER);
 
+    // NOTE: to _RETAIN_ whitespace, we'd use:
+//    private final static InputConverter JSON_CONV = InputConverter.nopConverter(MAPPER);
+    
     public JsonStdReadVanilla() {
-        super(MediaItem.class, NO_OP, MAPPER);
+        super(MediaItem.class, JSON_CONV, MAPPER);
     }
 }
