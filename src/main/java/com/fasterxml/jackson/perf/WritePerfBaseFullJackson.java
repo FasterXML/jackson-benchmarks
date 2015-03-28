@@ -40,8 +40,8 @@ public abstract class WritePerfBaseFullJackson<T>
     @GenerateMicroBenchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void writeMapMediaItem(BlackHole bh) throws Exception {
-        bh.consume(write(item, UNTYPED_WRITER));
+    public void writeUntypedMediaItem(BlackHole bh) throws Exception {
+        bh.consume(write(untyped, UNTYPED_WRITER));
     }
 
     /*
@@ -54,6 +54,6 @@ public abstract class WritePerfBaseFullJackson<T>
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
     public void writeNodeMediaItem(BlackHole bh) throws Exception {
-        bh.consume(write(item, NODE_WRITER));
+        bh.consume(write(node, NODE_WRITER));
     }
 }
