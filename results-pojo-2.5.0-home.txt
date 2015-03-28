@@ -26,7 +26,6 @@ c.f.j.p.msgpack.MsgpackStdReadVanilla.readTreeMediaItem          thrpt        95
 Benchmark (2.5.0)                                                 Mode   Samples         Mean   Mean error    Units
 
 c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem          thrpt       295   929376.834     3984.552    ops/s
-c.f.j.p.protobuf.ProtobufStdWriteAfterburner.writePojoMediaItem  thrpt        95   810393.740     5626.512    ops/s
 c.f.j.p.json.JsonStdWriteAfterburner.writePojoMediaItem          thrpt       295   710361.573     1711.773    ops/s
 c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem        thrpt       295   762603.293     2829.690    ops/s
 c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem            thrpt       295   435913.761     1477.968    ops/s
@@ -36,7 +35,6 @@ c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMediaItem    thrpt       295
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem          thrpt       295    45428.193       41.381    ops/s
 
 c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem              thrpt       295   737175.972     3408.141    ops/s
-c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem      thrpt        95   643747.941     5013.964    ops/s
 c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem              thrpt       295   597969.478     1797.012    ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem            thrpt       295   571929.064     1576.375    ops/s
 c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem                thrpt       295   414071.243     2049.613    ops/s
