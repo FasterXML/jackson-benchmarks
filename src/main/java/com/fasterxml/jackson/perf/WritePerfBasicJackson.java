@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
-public abstract class WritePerfBasicJackson<T>
+public  class WritePerfBasicJackson<T>
 	implements WritePerfTestBasic
 {
     protected final ObjectWriter MEDIA_ITEM_WRITER;
@@ -20,7 +20,7 @@ public abstract class WritePerfBasicJackson<T>
     protected final T item;
     
     protected WritePerfBasicJackson(ObjectMapper mapper) {
-    	this(mapper, null);
+        this(mapper, null);
     }
 
     @SuppressWarnings("unchecked")
@@ -40,7 +40,7 @@ public abstract class WritePerfBasicJackson<T>
 
     /*
     /**********************************************************************
-    /* Typed reading tests
+    /* Typed writing tests
     /**********************************************************************
      */
 
