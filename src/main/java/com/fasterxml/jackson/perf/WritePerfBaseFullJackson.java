@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
-public class WritePerfBaseFullJackson<T>
+public abstract class WritePerfBaseFullJackson<T>
     extends WritePerfBasicJackson<T>
     implements WritePerfTestFull
 {

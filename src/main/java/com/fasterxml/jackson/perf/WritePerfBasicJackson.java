@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
-public  class WritePerfBasicJackson<T>
+public abstract class WritePerfBasicJackson<T>
 	implements WritePerfTestBasic
 {
     protected final ObjectWriter MEDIA_ITEM_WRITER;
