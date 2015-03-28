@@ -9,25 +9,19 @@ import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
-import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
+import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Group) // Thread, Group or Benchmark
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class MsgpackStdReadAfterburner
-    extends ReadPerfBaseFullJackson<MediaItem>
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private final static MessagePackFactory _f = new MessagePackFactory();
-    
-    private static final ObjectMapper MAPPER = new ObjectMapper(_f);
-    static {
-        MAPPER.registerModule(new AfterburnerModule());
-    }
-
-    private final static InputConverter MSGPACKS = InputConverter.stdConverter(MAPPER);
+    private static final ObjectMapper MAPPER = new ObjectMapper(new MessagePackFactory())
+        .registerModule(new AfterburnerModule());
 
     public MsgpackStdReadAfterburner() {
-        super(MediaItem.class, MSGPACKS, MAPPER);
+        super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);
     }
 }
