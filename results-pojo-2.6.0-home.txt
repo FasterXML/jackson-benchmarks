@@ -22,13 +22,14 @@ c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem        thrpt       495  
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem              thrpt       495    30818.842       99.144    ops/s
 
 Untyped (Object)
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem         thrpt       145   554359.370     1159.536    ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem           thrpt       145   489488.122     1709.591    ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem           thrpt       145   415218.934     1139.442    ops/s
 
-c.f.j.p.smile.SmileStdReadVanilla.readTreeMediaItem            thrpt       295   560501.351      946.930    ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readTreeMediaItem              thrpt       295   495803.571      844.278    ops/s
-c.f.j.p.json.JsonStdReadVanilla.readTreeMediaItem              thrpt       295   415623.330     1340.380    ops/s
-
-Tree (JsonNode)
-c.f.j.p.j.JsonStdReadVanilla.readUntypedMediaItem              thrpt        95   413984.369     2073.007    ops/s
+JsonNode / 2.6.0-SNAPSHOT / 28-Mar-2015
+c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem            thrpt       145   520141.087     1677.315    ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readNodeMediaItem              thrpt       145   481659.525     1688.892    ops/s
+c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem              thrpt       145   403272.499     1236.614    ops/s
 
 2.6.0-SNAPSHOT / 25-Mar-2015 / home
 
@@ -54,7 +55,11 @@ c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem      thrpt       195  
 c.f.j.p.y.YAMLStdWriteVanilla.writePojoMediaItem               thrpt       195    44499.638       61.453    ops/s
 
 Untyped (Object)
-c.f.j.p.j.JsonStdWriteVanilla.writeUntypedMediaItem            thrpt        95   595883.408     3184.024    ops/s
+c.f.j.p.c.CBORStdWriteVanilla.writeUntypedMediaItem            thrpt       145   847036.849     4276.103    ops/s
+c.f.j.p.j.JsonStdWriteVanilla.writeUntypedMediaItem            thrpt       145   615670.658     2144.983    ops/s
+c.f.j.p.s.SmileStdWriteVanilla.writeUntypedMediaItem           thrpt       145   770251.603     1989.527    ops/s
 
 Tree (JsonNode)
-c.f.j.p.j.JsonStdWriteVanilla.writeNodeMediaItem               thrpt        95   673737.165     1673.644    ops/s
+c.f.j.p.c.CBORStdWriteVanilla.writeNodeMediaItem               thrpt       145   863175.109     3299.286    ops/s
+c.f.j.p.j.JsonStdWriteVanilla.writeNodeMediaItem               thrpt       145   676368.012     1435.838    ops/s
+c.f.j.p.s.SmileStdWriteVanilla.writeNodeMediaItem              thrpt       145   775975.639     2453.248    ops/s
