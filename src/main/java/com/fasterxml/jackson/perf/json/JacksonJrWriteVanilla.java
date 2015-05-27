@@ -13,7 +13,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
-public class JacksonJrWrite implements WritePerfTestBasic
+public class JacksonJrWriteVanilla implements WritePerfTestBasic
 {
     private static final JSON json = JSON.std;
 

@@ -1,4 +1,4 @@
-2.6.0-SNAPSHOT / 23-Mar-2015 / home
+Afterburner / 2.6.0-SNAPSHOT / 23-Mar-2015 / home
 
 c.f.j.p.protobuf.ProtobufStdReadAfterburner.readPojoMediaItem  thrpt       495   680886.550     1668.332    ops/s
 c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem        thrpt       495   633743.172     1528.220    ops/s
@@ -10,21 +10,23 @@ c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem            thrpt       495  
 c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem    thrpt       495   186024.261      221.804    ops/s
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem          thrpt       495    32672.233       88.847    ops/s
 
-c.f.j.p.protobuf.ProtobufStdReadVanilla.readPojoMediaItem      thrpt       495   490509.650     1206.784    ops/s
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem            thrpt       295   471928.646     1563.643    ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem              thrpt       495   425493.035     1139.426    ops/s
-c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem              thrpt       495   412423.238     1977.045    ops/s
-c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem              thrpt       495   374435.679     1220.705    ops/s
-c.f.j.p.json.JacksonJrRead.readPojoMediaItem                   thrpt       295   397538.042     1368.619    ops/s
-c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem                thrpt       495   270013.855      770.815    ops/s
-c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem                thrpt       495   164809.680      242.665    ops/s
-c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem        thrpt       495   153101.787      299.005    ops/s
-c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem              thrpt       495    30818.842       99.144    ops/s
+Vanila / 2.6.0-rc1 / 26-May-2015 / home
+Benchmark                                                     Mode   Samples         Mean   Mean error    Units
+c.f.j.p.protobuf.ProtobufStdReadVanilla.readPojoMediaItem    thrpt       245   477538.360     1844.301    ops/sc
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem          thrpt       245   467848.847     1675.585    ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem            thrpt       245   417410.597     1217.260    ops/s
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem            thrpt       245   410018.901     2440.856    ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem            thrpt       245   368655.197     1918.041    ops/s
+c.f.j.p.json.JacksonJrRead.readPojoMediaItem                 thrpt       245   393675.418     1952.839    ops/s
+c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem              thrpt       245   263597.285     1123.644    ops/s
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem              thrpt       245   158931.016      459.459    ops/s
+c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem      thrpt       245   150901.246      427.666    ops/s
+c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem            thrpt       245    30438.086      127.571    ops/s
 
-Untyped (Object)
-c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem         thrpt       145   554359.370     1159.536    ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem           thrpt       145   489488.122     1709.591    ops/s
-c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem           thrpt       145   415218.934     1139.442    ops/s
+Untyped (Object) / 2.6.0-rc1 / 26-May-2015 / home
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt       245   537706.144     1411.814    ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt       245   481060.990      757.155    ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt       245   403168.445     1444.342    ops/s
 
 JsonNode / 2.6.0-SNAPSHOT / 28-Mar-2015
 c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem            thrpt       145   520141.087     1677.315    ops/s
