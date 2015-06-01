@@ -12,7 +12,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 @OutputTimeUnit(TimeUnit.SECONDS)
-public class JacksonJrRead
+public class JacksonJrReadVanilla
 	implements ReadPerfTestBasic
 {
 //    @State(Scope.Group) // Thread, Group or Benchmark
@@ -27,7 +27,7 @@ public class JacksonJrRead
         }
     }
 
-    public JacksonJrRead() { }
+    public JacksonJrReadVanilla() { }
 
     @GenerateMicroBenchmark
     @Override

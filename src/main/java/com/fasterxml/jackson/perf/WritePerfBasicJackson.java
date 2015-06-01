@@ -40,7 +40,7 @@ public abstract class WritePerfBasicJackson<T>
 
     /*
     /**********************************************************************
-    /* Typed reading tests
+    /* Typed writing tests
     /**********************************************************************
      */
 
@@ -58,7 +58,7 @@ public abstract class WritePerfBasicJackson<T>
      */
 
     @SuppressWarnings("resource")
-    protected final int write(T value, ObjectWriter w) throws IOException {
+    protected final int write(Object value, ObjectWriter w) throws IOException {
         NopOutputStream out = new NopOutputStream();
         w.writeValue(out, value);
         return out.size();
