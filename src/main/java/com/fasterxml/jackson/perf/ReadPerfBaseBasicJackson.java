@@ -34,7 +34,7 @@ public abstract class ReadPerfBaseBasicJackson<T>
         }
         MEDIA_ITEM_READER = r;
     }
-    
+
     /*
     /**********************************************************************
     /* Typed reading tests

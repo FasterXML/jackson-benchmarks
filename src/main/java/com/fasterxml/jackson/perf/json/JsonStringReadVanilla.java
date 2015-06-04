@@ -55,6 +55,19 @@ public class JsonStringReadVanilla
 
     /*
     /**********************************************************************
+    /* Typed reading tests
+    /**********************************************************************
+     */
+
+    @GenerateMicroBenchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readPojoMediaItem(BlackHole bh) throws Exception {
+        bh.consume(read(_converter.mediaItemAsString(), MEDIA_ITEM_READER));
+    }
+
+    /*
+    /**********************************************************************
     /* Untyped ("map") reading tests
     /**********************************************************************
      */
