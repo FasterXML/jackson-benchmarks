@@ -33,6 +33,7 @@ public class JacksonJrWriteVanilla implements WritePerfTestBasic
     /**********************************************************************
      */
 
+    @SuppressWarnings("resource")
     protected final int write(MediaItem value, JSON writer) throws IOException {
         NopOutputStream out = new NopOutputStream();
         writer.write(value, out);

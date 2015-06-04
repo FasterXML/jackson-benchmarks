@@ -12,14 +12,13 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class CBORStdWriteVanilla
     extends WritePerfBaseFullJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER;
+    private static final ObjectMapper CBOR_MAPPER;
     static {
-        CBORFactory f = new CBORFactory();
         // configure differently?
-        MAPPER = new ObjectMapper(f);
+        CBOR_MAPPER = new ObjectMapper(new CBORFactory());
     }
 
     public CBORStdWriteVanilla() {
-        super(MAPPER);
+        super(CBOR_MAPPER);
     }
 }

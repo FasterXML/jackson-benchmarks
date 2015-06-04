@@ -17,7 +17,6 @@ public abstract class ReadPerfBaseFullJackson<T>
     protected final InputConverter FULL_CONVERTER;
 
     protected final ObjectReader UNTYPED_READER;
-
     protected final ObjectReader NODE_READER;
     
     protected ReadPerfBaseFullJackson(Class<T> type, InputConverter conv, ObjectMapper mapper)
@@ -59,7 +58,7 @@ public abstract class ReadPerfBaseFullJackson<T>
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
     public void readUntypedMediaItem(BlackHole bh) throws Exception {
-        bh.consume(read(FULL_CONVERTER.bytesForMediaItem(), UNTYPED_READER));
+        bh.consume(read(FULL_CONVERTER.mediaItemAsBytes(), UNTYPED_READER));
     }
 
     /*
@@ -93,6 +92,6 @@ public abstract class ReadPerfBaseFullJackson<T>
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
     public void readNodeMediaItem(BlackHole bh) throws Exception {
-        bh.consume(read(FULL_CONVERTER.bytesForMediaItem(), NODE_READER));
+        bh.consume(read(FULL_CONVERTER.mediaItemAsBytes(), NODE_READER));
     }
 }

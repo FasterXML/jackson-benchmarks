@@ -12,14 +12,13 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class SmileStdWriteVanilla
     extends WritePerfBaseFullJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER;
+    private static final ObjectMapper SMILE_MAPPER;
     static {
-        SmileFactory f = new SmileFactory();
         // configure differently?
-        MAPPER = new ObjectMapper(f);
+        SMILE_MAPPER = new ObjectMapper(new SmileFactory());
     }
 
     public SmileStdWriteVanilla() {
-        super(MAPPER);
+        super(SMILE_MAPPER);
     }
 }
