@@ -28,7 +28,7 @@ public abstract class ReadPerfBaseBasicJackson<T>
             MinimalInputConverter conv, ObjectMapper mapper, FormatSchema schema)
     {
         MINIMAL_CONV = conv;
-        ObjectReader r = mapper.reader(type);
+        ObjectReader r = mapper.readerFor(type);
         if (schema != null) {
         	r = r.with(schema);
         }
@@ -54,7 +54,7 @@ public abstract class ReadPerfBaseBasicJackson<T>
     /**********************************************************************
      */
 
-    protected final Object read(byte[] input, ObjectReader reader) throws IOException {
+    protected Object read(byte[] input, ObjectReader reader) throws IOException {
         return reader.readValue(input);
     }
 }

@@ -24,8 +24,8 @@ public abstract class ReadPerfBaseFullJackson<T>
     {
         super(type, conv, mapper);
         FULL_CONVERTER = conv;
-        UNTYPED_READER = mapper.reader(Object.class);
-        NODE_READER = mapper.reader(JsonNode.class);
+        UNTYPED_READER = mapper.readerFor(Object.class);
+        NODE_READER = mapper.readerFor(JsonNode.class);
     }
 
     /*
