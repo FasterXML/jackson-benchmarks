@@ -22,7 +22,8 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 @State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonStringReadVanilla
-    extends ReadPerfBaseBasicJackson<MediaItem>
+// NOTE: important -- can NOT extend ReaderPerfBaseBasicJackson, jmh dislikes
+// overrides
     implements ReadPerfTestFull
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -32,20 +33,16 @@ public class JsonStringReadVanilla
 
     protected final ObjectReader UNTYPED_READER;
     protected final ObjectReader NODE_READER;
+    protected final ObjectReader MEDIA_ITEM_READER;
     
     protected final StringInputConverter _converter;
 
     public JsonStringReadVanilla() {
-        super(MediaItem.class, STRING_CONVERTER, MAPPER);
+//        super(MediaItem.class, STRING_CONVERTER, MAPPER);
         _converter = STRING_CONVERTER;
         UNTYPED_READER = MAPPER.readerFor(Object.class);
         NODE_READER = MAPPER.readerFor(JsonNode.class);
-    }
-
-    // We _should_ override all methods that would call this, so report an error here
-    @Override
-    protected Object read(byte[] input, ObjectReader reader) throws IOException {
-        throw new IOException("Should never call this method for "+getClass().getName());
+        MEDIA_ITEM_READER = MAPPER.readerFor(MediaItem.class);
     }
 
     protected Object read(String input, ObjectReader reader) throws IOException {
@@ -60,8 +57,8 @@ public class JsonStringReadVanilla
 
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-//    @Override
-    public void readPojoMediaItem3(Blackhole bh) throws Exception {
+    @Override
+    public void readPojoMediaItem(Blackhole bh) throws Exception {
         bh.consume(read(_converter.mediaItemAsString(), MEDIA_ITEM_READER));
     }
 

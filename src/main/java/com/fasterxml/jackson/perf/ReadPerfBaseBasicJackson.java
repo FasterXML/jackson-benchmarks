@@ -43,7 +43,7 @@ public abstract class ReadPerfBaseBasicJackson<T>
 
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-//    @Override
+    @Override
     public void readPojoMediaItem(Blackhole bh) throws Exception {
         bh.consume(read(MINIMAL_CONV.mediaItemAsBytes(), MEDIA_ITEM_READER));
     }
