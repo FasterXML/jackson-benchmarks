@@ -4,9 +4,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,10 +43,10 @@ public abstract class WritePerfBaseFullJackson<T>
     /**********************************************************************
      */
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void writeUntypedMediaItem(BlackHole bh) throws Exception {
+    public void writeUntypedMediaItem(Blackhole bh) throws Exception {
         Object value = untypedRef.get();
         if (value == null) {
             value = MAPPER.convertValue(item, Map.class);
@@ -61,10 +61,10 @@ public abstract class WritePerfBaseFullJackson<T>
     /**********************************************************************
      */
     
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void writeNodeMediaItem(BlackHole bh) throws Exception {
+    public void writeNodeMediaItem(Blackhole bh) throws Exception {
         JsonNode node = nodeRef.get();
         if (node == null) {
             node = MAPPER.valueToTree(item);

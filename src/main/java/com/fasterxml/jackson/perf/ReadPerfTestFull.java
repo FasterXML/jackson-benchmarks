@@ -1,16 +1,16 @@
 package com.fasterxml.jackson.perf;
 
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 public interface ReadPerfTestFull extends ReadPerfTestBasic
 {
-    public void readUntypedCitmCatalog(BlackHole bh) throws Exception;
-    public void readUntypedWebxml(BlackHole bh) throws Exception;
-    public void readUntypedMenu(BlackHole bh) throws Exception;
-    public void readUntypedMediaItem(BlackHole bh) throws Exception;
+    public void readUntypedCitmCatalog(Blackhole bh) throws Exception;
+    public void readUntypedWebxml(Blackhole bh) throws Exception;
+    public void readUntypedMenu(Blackhole bh) throws Exception;
+    public void readUntypedMediaItem(Blackhole bh) throws Exception;
 
-    public void readNodeCitmCatalog(BlackHole bh) throws Exception;
-    public void readNodeWebxml(BlackHole bh) throws Exception;
-    public void readNodeMenu(BlackHole bh) throws Exception;
-    public void readNodeMediaItem(BlackHole bh) throws Exception;
+    public void readNodeCitmCatalog(Blackhole bh) throws Exception;
+    public void readNodeWebxml(Blackhole bh) throws Exception;
+    public void readNodeMenu(Blackhole bh) throws Exception;
+    public void readNodeMediaItem(Blackhole bh) throws Exception;
 }

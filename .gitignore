@@ -21,4 +21,4 @@ target
 *.iml
 *.ipr
 *.iws
-/target
+/target/

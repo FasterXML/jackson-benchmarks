@@ -10,7 +10,7 @@ import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class ProtobufStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {

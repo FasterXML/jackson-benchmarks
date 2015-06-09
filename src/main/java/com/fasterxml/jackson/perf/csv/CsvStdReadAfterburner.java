@@ -10,7 +10,7 @@ import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 import com.fasterxml.jackson.perf.model.FlattenedMediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class CsvStdReadAfterburner
     extends ReadPerfBaseBasicJackson<FlattenedMediaItem>
 {

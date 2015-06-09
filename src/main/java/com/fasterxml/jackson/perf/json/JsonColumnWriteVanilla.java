@@ -8,7 +8,7 @@ import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class JsonColumnWriteVanilla extends WritePerfBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper();

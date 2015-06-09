@@ -9,15 +9,15 @@ import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class CBORStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER;
     static {
-    	CBORFactory f = new CBORFactory();
-    	// configure differently?
-    	MAPPER = new ObjectMapper(f);
+        CBORFactory f = new CBORFactory();
+        // configure differently?
+        MAPPER = new ObjectMapper(f);
         MAPPER.registerModule(new AfterburnerModule());
     }
 

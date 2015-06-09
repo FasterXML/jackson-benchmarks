@@ -3,9 +3,9 @@ package com.fasterxml.jackson.perf;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,10 +41,10 @@ public abstract class ReadPerfBaseBasicJackson<T>
     /**********************************************************************
      */
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
-    @Override
-    public void readPojoMediaItem(BlackHole bh) throws Exception {
+//    @Override
+    public void readPojoMediaItem(Blackhole bh) throws Exception {
         bh.consume(read(MINIMAL_CONV.mediaItemAsBytes(), MEDIA_ITEM_READER));
     }
 

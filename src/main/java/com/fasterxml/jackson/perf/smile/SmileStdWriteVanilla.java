@@ -8,7 +8,7 @@ import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.perf.WritePerfBaseFullJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class SmileStdWriteVanilla
     extends WritePerfBaseFullJackson<MediaItem>
 {

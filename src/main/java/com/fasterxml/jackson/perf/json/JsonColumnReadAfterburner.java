@@ -13,7 +13,7 @@ import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonColumnReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>

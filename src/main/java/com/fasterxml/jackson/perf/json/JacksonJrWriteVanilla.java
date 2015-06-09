@@ -3,9 +3,9 @@ package com.fasterxml.jackson.perf.json;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.jr.ob.JSON;
 import com.fasterxml.jackson.perf.*;
@@ -18,11 +18,11 @@ public class JacksonJrWriteVanilla implements WritePerfTestBasic
     private static final JSON json = JSON.std;
 
     private static final MediaItem item = MediaItems.stdMediaItem();
-    
-    @GenerateMicroBenchmark
+
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void writePojoMediaItem(BlackHole bh) throws Exception
+    public void writePojoMediaItem(Blackhole bh) throws Exception
     {
         bh.consume(write(item, json));
     }

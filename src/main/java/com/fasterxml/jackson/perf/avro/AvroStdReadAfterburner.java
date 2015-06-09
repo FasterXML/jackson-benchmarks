@@ -9,7 +9,7 @@ import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class AvroStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {

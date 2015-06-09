@@ -1,8 +1,8 @@
 package com.fasterxml.jackson.perf;
 
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 public interface ReadPerfTestBasic
 {
-    public void readPojoMediaItem(BlackHole bh) throws Exception;
+    public void readPojoMediaItem(Blackhole bh) throws Exception;
 }

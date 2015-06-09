@@ -10,7 +10,7 @@ import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.FlattenedMediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class CsvStdWriteAfterburner
     extends WritePerfBasicJackson<FlattenedMediaItem>
 {

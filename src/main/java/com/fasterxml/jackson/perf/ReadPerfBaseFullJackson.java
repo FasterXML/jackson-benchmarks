@@ -2,9 +2,9 @@ package com.fasterxml.jackson.perf;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
@@ -33,31 +33,31 @@ public abstract class ReadPerfBaseFullJackson<T>
     /**********************************************************************
      */
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readUntypedCitmCatalog(BlackHole bh) throws Exception {
+    public void readUntypedCitmCatalog(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.CITM_CATALOG_WS), UNTYPED_READER));
     }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readUntypedWebxml(BlackHole bh) throws Exception {
+    public void readUntypedWebxml(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.WEBXML_WS), UNTYPED_READER));
     }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readUntypedMenu(BlackHole bh) throws Exception {
+    public void readUntypedMenu(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.MENU_WS), UNTYPED_READER));
     }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readUntypedMediaItem(BlackHole bh) throws Exception {
+    public void readUntypedMediaItem(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.mediaItemAsBytes(), UNTYPED_READER));
     }
 
@@ -67,31 +67,31 @@ public abstract class ReadPerfBaseFullJackson<T>
     /**********************************************************************
      */
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readNodeCitmCatalog(BlackHole bh) throws Exception {
+    public void readNodeCitmCatalog(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.CITM_CATALOG_WS), NODE_READER));
     }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readNodeWebxml(BlackHole bh) throws Exception {
+    public void readNodeWebxml(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.WEBXML_WS), NODE_READER));
     }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readNodeMenu(BlackHole bh) throws Exception {
+    public void readNodeMenu(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.MENU_WS), NODE_READER));
     }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readNodeMediaItem(BlackHole bh) throws Exception {
+    public void readNodeMediaItem(Blackhole bh) throws Exception {
         bh.consume(read(FULL_CONVERTER.mediaItemAsBytes(), NODE_READER));
     }
 }

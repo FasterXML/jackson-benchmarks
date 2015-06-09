@@ -1,10 +1,10 @@
 package com.fasterxml.jackson.perf;
 
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 public interface WritePerfTestFull extends WritePerfTestBasic
 {
-    public void writeUntypedMediaItem(BlackHole bh) throws Exception;
+    public void writeUntypedMediaItem(Blackhole bh) throws Exception;
 
-    public void writeNodeMediaItem(BlackHole bh) throws Exception;
+    public void writeNodeMediaItem(Blackhole bh) throws Exception;
 }

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class JsonStdReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>

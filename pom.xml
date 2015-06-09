@@ -17,15 +17,32 @@
 
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.jackson.annotations>2.6.0-rc1</version.jackson.annotations>
-        <version.jackson>2.6.0-rc1</version.jackson>
+        <version.jackson.annotations>2.6.0-rc2</version.jackson.annotations>
+        <version.jackson>2.6.0-rc2</version.jackson>
+        <version.jmh>1.9.3</version.jmh>
+<!--
+        <version.jmh>1.0.1</version.jmh>
+-->
     </properties>
 
     <dependencies>
       <dependency>
         <groupId>org.openjdk.jmh</groupId>
         <artifactId>jmh-core</artifactId>
-        <version>0.4</version>
+        <version>${version.jmh}</version>
+      </dependency>
+
+      <!-- As per [http://stackoverflow.com/questions/23891586/jmh-not-working-in-eclipse-as-maven-project-no-benchmarks-to-run]
+           we need another dep
+        -->
+      <dependency>
+        <groupId>org.openjdk.jmh</groupId>
+        <artifactId>jmh-generator-annprocess</artifactId>
+        <version>${version.jmh}</version>
+        <!-- the processor artifact is required only during compilation and 
+           does not need to be transitive, hence provided scope
+        -->
+    <scope>provided</scope> 
       </dependency>
 
       <dependency>

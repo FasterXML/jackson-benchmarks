@@ -7,7 +7,7 @@ import com.fasterxml.jackson.dataformat.avro.*;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
-@State(Scope.Group) // Thread, Group or Benchmark
+@State(Scope.Thread)
 public class AvroStdWriteVanilla
     extends WritePerfBasicJackson<MediaItem>
 {

@@ -3,9 +3,9 @@ package com.fasterxml.jackson.perf;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.*;
@@ -44,10 +44,10 @@ public abstract class WritePerfBasicJackson<T>
     /**********************************************************************
      */
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void writePojoMediaItem(BlackHole bh) throws Exception {
+    public void writePojoMediaItem(Blackhole bh) throws Exception {
         bh.consume(write(item, MEDIA_ITEM_WRITER));
     }
 

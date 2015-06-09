@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.logic.BlackHole;
+import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.jr.ob.JSON;
 import com.fasterxml.jackson.perf.ReadPerfTestBasic;
@@ -12,32 +12,32 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 @OutputTimeUnit(TimeUnit.SECONDS)
+@State(Scope.Thread)
 public class JacksonJrReadVanilla
-	implements ReadPerfTestBasic
+    implements ReadPerfTestBasic
 {
-//    @State(Scope.Group) // Thread, Group or Benchmark
-    private static final JSON json = JSON.std;
-    
-    private static byte[] _mediaItemBytes;
+    static final JSON json = JSON.std;
+
+    static byte[] _mediaItemBytes;
     static {
         try {
-    		    _mediaItemBytes = json.asBytes(MediaItems.stdMediaItem());
+            _mediaItemBytes = json.asBytes(MediaItems.stdMediaItem());
         } catch (IOException e) {
-    		    throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 
     public JacksonJrReadVanilla() { }
 
-    @GenerateMicroBenchmark
+    @Benchmark
     @Override
-    public void readPojoMediaItem(BlackHole bh) throws Exception {
+    public void readPojoMediaItem(Blackhole bh) throws Exception {
         bh.consume(read(_mediaItemBytes));
     }
 
     // part of 'full' test, but we don't implement that in its entirety
-    @GenerateMicroBenchmark
-    public void readTreeMediaItem(BlackHole bh) throws Exception {
+    @Benchmark
+    public void readTreeMediaItem(Blackhole bh) throws Exception {
         bh.consume(readTree(_mediaItemBytes));
     }
 
