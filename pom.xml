@@ -54,10 +54,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>2.6.0-rc2-SNAPSHOT</version>
-<!--
         <version>${version.jackson}</version>
--->
       </dependency>
 
       <dependency>
@@ -74,10 +71,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-cbor</artifactId>
-        <version>2.6.0-rc2-SNAPSHOT</version>
-<!--
         <version>${version.jackson}</version>
--->
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -111,10 +105,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-protobuf</artifactId>
-<!--
         <version>${version.jackson}</version>
--->
-        <version>2.6.0-rc2-SNAPSHOT</version>
       </dependency>
 
       <dependency>
