@@ -33,7 +33,7 @@ public class InputConverter
 	        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
 	        return new InputConverter(data, mib);
         } catch (IOException e) {
-        	throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 
