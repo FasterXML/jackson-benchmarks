@@ -41,9 +41,11 @@
         <version>${version.jmh}</version>
         <!-- the processor artifact is required only during compilation and 
            does not need to be transitive, hence provided scope
-        -->
-    <scope>provided</scope> 
+          -->
+	<scope>provided</scope> 
       </dependency>
+
+      <!-- First, a boatload of Jackson deps -->
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
@@ -129,6 +131,14 @@
         <artifactId>jackson-jr-objects</artifactId>
         <version>${version.jackson}</version>
       </dependency>
+
+      <!-- And then some other Java JSON libs: -->
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.3.1</version>
+      </dependency>
+
     </dependencies>
 
     <build>

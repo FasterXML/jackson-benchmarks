@@ -13,7 +13,7 @@ import com.fasterxml.jackson.perf.model.MediaItems;
 
 @OutputTimeUnit(TimeUnit.SECONDS)
 @State(Scope.Thread)
-public class JacksonJrReadVanilla
+public class JacksonJrStdReadVanilla
     implements ReadPerfTestBasic
 {
     static final JSON json = JSON.std;
@@ -27,7 +27,7 @@ public class JacksonJrReadVanilla
         }
     }
 
-    public JacksonJrReadVanilla() { }
+    public JacksonJrStdReadVanilla() { }
 
     @Benchmark
     @Override
