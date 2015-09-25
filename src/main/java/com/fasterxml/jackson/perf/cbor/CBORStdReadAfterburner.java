@@ -14,9 +14,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class CBORStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private final static CBORFactory _cf = new CBORFactory();
-    
-    private static final ObjectMapper MAPPER = new ObjectMapper(_cf);
+    private static final ObjectMapper MAPPER = new ObjectMapper(new CBORFactory());
     static {
         MAPPER.registerModule(new AfterburnerModule());
     }
