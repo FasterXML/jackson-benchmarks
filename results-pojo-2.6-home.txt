@@ -58,18 +58,18 @@ c.f.j.p.bson.BSONStdWriteAfterburner.writePojoMediaItem      thrpt  145  181528.
 c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMediaItemthrpt  145  213417.180 ± 1263.139  ops/s
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem      thrpt  145   41665.253 ±  278.140  ops/s
 
-2.6.0 / 05-Aug-2015 / home
-c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem  thrpt  145  759161.409 ± 8026.002  ops/s
-c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem          thrpt  145  723276.122 ± 4730.467  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem        thrpt  145  627696.397 ± 3797.215  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem          thrpt  145  591617.842 ± 2284.759  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem     thrpt  145  580841.118 ± 2137.683  ops/s
-c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem            thrpt  145  610621.944 ± 4984.020  ops/s
-c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem            thrpt  145  324393.952 ± 1815.339  ops/s
-c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem          thrpt  145  302696.122 ±  903.707  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem          thrpt  145  173335.988 ±  314.312  ops/s
-c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem    thrpt  145  192998.614 ±  872.577  ops/s
-c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem          thrpt  145   44397.460 ±   80.915  ops/s
+2.6.2 / 05-Oct-2015 / home
+c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem  thrpt  145  670250.880 ± 5046.978  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem          thrpt  145  690383.352 ± 5789.379  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem        thrpt  145  687794.323 ± 4572.940  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem          thrpt  145  563426.988 ± 2255.471  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem     thrpt  145  613379.578 ± 3655.837  ops/s
+c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem            thrpt  145  613056.580 ± 4434.313  ops/s
+c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem            thrpt  145  329571.728 ± 1259.545  ops/s
+c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem          thrpt  145  299595.072 ± 1860.329  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem          thrpt  145  169991.489 ±  652.531  ops/s
+c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem    thrpt  145  194246.061 ±  990.822  ops/s
+c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem          thrpt  145   40992.701 ±  268.296  ops/s
 
 Untyped (Object) / 2.6.0 / 05-Aug-2015
 c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem       thrpt  145  912540.039 ± 5388.888  ops/s
