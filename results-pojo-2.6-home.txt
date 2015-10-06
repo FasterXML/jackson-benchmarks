@@ -46,7 +46,7 @@ c.f.j.p.cbor.CBORColumnWriteVanilla.writePojoMediaItem       thrpt  145   990576
 c.f.j.p.json.JsonColumnWriteAfterburner.writePojoMediaItem   thrpt  145   950821.073 ±  5130.681  ops/s
 c.f.j.p.json.JsonColumnWriteVanilla.writePojoMediaItem       thrpt  145   779215.936 ±  6216.934  ops/s
 
-2.6.2 / 05-Oct-2015 / home
+## Write POJO 2.6.2 / 05-Oct-2015 / home
 c.f.j.p.protobuf.ProtobufStdWriteAfterburner.writePojoMediaItem th  145  961424.379 ± 6441.390  ops/s
 c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem      thrpt  145  960019.020 ± 5931.518  ops/s
 c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem    thrpt  145  852133.073 ± 4898.812  ops/s
@@ -58,27 +58,27 @@ c.f.j.p.bson.BSONStdWriteAfterburner.writePojoMediaItem      thrpt  145  181528.
 c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMediaItemthrpt  145  213417.180 ± 1263.139  ops/s
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem      thrpt  145   41665.253 ±  278.140  ops/s
 
-2.6.2 / 05-Oct-2015 / home
-c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem  thrpt  145  670250.880 ± 5046.978  ops/s
-c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem          thrpt  145  690383.352 ± 5789.379  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem        thrpt  145  687794.323 ± 4572.940  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem          thrpt  145  563426.988 ± 2255.471  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem     thrpt  145  613379.578 ± 3655.837  ops/s
-c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem            thrpt  145  613056.580 ± 4434.313  ops/s
-c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem            thrpt  145  329571.728 ± 1259.545  ops/s
-c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem          thrpt  145  299595.072 ± 1860.329  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem          thrpt  145  169991.489 ±  652.531  ops/s
-c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem    thrpt  145  194246.061 ±  990.822  ops/s
-c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem          thrpt  145   40992.701 ±  268.296  ops/s
+### Write POJO 2.6.2 / 05-Oct-2015 / home
+c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem  thrpt  145  755217.337 ± 6364.634  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem          thrpt  145  726266.486 ± 2958.596  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem        thrpt  145  632603.635 ± 3383.686  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem          thrpt  145  593594.682 ± 3232.002  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem     thrpt  145  576056.860 ± 2177.582  ops/s
+c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem            thrpt  145  565165.258 ± 4865.520  ops/s
+c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem            thrpt  145  328943.492 ± 1447.476  ops/s
+c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem          thrpt  145  299842.313 ± 1498.321  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem          thrpt  145  173885.003 ±  447.169  ops/s
+c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem    thrpt  145  193481.562 ±  691.027  ops/s
+c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem          thrpt  145   44450.080 ±   72.512  ops/s
 
-Untyped (Object) / 2.6.0 / 05-Aug-2015
-c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem       thrpt  145  912540.039 ± 5388.888  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem       thrpt  145  669463.557 ± 1399.154  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem     thrpt  145  752508.658 ± 4345.618  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem       thrpt  145  194711.751 ±  307.480  ops/s
+## Write Untyped 2.6.2 / 05-Oct-2015 / Home
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem       thrpt  145  843598.378 ± 4459.061  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem     thrpt  145  749256.398 ± 3498.631  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem       thrpt  145  667603.313 ± 2156.195  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem       thrpt  145  193622.680 ±  599.732  ops/s
 
-Tree (JsonNode) / 2.6.0 / 05-Aug-2015
-c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem          thrpt  145  968769.190 ± 5829.657  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem          thrpt  145  697127.464 ± 1585.264  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem        thrpt  145  740154.370 ± 2266.337  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem          thrpt  145  194331.846 ±  378.443  ops/s
+## Write Tree / 2.6.2 / 05-Oct-2015
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem          thrpt  145  855909.779 ± 2943.482  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem        thrpt  145  761461.689 ± 2429.953  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem          thrpt  145  694790.955 ± 1383.428  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem          thrpt  145  194577.890 ±  382.337  ops/s
