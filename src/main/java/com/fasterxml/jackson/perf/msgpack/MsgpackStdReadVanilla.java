@@ -2,7 +2,7 @@ package com.fasterxml.jackson.perf.msgpack;
 
 import java.util.concurrent.TimeUnit;
 
-import org.msgpack.jackson.dataformat.msgpack.MessagePackFactory;
+import org.msgpack.jackson.dataformat.MessagePackFactory;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;

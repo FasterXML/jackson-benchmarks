@@ -1,6 +1,7 @@
 package com.fasterxml.jackson.perf.msgpack;
 
-import org.msgpack.jackson.dataformat.msgpack.MessagePackFactory;
+import org.msgpack.jackson.dataformat.MessagePackFactory;
+
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 

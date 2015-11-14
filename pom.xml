@@ -110,9 +110,17 @@
       </dependency>
 
       <dependency>
+        <!-- 14-Nov-2015, tatu: This was the old, experimental version
         <groupId>org.komamitsu</groupId>
         <artifactId>jackson-dataformat-msgpack</artifactId>
         <version>0.0.4-SNAPSHOT</version>
+          -->
+
+        <!-- msgpack 0.7.1 relies on Jackson 2.6 --> 
+        <groupId>org.msgpack</groupId>
+        <artifactId>jackson-dataformat-msgpack</artifactId>
+        <version>0.7.1</version>
+
       </dependency>
       <dependency>
         <groupId>de.undercouch</groupId>
