@@ -27,9 +27,17 @@ c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem          thrpt  150   30499.98
 
 Untyped (Object) / 2.7.0-rc1 / 28-Nov-2015 / home
 
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem  thrpt  150  530055.617 ± 1275.848  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem    thrpt  150  476639.944 ± 1162.601  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem    thrpt  150  398221.301 ± 2134.472  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readUntypedMediaItem    thrpt  150  163671.128 ±  374.739  ops/s
+
 JsonNode / 2.7.0-rc1 / 28-Nov-2015 / home
 
-...
+c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem  thrpt  150  495333.565 ± 1141.383  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readNodeMediaItem    thrpt  150  460486.569 ± 1412.809  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem    thrpt  150  385659.080 ± 1556.564  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readNodeMediaItem    thrpt  150  158300.384 ±  302.944  ops/s
 
 Afterburner / 2.7.0-rc1 / 28-Nov-2015 / home
 
