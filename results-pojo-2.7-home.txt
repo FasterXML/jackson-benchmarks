@@ -43,7 +43,28 @@ Afterburner / 2.7.0-rc1 / 28-Nov-2015 / home
 
 Vanilla / 2.7.0-rc1 / 28-Nov-2015 / home
 
+c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMedia  thrpt  150  759645.035 ± 7288.730  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem      thrpt  150  719113.612 ± 2850.937  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem    thrpt  150  632855.996 ± 2993.478  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem      thrpt  150  593894.859 ± 2306.106  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem thrpt  150  577186.043 ± 2340.834  ops/s
+c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem        thrpt  150  604261.487 ± 3950.123  ops/s
+c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem        thrpt  150  325760.144 ± 1403.961  ops/s
+c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem      thrpt  150  302849.925 ± 1592.529  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem      thrpt  150  171944.294 ±  334.151  ops/s
+c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaIte thrpt  150  197814.149 ±  801.167  ops/s
+c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem      thrpt  150   44143.110 ±   76.774  ops/s
+
 Untyped (Object) / 2.7.0-rc1 / 28-Nov-2015 / home
+
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem   thrpt  150  891206.700 ± 3487.604  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem thrpt  150  727788.828 ± 2674.011  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem   thrpt  150  653236.512 ± 1289.691  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem   thrpt  150  191447.040 ±  391.514  ops/s
 
 JsonNode / 2.7.0-rc1 / 28-Nov-2015 / home
 
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem      thrpt  150  962523.525 ± 6577.882  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem    thrpt  150  733489.657 ± 2484.505  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem      thrpt  150  690788.296 ± 1666.500  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem      thrpt  150  193125.755 ±  292.135  ops/s
