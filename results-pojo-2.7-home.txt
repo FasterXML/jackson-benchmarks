@@ -57,7 +57,7 @@ Vanilla / 2.7.0 / 11-Jan-2016 / home
 c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem  thrpt  150  762416.560 ±  5865.082  ops/s
 c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem          thrpt  150  717906.137 ±  4296.447  ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem        thrpt  150  631928.693 ±  2891.500  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem          thrpt  150  574151.210 ± 10156.359  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem          thrpt  150  590387.317 ±  2370.415  ops/s
 c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem     thrpt  150  579641.444 ±  1842.215  ops/s
 c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem            thrpt  150  604949.722 ±  3425.265  ops/s
 c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem            thrpt  150  327542.642 ±  1632.510  ops/s
@@ -66,16 +66,16 @@ c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem          thrpt  150  173519.
 c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem    thrpt  150  197989.730 ±   866.992  ops/s
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem          thrpt  150   44253.324 ±    89.543  ops/s
 
-Untyped (Object) / 2.7.0-rc2 / 22-Dec-2015 / home
+Untyped (Object) / 2.7.0 / 11-Jan-2016 / home
 
-c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem   thrpt  150  891206.700 ± 3487.604  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem thrpt  150  727788.828 ± 2674.011  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem   thrpt  150  653236.512 ± 1289.691  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem   thrpt  150  191447.040 ±  391.514  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem    thrpt  150  890101.234 ± 3180.731  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem  thrpt  150  722764.077 ± 3424.411  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem    thrpt  150  653776.110 ± 1406.800  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem    thrpt  150  191612.999 ±  373.738  ops/s
 
-JsonNode / 2.7.0-rc2 / 22-Dec-2015 / home
+JsonNode / 2.7.0 / 11-Jan-2016 / home
 
-c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem      thrpt  150  962523.525 ± 6577.882  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem    thrpt  150  733489.657 ± 2484.505  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem      thrpt  150  690788.296 ± 1666.500  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem      thrpt  150  193125.755 ±  292.135  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem    thrpt  150  961576.386 ± 5259.505  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem  thrpt  150  735376.324 ± 2414.226  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem    thrpt  150  694048.498 ± 1784.743  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem    thrpt  150  192810.107 ±  357.676  ops/s
