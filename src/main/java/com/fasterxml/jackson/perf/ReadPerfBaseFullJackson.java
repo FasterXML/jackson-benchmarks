@@ -6,6 +6,7 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
+import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.data.InputData;
@@ -18,7 +19,7 @@ public abstract class ReadPerfBaseFullJackson<T>
 
     protected final ObjectReader UNTYPED_READER;
     protected final ObjectReader NODE_READER;
-    
+
     protected ReadPerfBaseFullJackson(Class<T> type, InputConverter conv, ObjectMapper mapper)
     {
         super(type, conv, mapper);
@@ -27,6 +28,25 @@ public abstract class ReadPerfBaseFullJackson<T>
         NODE_READER = mapper.readerFor(JsonNode.class);
     }
 
+    protected ReadPerfBaseFullJackson(Class<T> type, InputConverter conv,
+            ObjectMapper mapper, FormatSchema schema)
+    {
+        super(type, conv, mapper);
+        FULL_CONVERTER = conv;
+        ObjectReader r;
+        
+        r = mapper.readerFor(Object.class);
+        if (schema != null) {
+            r = r.with(schema);
+        }
+        UNTYPED_READER = r;
+        r = mapper.readerFor(JsonNode.class);
+        if (schema != null) {
+            r = r.with(schema);
+        }
+        NODE_READER = r;
+    }
+    
     /*
     /**********************************************************************
     /* Untyped ("map") reading tests

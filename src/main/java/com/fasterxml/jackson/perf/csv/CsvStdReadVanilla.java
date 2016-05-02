@@ -14,12 +14,11 @@ public class CsvStdReadVanilla
     extends ReadPerfBaseBasicJackson<FlattenedMediaItem>
 {
     private static final CsvMapper MAPPER = new CsvMapper();
-    private final static CsvSchema _mediaItemSchema;
-    static {
-        _mediaItemSchema = MAPPER.typedSchemaFor(FlattenedMediaItem.class);
-    }
+    private final static CsvSchema _mediaItemSchema
+        = MAPPER.typedSchemaFor(FlattenedMediaItem.class);
 
-    private final static MinimalInputConverter CONV = MinimalInputConverter.minimalConverter(MAPPER,
+    private final static MinimalInputConverter CONV
+        = MinimalInputConverter.minimalConverter(MAPPER,
             _mediaItemSchema, MediaItems.flatMediaItem());
 
     public CsvStdReadVanilla() {

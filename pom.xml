@@ -18,7 +18,7 @@
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.jackson.annotations>2.7.0</version.jackson.annotations>
-        <version.jackson.core>2.7.3</version.jackson.core>
+        <version.jackson.core>2.7.4</version.jackson.core>
         <version.jackson.afterburner>${version.jackson.core}</version.jackson.afterburner>
         <version.jackson.other>${version.jackson.core}</version.jackson.other>
         <version.jackson.bson>2.7.0</version.jackson.bson>
@@ -68,7 +68,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-properties</artifactId>
-        <version>2.7.3-SNAPSHOT</version>
+        <version>${version.jackson.other}</version>
       </dependency>
 
       <dependency>

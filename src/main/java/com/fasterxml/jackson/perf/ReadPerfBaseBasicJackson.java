@@ -30,7 +30,7 @@ public abstract class ReadPerfBaseBasicJackson<T>
         MINIMAL_CONV = conv;
         ObjectReader r = mapper.readerFor(type);
         if (schema != null) {
-        	r = r.with(schema);
+            r = r.with(schema);
         }
         MEDIA_ITEM_READER = r;
     }

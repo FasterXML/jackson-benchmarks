@@ -51,6 +51,7 @@ c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem         thrpt  150  623943
 c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem         thrpt  150  393002.886 ± 1274.577  ops/s
 c.f.j.p.avro.AvroStdWriteAfterburner.writePojoMediaItem       thrpt  150  336472.744 ± 1555.845  ops/s
 c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMediaItem thrpt  150  268276.148 ±  962.288  ops/s
+c.f.j.p.props.PropertiesStdWriteAfterburner.writePojoMediaItem thrpt  45  228444.484 ± 1860.721  ops/s
 c.f.j.p.bson.BSONStdWriteAfterburner.writePojoMediaItem       thrpt  150  185573.200 ±  301.531  ops/s
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem       thrpt  150   45322.880 ±   67.759  ops/s
 
@@ -65,6 +66,7 @@ c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem            thrpt  150  604949.
 c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem            thrpt  150  327542.642 ±  1632.510  ops/s
 c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem          thrpt  150  302773.854 ±  1900.948  ops/s
 c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem    thrpt  150  264818.001 ±  891.293  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem   thrpt   45  211058.633 ± 1879.452  ops/s
 c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem          thrpt  150  173519.476 ±   348.025  ops/s
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem          thrpt  150   44253.324 ±    89.543  ops/s
 
