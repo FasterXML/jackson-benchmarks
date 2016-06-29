@@ -19,8 +19,8 @@ public class NopOutputStream extends OutputStream
     public void write(byte[] b, int offset, int len) throws IOException { size += len; }
 
     public NopOutputStream reset() {
-    	size = 0;
-    	return this;
+        size = 0;
+    	    return this;
     }
     public int size() { return size; }
 }

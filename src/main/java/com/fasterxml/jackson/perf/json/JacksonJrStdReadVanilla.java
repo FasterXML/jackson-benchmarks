@@ -37,7 +37,7 @@ public class JacksonJrStdReadVanilla
 
     // part of 'full' test, but we don't implement that in its entirety
     @Benchmark
-    public void readTreeMediaItem(Blackhole bh) throws Exception {
+    public void readUntypedMediaItem(Blackhole bh) throws Exception {
         bh.consume(readTree(_mediaItemBytes));
     }
 

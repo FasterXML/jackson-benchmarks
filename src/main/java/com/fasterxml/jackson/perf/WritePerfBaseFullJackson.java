@@ -60,7 +60,7 @@ public abstract class WritePerfBaseFullJackson<T>
     /* Tree ("node") writing tests
     /**********************************************************************
      */
-    
+
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
