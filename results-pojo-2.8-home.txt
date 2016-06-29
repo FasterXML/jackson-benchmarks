@@ -54,8 +54,8 @@ Write - Vanilla / 2.8.0.rc2 / home / (28.06.2016)
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVa.*PojoMediaItem.*" -wi 4 -i 5 -f 9 -t 1
 
 Benchmark                                                        Mode  Cnt       Score       Error  Units
-c.f.j.p.protobuf.ProtobufStdWriteVanilla.writePojoMediaItem     thrpt   45  761941.184 ± 11885.393  ops/s
-c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem             thrpt   45  682118.746 ±  7258.406  ops/s
+c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem       thrpt  150  748657.652 ±  6248.310  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem             thrpt  150  704183.078 ±  4049.242  ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem           thrpt   45  606882.629 ±  6579.986  ops/s
 c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem             thrpt   45  575599.767 ±  5892.917  ops/s
 c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem        thrpt   45  563023.758 ±  6499.122  ops/s
