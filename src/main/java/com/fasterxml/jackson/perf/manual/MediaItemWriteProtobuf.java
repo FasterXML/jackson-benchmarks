@@ -7,7 +7,7 @@ import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
-import com.fasterxml.jackson.perf.protobuf.ProtobufHelper;
+import com.fasterxml.jackson.perf.protob.ProtobufHelper;
 
 public class MediaItemWriteProtobuf
     extends ObjectWriterTestBase<MediaItem, MediaItem>

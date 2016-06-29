@@ -1,4 +1,4 @@
-package com.fasterxml.jackson.perf.protobuf;
+package com.fasterxml.jackson.perf.protob;
 
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;

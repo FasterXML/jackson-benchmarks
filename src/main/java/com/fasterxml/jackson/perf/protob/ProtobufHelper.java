@@ -1,4 +1,4 @@
-package com.fasterxml.jackson.perf.protobuf;
+package com.fasterxml.jackson.perf.protob;
 
 import java.io.IOException;
 
