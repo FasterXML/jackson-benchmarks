@@ -87,16 +87,16 @@ c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem  thrpt  150  237336.9
 c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem         thrpt  150  191354.789 ±  926.059  ops/s
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem         thrpt  150   44738.643 ±  160.629  ops/s
 
-Write - Untyped / 2.8.0 / home / 04-Jul-2016
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 9 -t 1
+Write - Untyped / 2.8.0 / home / 05-Jul-2016
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 30 -t 1
 
 Benchmark                                                       Mode  Cnt       Score      Error  Units
-c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt   45  935665.954 ± 8678.848  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt   45  844650.787 ± 9673.945  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt   45  759579.910 ± 7499.095  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt   45  727236.971 ± 7948.952  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt   45  290777.469 ± 1754.715  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt   45  218189.339 ± 1998.912  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt  150  950738.701 ±  4823.772  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt  150  839131.663 ±  5320.930  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt  150  752176.544 ±  6019.786  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt  150  717958.543 ± 13063.676  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt  150  289632.314 ±   820.242  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt  150  220594.517 ±  1128.448  ops/s
 
 Write - Node / 2.8.0 / home / 
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 9 -t 1
