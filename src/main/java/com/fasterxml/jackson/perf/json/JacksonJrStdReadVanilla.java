@@ -16,7 +16,9 @@ import com.fasterxml.jackson.perf.model.MediaItems;
 public class JacksonJrStdReadVanilla
     implements ReadPerfTestBasic
 {
-    static final JSON json = JSON.std;
+    static final JSON json = JSON.std
+            // 06-Jul-2016, tatu: important for apples-to-apples comparison:
+            .without(JSON.Feature.USE_DEFERRED_MAPS);
 
     static byte[] _mediaItemBytes;
     static {
