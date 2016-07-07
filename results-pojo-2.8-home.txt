@@ -98,12 +98,12 @@ c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt  150  71795
 c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt  150  289632.314 ±   820.242  ops/s
 c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt  150  220594.517 ±  1128.448  ops/s
 
-Write - Node / 2.8.0 / home / 
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 9 -t 1
+Write - Node / 2.8.0 / home / 06-Jul-2016
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 30 -t 1
 
-Benchmark                                                    Mode  Cnt        Score       Error  Units
-c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem         thrpt   45  1061287.988 ± 15408.705  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt   45   886373.846 ± 12032.086  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt   45   849511.008 ±  6484.476  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem  thrpt   45   309069.622 ±  3088.447  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem         thrpt   45   224749.877 ±  2097.024  ops/s
+Benchmark                                                    Mode  Cnt        Score      Error  Units
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem         thrpt  150  1068141.141 ± 6082.433  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt  150   883281.209 ± 5130.724  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt  150   843238.424 ± 3616.485  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem  thrpt  150   308506.786 ± 1181.416  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem         thrpt  150   225913.627 ±  855.849  ops/s
