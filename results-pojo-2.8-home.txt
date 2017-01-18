@@ -1,38 +1,38 @@
 JVM: 1.8.0_92
 Version: 2.8
 
-Read - Afterburner / 2.8.0 / home / 04-Jul-2016
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 30 -t 1
+Read - Afterburner / 2.8.6 / home / 18-Jan-2017 / 1.8.0_122
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
 
 Benchmark                                                      Mode  Cnt       Score       Error  Units
-c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt  150  587366.477 ± 5145.924  ops/s
-c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt  150  676645.360 ± 4718.664  ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt  150  661590.952 ± 3467.452  ops/s
-c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt  150  518761.329 ± 3320.735  ops/s
-c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt  150  485262.866 ± 2346.570  ops/s
-c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt  150  351619.546 ± 1513.344  ops/s
-c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem   thrpt  150  272285.772 ± 3284.326  ops/s
-c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt  150  199703.957 ±  847.304  ops/s
-c.f.j.p.bson.BSONStdReadAfterburner.readPojoMediaItem         thrpt  150  177027.279 ±  638.768  ops/s
-c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt  150   89660.870 ±  356.058  ops/s
-c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt  150   27855.846 ±  287.729  ops/s
+c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt  100  592135.065 ± 6728.285  ops/s
+c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt  100  670719.611 ± 4997.057  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt  100  658854.604 ± 4122.089  ops/s
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt  100  490729.368 ± 4726.100  ops/s
+c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt  100  502843.248 ± 4857.947  ops/s
+c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt  100  351708.927 ± 2214.188  ops/s
+c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem   thrpt  100  269562.418 ± 4295.369  ops/s
+c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt  100  200937.015 ±  913.605  ops/s
+c.f.j.p.bson.BSONStdReadAfterburner.readPojoMediaItem         thrpt  100  169532.134 ± 1416.351  ops/s
+c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt  100   89085.433 ±  355.481  ops/s
+c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt  100   27272.265 ±  358.559  ops/s
 
-Read - Vanilla / 2.8.0 / home / 04-Jul-2016
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*PojoMediaItem.*" -wi 4 -i 5 -f 30 -t 1
+Read - Vanilla / 2.8.6 / home / 18-Jan-2017 / 1.8.0_122
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
 
 Benchmark                                                  Mode  Cnt       Score      Error  Units
-c.f.j.p.protob.ProtobufStdReadVanilla.readPojoMediaItem   thrpt  150  414109.285 ± 3793.309  ops/s
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem       thrpt  150  500941.328 ± 2764.567  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt  150  447911.307 ± 7286.581  ops/s
-c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt  150  410761.561 ± 4015.800  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem         thrpt  150  360091.000 ± 4174.237  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem    thrpt  150  399928.834 ± 2856.119  ops/s
-c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem           thrpt  150  300774.760 ± 1652.488  ops/s
-c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem   thrpt  150  213404.301 ± 2083.483  ops/s
-c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem           thrpt  150  172959.647 ±  798.942  ops/s
-c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem         thrpt  150  152119.708 ±  542.094  ops/s
-c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt  150   84370.036 ±  361.785  ops/s
-c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt  150   25680.771 ±  347.069  ops/s
+c.f.j.p.protob.ProtobufStdReadVanilla.readPojoMediaItem   thrpt  100  409292.313 ±  4154.074  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem       thrpt  100  485780.023 ±  4486.208  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt  100  436802.356 ± 13889.428  ops/s
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt  100  406000.999 ±  4182.760  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem         thrpt  100  349929.063 ±  6522.263  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem    thrpt  100  397100.411 ±  3784.551  ops/s
+c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem           thrpt  100  303164.312 ±  2063.551  ops/s
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem           thrpt  100  169100.113 ±  1071.144  ops/s
+c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem   thrpt  100  215681.800 ±  2495.274  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem         thrpt  100  151353.239 ±   667.483  ops/s
+c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt  100   83306.004 ±   383.608  ops/s
+c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt  100   24706.205 ±   396.505  ops/s
 
 Read - Untyped / 2.8.4 / home / 03-Nov-2016
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 19 -t 1
@@ -56,7 +56,7 @@ c.f.j.p.bson.BSONStdReadVanilla.readNodeMediaItem         thrpt  150  169862.289
 c.f.j.p.props.PropertiesStdReadVanilla.readNodeMediaItem  thrpt  150   94001.335 ±  408.179  ops/s
 
 Write - Afterburner / 2.8.0 / home / 05-Jul-2016
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 9 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
 
 Benchmark                                                        Mode  Cnt        Score      Error  Units
 c.f.j.p.protob.ProtobufStdWriteAfterburner.writePojoMediaItem   thrpt  150  1089746.729 ± 7365.180  ops/s
