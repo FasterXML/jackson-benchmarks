@@ -17,11 +17,11 @@
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.jackson.annotations>2.8.0</version.jackson.annotations>
-        <version.jackson.core>2.8.4</version.jackson.core>
-        <version.jackson.dataformat>2.8.4</version.jackson.dataformat>
+        <version.jackson.core>2.8.6</version.jackson.core>
+        <version.jackson.dataformat>${version.jackson.core}</version.jackson.dataformat>
         <version.jackson.base>${version.jackson.core}</version.jackson.base>
         <version.jackson.afterburner>${version.jackson.core}</version.jackson.afterburner>
-        <version.jackson.other>2.8.4</version.jackson.other>
+        <version.jackson.other>${version.jackson.core}</version.jackson.other>
         <version.jackson.bson>2.7.0</version.jackson.bson>
         <version.jmh>1.9.3</version.jmh>
     </properties>
