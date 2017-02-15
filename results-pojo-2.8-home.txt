@@ -26,6 +26,7 @@ c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem       thrpt  100  485780.023
 c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt  100  436802.356 ± 13889.428  ops/s
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt  100  406000.999 ±  4182.760  ops/s
 c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem         thrpt  100  349929.063 ±  6522.263  ops/s
+c.f.j.p.json.JsonStringReadVanilla.readPojoMediaItem      thrpt  100  325612.680 ±  3759.841  ops/s
 c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem    thrpt  100  397100.411 ±  3784.551  ops/s
 c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem           thrpt  100  303164.312 ±  2063.551  ops/s
 c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem           thrpt  100  169100.113 ±  1071.144  ops/s
@@ -34,16 +35,14 @@ c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem         thrpt  100  151353.239
 c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt  100   83306.004 ±   383.608  ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt  100   24706.205 ±   396.505  ops/s
 
-Read - Untyped / 2.8.4 / home / 03-Nov-2016
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 19 -t 1
-
-Benchmark                                                     Mode  Cnt       Score      Error  Units
-c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt   95  567000.461 ± 5645.595  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt   95  531358.289 ± 7533.265  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt   95  419576.799 ± 2274.949  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt   95  418196.313 ± 6267.006  ops/s
-c.f.j.p.bson.BSONStdReadVanilla.readUntypedMediaItem         thrpt   95  167996.232 ± 1027.941  ops/s
-c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt   95   91278.544 ±  407.646  ops/s
+Read - Untyped / 2.8.6 / home / 14-Feb-2016 / 1.8.0_122
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 20 -t 1
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt  100  566842.194 ±  7214.283  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt  100  534525.655 ± 10297.314  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt  100  419041.812 ±  1732.012  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt  100  418181.709 ±  5167.374  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readUntypedMediaItem         thrpt  100  168652.160 ±  1263.676  ops/s
+c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt  100   90676.860 ±   386.180  ops/s
 
 Read - Tree / 2.8.0 / home / 05-Jul-2016
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 30 -t 1
