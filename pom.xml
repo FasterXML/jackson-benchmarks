@@ -16,8 +16,8 @@
 
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.jackson.annotations>2.9.0-SNAPSHOT</version.jackson.annotations>
-        <version.jackson.core>2.9.0-SNAPSHOT</version.jackson.core>
+        <version.jackson.annotations>2.9.0.pr1</version.jackson.annotations>
+        <version.jackson.core>2.9.0.pr1</version.jackson.core>
         <version.jackson.dataformat>${version.jackson.core}</version.jackson.dataformat>
         <version.jackson.base>${version.jackson.core}</version.jackson.base>
         <version.jackson.afterburner>${version.jackson.core}</version.jackson.afterburner>
