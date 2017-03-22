@@ -4,7 +4,7 @@
     <parent>
       <groupId>com.fasterxml.jackson</groupId>
       <artifactId>jackson-parent</artifactId>
-      <version>2.9-rc1-SNAPSHOT</version>
+      <version>2.9.pr1b</version>
     </parent>
 
     <artifactId>jackson-benchmarks</artifactId>
@@ -16,8 +16,8 @@
 
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.jackson.annotations>2.9.0.pr1</version.jackson.annotations>
-        <version.jackson.core>2.9.0.pr1</version.jackson.core>
+        <version.jackson.annotations>2.9.0.pr2</version.jackson.annotations>
+        <version.jackson.core>2.9.0.pr2</version.jackson.core>
         <version.jackson.dataformat>${version.jackson.core}</version.jackson.dataformat>
         <version.jackson.base>${version.jackson.core}</version.jackson.base>
         <version.jackson.afterburner>${version.jackson.core}</version.jackson.afterburner>
@@ -74,7 +74,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-avro</artifactId>
-        <version>${version.jackson.dataformat}</version>
+        <version>2.9.0.pr2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
