@@ -41,15 +41,16 @@ c.f.j.p.smile.SmileStdReadAsync.readPojoMediaItem             thrpt  100  447278
 c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem               thrpt  100  349850.600 ± 8122.200  ops/s
 c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem           thrpt  100  221287.589 ± 1655.209  ops/s
 
-Read - Untyped / 2.9.0.pr2 / home / 21-Mar-2017 / 1.8.0_122
+Read - Untyped / 2.9.0.pr4 / home / 21-Jun-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 20 -t 1
 
-c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt  100  569012.597 ± 5345.055  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt  100  535244.333 ± 7475.660  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt  100  420505.588 ± 3757.760  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt  100  411277.605 ± 4138.879  ops/s
-c.f.j.p.bson.BSONStdReadVanilla.readUntypedMediaItem         thrpt  100  169480.861 ±  915.995  ops/s
-c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt  100   90961.055 ±  443.754  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt  100  561702.162 ± 5507.058  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt  100  524080.519 ± 7310.233  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt  100  419260.344 ± 5427.001  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt  100  408962.409 ± 5456.132  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readUntypedMediaItem         thrpt  100  166181.006 ±  897.590  ops/s
+c.f.j.p.ion.IonStdReadVanilla.readUntypedMediaItem           thrpt  100   84092.981 ±  655.199  ops/s
+c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt  100   91242.305 ±  396.626  ops/s
 
 Read - Tree / 2.9.0.pr2 / home / 21-Mar-2017 / 1.8.0_122
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 20 -t 1
