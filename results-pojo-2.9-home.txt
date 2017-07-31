@@ -93,22 +93,24 @@ c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem      thrpt  100   246
 c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem             thrpt  100   193739.636 ±  911.604  ops/s
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem             thrpt  100    44209.525 ±  309.405  ops/s
 
-Write - Untyped / 2.9.0.pr4 / home / 21-Jun-2017 / 1.8.0_152
+Write - Untyped / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt  100  971284.883 ± 7392.709  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt  100  830699.627 ± 6279.599  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt  100  718832.719 ± 4130.849  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt  100  718572.780 ± 5823.035  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt  100  304406.132 ± 1603.531  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt  100  295986.810 ± 1393.774  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt  100  219585.423 ± 1572.787  ops/s
+Benchmark                                                       Mode  Cnt       Score      Error  Units
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt  100  947780.425 ± 5464.101  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt  100  827950.644 ± 4316.363  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt  100  743788.893 ± 5046.760  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt  100  718817.097 ± 7849.791  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt  100  297624.609 ± 2006.521  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt  100  301874.204 ± 1660.298  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt  100  215010.532 ± 1464.462  ops/s
 
-Write - Node / 2.9.0.pr2 / home / 21-Jun-2017 / 1.8.0_152
+
+Write - Node / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
-c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem            thrpt  100  1065441.740 ± 4714.620  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem          thrpt  100   891154.375 ± 9751.003  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem            thrpt  100   793141.325 ± 3941.123  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writeNodeMediaItem              thrpt  100   296891.305 ± 1604.753  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem     thrpt  100   316017.390 ± 1262.086  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem            thrpt  100   222803.424 ± 1083.620  ops/s
+Benchmark                                                    Mode  Cnt        Score      Error  Units
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem         thrpt  100  1067824.464 ± 6349.644  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt  100   907559.894 ± 8955.426  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt  100   806293.628 ± 4913.396  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writeNodeMediaItem           thrpt  100   300630.582 ± 1616.762  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem  thrpt  100   323097.750 ± 2185.196  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem         thrpt  100   223305.775 ± 1418.427  ops/s
