@@ -76,22 +76,22 @@ c.f.j.p.props.PropertiesStdWriteAfterburner.writePojoMediaItem  thrpt  100   280
 c.f.j.p.bson.BSONStdWriteAfterburner.writePojoMediaItem         thrpt  100   206389.517 ± 1440.811  ops/s
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem         thrpt  100    45757.379 ±  216.761  ops/s
 
-Write - Vanilla / 2.9.0.pr4 / home / 21-Jun-2017 / 1.8.0_152
+Write - Vanilla / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanil.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
-c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem       thrpt  100   768524.718 ± 8921.409  ops/s
-c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem             thrpt  100   726859.867 ± 7837.760  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem           thrpt  100   703262.200 ± 7326.908  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem        thrpt  100   613479.462 ± 4070.803  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem             thrpt  100   605199.413 ± 3967.501  ops/s
-c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem               thrpt  100   649347.123 ± 5330.923  ops/s
-c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem               thrpt  100   341433.243 ± 1718.631  ops/s
-c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem             thrpt  100   267572.070 ± 2261.081  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writePojoMediaItem               thrpt  100   269286.423 ± 1718.683  ops/s
-c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem       thrpt  100   236369.709 ± 1040.488  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem      thrpt  100   246012.316 ± 1103.057  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem             thrpt  100   193739.636 ±  911.604  ops/s
-c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem             thrpt  100    44209.525 ±  309.405  ops/s
+Benchmark                                                    Mode  Cnt       Score      Error  Units
+c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem   thrpt  100  776207.129 ± 7248.212  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem         thrpt  100  726896.580 ± 7909.666  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem       thrpt  100  718551.060 ± 5781.159  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem    thrpt  100  611282.460 ± 3345.746  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem         thrpt  100  611665.517 ± 3089.016  ops/s
+c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem           thrpt  100  637458.551 ± 6951.114  ops/s
+c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem           thrpt  100  341151.510 ± 2416.284  ops/s
+c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem         thrpt  100  271618.630 ± 1669.810  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writePojoMediaItem           thrpt  100  269947.587 ± 1662.928  ops/s
+c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem   thrpt  100  235547.830 ± 1560.005  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem  thrpt  100  247350.215 ± 1308.590  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem         thrpt  100  192189.006 ± 1428.420  ops/s
+c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem         thrpt  100   44431.026 ±  167.180  ops/s
 
 Write - Untyped / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 20 -t 1
@@ -103,7 +103,6 @@ c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt  100  71881
 c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt  100  297624.609 ± 2006.521  ops/s
 c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt  100  301874.204 ± 1660.298  ops/s
 c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt  100  215010.532 ± 1464.462  ops/s
-
 
 Write - Node / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 20 -t 1
