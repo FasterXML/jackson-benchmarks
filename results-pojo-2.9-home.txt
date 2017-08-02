@@ -36,11 +36,12 @@ c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt  100   26271.191
 
 Read - other / 2.9.0 / home / 31-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
 
 c.f.j.p.smile.SmileStdReadAsync.readPojoMediaItem   thrpt  100  433432.156 ± 3743.715  ops/s
 c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem     thrpt  100  353296.014 ± 4508.174  ops/s
+c.f.j.p.json.JsonStringReadVanilla.readPojoMediaItem thrpt 100  327544.261 ± 2835.563  ops/s
 c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem thrpt  100  213879.152 ± 1757.301  ops/s
 
 Read - Untyped / 2.9.0 / home / 31-Jul-2017 / 1.8.0_152
