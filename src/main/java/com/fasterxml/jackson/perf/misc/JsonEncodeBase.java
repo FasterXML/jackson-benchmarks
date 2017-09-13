@@ -18,7 +18,7 @@ public abstract class JsonEncodeBase
 {
     // contents copied from sample document in https://en.wikipedia.org/wiki/JSON
     // although augmented by some escapable characters
-    protected final static String[] INPUTS = new String[] {
+    public final static String[] INPUTS = new String[] {
             "firstName", "John",
             "lastName", "\"Smith\"",
             "age", "25",
@@ -35,7 +35,7 @@ public abstract class JsonEncodeBase
                 "type", "male"
     };
 
-    protected final static String LONG_INPUT;
+    public final static String LONG_INPUT;
     static {
         // inefficient but who cares:
         LONG_INPUT = Stream.of(INPUTS).collect(Collectors.joining(" "));
