@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.perf.manual;
 
-import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
@@ -15,7 +14,7 @@ public class MediaItemReadSmile extends ManualMediaItemReadBase
 
 	public static void main(String[] args) throws Exception
 	{
-	    JsonFactory f = new SmileFactory();
+	    SmileFactory f = new SmileFactory();
 	    String desc = "Smile";
 	    ObjectMapper m = new ObjectMapper(f);
 	    if (USE_AFTERBURNER) {

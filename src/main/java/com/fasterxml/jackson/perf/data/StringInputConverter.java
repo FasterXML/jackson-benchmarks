@@ -49,7 +49,7 @@ public class StringInputConverter
         EnumMap<InputData,String> data = new EnumMap<>(InputData.class);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream(4000);
         final JsonFactory jsonF = new JsonFactory();
-        final JsonFactory targetF = targetMapper.getFactory();
+        final TokenStreamFactory targetF = targetMapper.getFactory();
 
         try {
 	        for (InputData input : InputData.values()) {
