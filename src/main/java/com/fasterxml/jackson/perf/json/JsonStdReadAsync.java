@@ -37,7 +37,7 @@ public class JsonStdReadAsync
 
     @Override
     protected Object read(byte[] input, ObjectReader reader) throws IOException {
-        JsonParser p = _factory.createNonBlockingByteArrayParser();
+        JsonParser p = MAPPER.createNonBlockingByteArrayParser();
         ((ByteArrayFeeder) p.getNonBlockingInputFeeder()).feedInput(input, 0, input.length);
         Object result = reader.readValue(p);
         p.close();

@@ -26,9 +26,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class SmileStdReadAsync
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private final static SmileFactory _sf = new SmileFactory();
-
-    private static final ObjectMapper MAPPER = new ObjectMapper(_sf);
+    private static final ObjectMapper MAPPER = new ObjectMapper(new SmileFactory());
 
     private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
 
@@ -38,7 +36,7 @@ public class SmileStdReadAsync
 
     @Override
     protected Object read(byte[] input, ObjectReader reader) throws IOException {
-        JsonParser p = _sf.createNonBlockingByteArrayParser();
+        JsonParser p = MAPPER.createNonBlockingByteArrayParser();
         ((ByteArrayFeeder) p.getNonBlockingInputFeeder()).feedInput(input, 0, input.length);
         Object result = reader.readValue(p);
         p.close();
