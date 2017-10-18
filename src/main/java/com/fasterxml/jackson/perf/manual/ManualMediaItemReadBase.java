@@ -53,9 +53,8 @@ public class ManualMediaItemReadBase extends ObjectReaderTestBase
     protected final double _testRawDeser(int reps, byte[] json, ObjectReader reader) throws IOException
     {
         long start = System.nanoTime();
-        final TokenStreamFactory f = reader.getFactory();
         while (--reps >= 0) {
-            JsonParser p = f.createParser(new ByteArrayInputStream(json));
+            JsonParser p = reader.createParser(new ByteArrayInputStream(json));
             JsonToken t;
             while ((t = p.nextToken()) != null) {
                 if (t == JsonToken.VALUE_STRING) {
@@ -67,7 +66,8 @@ public class ManualMediaItemReadBase extends ObjectReaderTestBase
             }
             p.close();
         }
-        hash = f.hashCode();
-        return _msecsFromNanos(System.nanoTime() - start);
+        long nanos = System.nanoTime();
+        hash = (int) nanos;
+        return _msecsFromNanos(nanos - start);
     }
 }

@@ -17,10 +17,11 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class JsonNoInternReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper();
-    {
-        MAPPER.getFactory()
-            .disable(JsonFactory.Feature.INTERN_FIELD_NAMES);
+    private static final ObjectMapper MAPPER;
+    static {
+        JsonFactory f = new JsonFactory();
+        f.disable(JsonFactory.Feature.INTERN_FIELD_NAMES);
+        MAPPER = new ObjectMapper(f);
     }
 
     // pass non-null ObjectMapper: will remove whitespace, if any

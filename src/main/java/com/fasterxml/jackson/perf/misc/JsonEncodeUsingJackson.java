@@ -3,8 +3,6 @@ package com.fasterxml.jackson.perf.misc;
 import java.io.OutputStream;
 import java.io.Writer;
 
-import com.fasterxml.jackson.core.JsonFactory;
-
 import com.fasterxml.jackson.jr.ob.JSON;
 import com.fasterxml.jackson.jr.ob.JSONComposer;
 import com.fasterxml.jackson.jr.ob.comp.ArrayComposer;

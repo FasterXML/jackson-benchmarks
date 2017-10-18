@@ -42,13 +42,15 @@ public class InputConverter
         EnumMap<InputData, byte[]> data = new EnumMap<InputData, byte[]>(InputData.class);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream(4000);
         final JsonFactory jsonF = new JsonFactory();
-        final TokenStreamFactory targetF = targetMapper.getFactory();
+        final TokenStreamFactory targetF = targetMapper.tokenStreamFactory();
 
         try {
 	        for (InputData input : InputData.values()) {
-	            JsonParser in = jsonF.createParser(input.bytes());
+	            JsonParser in = jsonF.createParser(ObjectReadContext.empty(),
+	                    input.bytes());
 	            bytes.reset();
-	            JsonGenerator out = targetF.createGenerator(bytes);
+	            JsonGenerator out = targetF.createGenerator(ObjectWriteContext.empty(),
+	                    bytes);
 	            while (in.nextToken() != null) {
 	                out.copyCurrentStructure(in);
 	            }

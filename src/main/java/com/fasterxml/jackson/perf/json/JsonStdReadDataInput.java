@@ -36,7 +36,7 @@ public class JsonStdReadDataInput
     @Override
     protected Object read(byte[] input, ObjectReader reader) throws IOException {
         DataInput dataInput = new MockDataInput(input);
-        JsonParser p = reader.getFactory().createParser(dataInput);
+        JsonParser p = reader.createParser(dataInput);
         Object ob = reader.readValue(p);
         p.close();
         return ob;
