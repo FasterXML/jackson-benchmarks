@@ -34,6 +34,21 @@ c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem           thrpt  100   83215.689
 c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt  100   83461.004 ±   393.289  ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt  100   26271.191 ±   442.268  ops/s
 
+Read - Column-Afterburner / 2.9.2 / home / 21-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 9 -t 1
+
+c.f.j.p.smile.SmileColumnReadAfterburner.readPojoMediaItem  thrpt   45  884632.678 ± 14202.539  ops/s
+c.f.j.p.cbor.CBORColumnReadAfterburner.readPojoMediaItem    thrpt   45  833040.353 ± 13966.634  ops/s
+c.f.j.p.json.JsonColumnReadAfterburner.readPojoMediaItem    thrpt   45  614994.026 ±  6151.322  ops/s
+
+Read - Column-Vanilla / 2.9.2 / home / 21-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnReadVan.*PojoMediaItem.*" -wi 4 -i 5 -f 9 -t 1
+
+c.f.j.p.smile.SmileColumnReadVanilla.readPojoMediaItem  thrpt   45  687636.680 ±  5131.514  ops/s
+c.f.j.p.cbor.CBORColumnReadVanilla.readPojoMediaItem    thrpt   45  594739.569 ± 10649.542  ops/s
+c.f.j.p.json.JsonColumnReadVanilla.readPojoMediaItem    thrpt   45  486188.206 ±  6063.525  ops/s
+
+
 Read - other / 2.9.0 / home / 31-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
