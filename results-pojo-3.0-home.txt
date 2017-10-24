@@ -47,6 +47,16 @@ c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem           thrpt   15   83408.828
 c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt   15   83377.913 ±   702.584  ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt   15   20019.845 ±  2219.715  ops/s
 
+Read - Column-Afterburner / 3.0.0-SNAP / home / 21-Oct-2017 / 1.8.0_152
+c.f.j.p.smile.SmileColumnReadAfterburner.readPojoMediaItem  thrpt   15  904259.923 ± 10172.435  ops/s
+c.f.j.p.cbor.CBORColumnReadAfterburner.readPojoMediaItem    thrpt   15  814078.525 ± 13010.009  ops/s
+c.f.j.p.json.JsonColumnReadAfterburner.readPojoMediaItem    thrpt   15  617538.042 ±  9232.795  ops/s
+
+Read - Column-Vanilla / 3.0.0-SNAP / home / 21-Oct-2017 / 1.8.0_152
+c.f.j.p.smile.SmileColumnReadVanilla.readPojoMediaItem  thrpt   45  686424.281 ±  5944.277  ops/s
+c.f.j.p.cbor.CBORColumnReadVanilla.readPojoMediaItem    thrpt   15  609425.078 ±  7605.224  ops/s
+c.f.j.p.json.JsonColumnReadVanilla.readPojoMediaItem    thrpt   15  489178.467 ±  6714.098  ops/s
+
 Read - other / 3.0.0-SNAP / home / xx-sep-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
@@ -57,18 +67,17 @@ c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem       thrpt  100  355060.944 ± 
 c.f.j.p.json.JsonStringReadVanilla.readPojoMediaItem  thrpt  100  331604.180 ± 3701.846  ops/s
 c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem   thrpt  100  217792.957 ± 1604.866  ops/s
 
-Read - Untyped / 3.0.0-SNAP / home / xx-sep-2017 / 1.8.0_152
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 3 -t 1
-c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt   15  555418.918 ±  8788.966  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt   15  530558.378 ± 30609.434  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt   15  407046.468 ± 13304.254  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt   15  406948.494 ±  6949.804  ops/s
-c.f.j.p.bson.BSONStdReadVanilla.readUntypedMediaItem         thrpt   15  167044.480 ±  2517.535  ops/s
-c.f.j.p.ion.IonStdReadVanilla.readUntypedMediaItem           thrpt   15   86462.469 ±  1726.364  ops/s
-c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt   15   89749.129 ±  1543.233  ops/s
+Read - Untyped / 3.0.0-SNAP / home / 23-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 10 -t 1
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt   50  540422.626 ± 9846.232  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt   50  517545.323 ± 4079.629  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt   50  419157.171 ± 6872.491  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt   50  407778.743 ± 2716.939  ops/s
+c.f.j.p.ion.IonStdReadVanilla.readUntypedMediaItem           thrpt   50   86487.951 ±  910.599  ops/s
+c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt   50   91181.468 ±  576.693  ops/s
 
-Read - Tree / 3.0.0-SNAP / home / xx-sep-2017 / 1.8.0_152
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 3 -t 1
+Read - Tree / 3.0.0-SNAP / home / 23-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 10 -t 1
 c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem       thrpt   15  581995.453 ± 24505.527  ops/s
 c.f.j.p.cbor.CBORStdReadVanilla.readNodeMediaItem         thrpt   15  525984.146 ± 16824.181  ops/s
 c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem         thrpt   15  425320.280 ±  8236.909  ops/s
@@ -78,52 +87,61 @@ c.f.j.p.props.PropertiesStdReadVanilla.readNodeMediaItem  thrpt   15   92967.325
 
 ------ WRITE ------
 
+SUPER-OPT (23-Oct-2017)
+c.f.j.p.protob.ProtobufStdWriteAfterburner.writePojoMediaItem   thrpt  100  1151946.448 ±  9256.866  ops/s
+c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem         thrpt  100  1037801.961 ±  7753.114  ops/s
+c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem       thrpt  100   987782.669 ±  6777.940  ops/s
+c.f.j.p.json.JsonStdWriteAfterburner.writePojoMediaItem         thrpt  100   799796.319 ±  4142.426  ops/s
+c.f.j.p.avro.AvroStdWriteAfterburner.writePojoMediaItem         thrpt  100   322423.437 ±  1830.795  ops/s
+c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem           thrpt  100   686125.036 ± 10113.930  ops/s
+c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem           thrpt  100   409980.639 ±  2017.818  ops/s
+c.f.j.p.ion.IonStdWriteAfterburner.writePojoMediaItem           thrpt  100   298573.928 ±  3860.033  ops/s
+c.f.j.p.props.PropertiesStdWriteAfterburner.writePojoMediaItem  thrpt  100   289651.848 ±  1272.122  ops/s
+
 Write - Afterburner / 3.0.0-SNAP / home / xx-oct-2017 / 1.8.0_152
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 3 -t 1
-c.f.j.p.protob.ProtobufStdWriteAfterburner.writePojoMediaItem   thrpt   15  1092513.175 ± 30510.396  ops/s
-c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem         thrpt   15   932659.777 ± 11571.673  ops/s
-c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem       thrpt   15   864843.564 ± 10501.712  ops/s
-c.f.j.p.json.JsonStdWriteAfterburner.writePojoMediaItem         thrpt   15   771714.171 ± 10906.520  ops/s
-c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem           thrpt   15   684875.748 ± 31784.119  ops/s
-c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem           thrpt   15   406464.099 ±  9114.921  ops/s
-c.f.j.p.avro.AvroStdWriteAfterburner.writePojoMediaItem         thrpt   15   309555.856 ±  7793.207  ops/s
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 9 -t 1
+c.f.j.p.protob.ProtobufStdWriteAfterburner.writePojoMediaItem   thrpt   45  1077099.497 ± 15230.421  ops/s
+c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem         thrpt   45   911012.935 ±  6894.103  ops/s
+c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem       thrpt   45   873231.325 ±  9329.444  ops/s
+c.f.j.p.json.JsonStdWriteAfterburner.writePojoMediaItem         thrpt   45   762640.936 ±  5723.555  ops/s
+c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem           thrpt   45   690129.108 ± 10845.060  ops/s
+c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem           thrpt   45   408366.032 ±  5755.881  ops/s
+c.f.j.p.avro.AvroStdWriteAfterburner.writePojoMediaItem         thrpt   45   310164.546 ±  3948.782  ops/s
 c.f.j.p.msgpack.MsgpackStdWriteAfterburner.writePojoMediaItem   thrpt   15   257497.520 ±  3776.488  ops/s
-c.f.j.p.ion.IonStdWriteAfterburner.writePojoMediaItem           thrpt   15   291509.232 ±  5220.146  ops/s
-c.f.j.p.props.PropertiesStdWriteAfterburner.writePojoMediaItem  thrpt   15   274224.728 ±  6954.844  ops/s
+c.f.j.p.ion.IonStdWriteAfterburner.writePojoMediaItem           thrpt   45   290342.463 ±  3002.692  ops/s
+c.f.j.p.props.PropertiesStdWriteAfterburner.writePojoMediaItem  thrpt   45   278268.911 ±  1677.033  ops/s
 c.f.j.p.bson.BSONStdWriteAfterburner.writePojoMediaItem         thrpt   15   210947.447 ±  4956.446  ops/s
-c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem         thrpt   15    45312.612 ±   339.086  ops/s
+c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem         thrpt   45    45459.193 ±   401.924  ops/s
 
 Write - Vanilla / 3.0.0-SNAP / home / xx-Oct-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanil.*PojoMediaItem.*" -wi 4 -i 5 -f 3 -t 1
-c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem   thrpt   15  774845.001 ± 24518.162  ops/s
-c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem         thrpt   15  735867.038 ± 21301.232  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem       thrpt   15  696555.897 ± 32701.294  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem    thrpt   15  591147.501 ± 20659.523  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem         thrpt   15  594620.655 ± 14429.846  ops/s
-c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem           thrpt   15  655714.449 ± 12140.376  ops/s
-c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem           thrpt   15  340688.766 ±  8099.885  ops/s
-c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem         thrpt   15  267370.910 ±  2834.984  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writePojoMediaItem           thrpt   15  269452.664 ±  2815.164  ops/s
-c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem   thrpt   15  234656.207 ±  5912.693  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem  thrpt   15  246833.001 ±  3162.644  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem         thrpt   15  193422.761 ±  3507.465  ops/s
-c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem         thrpt   15   43892.260 ±   536.282  ops/s
+c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem   thrpt  100  773065.258 ± 7151.459  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem         thrpt  100  717935.190 ± 6395.228  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem       thrpt  100  703254.218 ± 5904.784  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem    thrpt  100  611663.025 ± 2877.548  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem         thrpt  100  599808.996 ± 3802.545  ops/s
+c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem           thrpt  100  659015.028 ± 7175.209  ops/s
+c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem           thrpt  100  341451.322 ± 2350.226  ops/s
+c.f.j.p.avro.AvroStdWriteVanilla.writePojoMediaItem         thrpt  100  268341.206 ± 1606.596  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writePojoMediaItem           thrpt  100  269839.466 ± 2028.331  ops/s
+c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem   thrpt   15  234656.207 ± 5912.693  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem  thrpt  100  245997.361 ± 1003.821  ops/s
+c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem         thrpt   15  193422.761 ± 3507.465  ops/s
+c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem         thrpt  100   44168.406 ±  245.734  ops/s
 
 Write - Untyped / 3.0.0-SNAP / home / xx-Oct-2017 / 1.8.0_152
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 3 -t 1
-c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt   15  970091.489 ± 29011.534  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt   15  836424.528 ± 14339.323  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt   15  741833.325 ± 12870.827  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt   15  721354.862 ± 16276.955  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt   15  302547.774 ±  3685.612  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt   15  304447.894 ±  2229.020  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt   15  217246.741 ±  6815.928  ops/s
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 10 -t 1
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt   50  966892.949 ±  8414.108  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt   50  846588.561 ±  5823.129  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt   50  731732.929 ±  9937.330  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt   50  726641.222 ± 13552.039  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt   50  305788.518 ±  2754.987  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt   50  299608.581 ±  1824.131  ops/s
 
 Write - Node / 3.0.0-SNAP / home / xx-Oct-2017 / 1.8.0_152
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 3 -t 1
-c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem         thrpt   15  1083138.573 ± 16236.784  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt   15   899307.551 ± 31753.893  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt   15   808653.669 ±  8244.286  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writeNodeMediaItem           thrpt   15   300573.823 ±  4301.932  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem  thrpt   15   324444.036 ±  4463.553  ops/s
-c.f.j.p.bson.BSONStdWriteVanilla.writeNodeMediaItem         thrpt   15   223445.051 ± 11110.208  ops/s
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 10 -t 1
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem            thrpt   50  1080863.086 ±  9617.119  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem          thrpt   50   907454.920 ± 11654.259  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem            thrpt   50   803716.259 ±  5792.646  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writeNodeMediaItem              thrpt   50   307749.529 ±  3283.258  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem     thrpt   50   319169.663 ±  1572.642  ops/s
