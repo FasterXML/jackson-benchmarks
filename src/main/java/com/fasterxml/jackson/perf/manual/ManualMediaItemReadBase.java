@@ -9,19 +9,19 @@ import com.fasterxml.jackson.perf.model.MediaItems;
 
 public class ManualMediaItemReadBase extends ObjectReaderTestBase
 {
-	private final static MediaItem ITEM = MediaItems.stdMediaItem();
+    private final static MediaItem ITEM = MediaItems.stdMediaItem();
 
-	private final ObjectMapper _mapper;
-	private final boolean _useBytes;
-	private final String _descPrefix;
+    private final ObjectMapper _mapper;
+    private final boolean _useBytes;
+    private final String _descPrefix;
+
+    public ManualMediaItemReadBase(ObjectMapper m, boolean useBytes, String desc) {
+        _mapper = m;
+        _useBytes = useBytes;
+        _descPrefix = desc;
+    }
 	
-	public ManualMediaItemReadBase(ObjectMapper m, boolean useBytes, String desc) {
-		_mapper = m;
-		_useBytes = useBytes;
-		_descPrefix = desc;
-	}
-	
-	@Override
+    @Override
     protected int targetSizeMegs() { return 15; }
     
     protected final void test() throws Exception
