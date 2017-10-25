@@ -16,11 +16,11 @@ public class SmileColumnWriteAfterburner
 {
     private static final ObjectMapper MAPPER;
     static {
-    	    SmileFactory f = new SmileFactory();
-    	    // configure differently?
-    	    MAPPER = new ObjectMapper(f);
-         MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-    	    MAPPER.registerModule(new AfterburnerModule());
+        SmileFactory f = new SmileFactory();
+    	// configure differently?
+    	MAPPER = new ObjectMapper(f);
+        MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
+    	MAPPER.registerModule(new AfterburnerModule());
     }
 
     public SmileColumnWriteAfterburner() {

@@ -20,7 +20,6 @@ public class SmileColumnWriteVanilla
         // configure differently?
         MAPPER = new ObjectMapper(f);
         MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-        MAPPER.registerModule(new AfterburnerModule());
     }
 
     public SmileColumnWriteVanilla() {
