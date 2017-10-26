@@ -1,4 +1,4 @@
-package com.fasterxml.jackson.perf.manual;
+package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;

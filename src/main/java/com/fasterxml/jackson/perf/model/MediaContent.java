@@ -6,10 +6,22 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder(alphabetic=true, value = {
-        "uri","title","width","height","format","duration","size","bitrate","persons","player","copyright"})
+      "player","uri","title","width","height","format","duration","size","bitrate","copyright","persons"})
 public class MediaContent
 {
-    public enum Player { JAVA, FLASH;  }
+    public enum Player {
+        JAVA, FLASH;
+
+        public static Player find(String str) {
+            if (str == "JAVA") return JAVA;
+            if (str == "FLASH") return FLASH;
+            if (str == null) return null;
+            if ("JAVA".equals(str)) return JAVA;
+            if ("FLASH".equals(str)) return FLASH;
+            String desc = (str == null) ? "NULL" : String.format("'%s'", str);
+            throw new IllegalArgumentException("No Player value of "+desc);
+        }
+    }
 
     private Player _player;
     private String _uri;

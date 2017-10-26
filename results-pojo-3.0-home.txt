@@ -1,16 +1,15 @@
 Version: 3.0.0-SNAPSHOT
 
 LATEST ULTRA-OPT
-c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt   45  736931.725 ± 10965.401  ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt   45  643849.533 ±  7275.271  ops/s
-c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt   45  344419.542 ±  3364.508  ops/s
-c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem           thrpt   45   92060.413 ±  1288.402  ops/s
-c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt   45  507611.520 ±  5355.119  ops/s
-c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem   thrpt   45  519328.189 ±  6983.875  ops/s
-c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt   45   88980.970 ±   821.507  ops/s
 c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt   45  687738.809 ± 11143.908  ops/s
 c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt   45  705501.409 ±  7302.844  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt   45  643849.533 ±  7275.271  ops/s
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt   45  736931.725 ± 10965.401  ops/s
+c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt   45  507611.520 ±  5355.119  ops/s
+c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt   45  344419.542 ±  3364.508  ops/s
 c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt   45  194803.808 ±  1185.679  ops/s
+c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem           thrpt   45   92060.413 ±  1288.402  ops/s
+c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt   45   88980.970 ±   821.507  ops/s
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt   45   22514.934 ±   680.347  ops/s
 /LATEST 
 

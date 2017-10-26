@@ -1,12 +1,11 @@
-package com.fasterxml.jackson.perf.manual;
+package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
-public class MediaItemWriteSmile
+public class MediaItemWriteJson
     extends ObjectWriterTestBase<MediaItem, MediaItem>
 {
     @Override
@@ -14,21 +13,21 @@ public class MediaItemWriteSmile
 
     public static void main(String[] args) throws Exception
     {
-//    	final boolean USE_AFTERBURNER = true;
-    	final boolean USE_AFTERBURNER = false;
+//    	final boolean USE_BYTES = true;
+    	final boolean USE_AFTERBURNER = true;
 
     	if (args.length != 0) {
             System.err.println("Usage: java ...");
             System.exit(1);
         }
-        String desc = "Smile";
+        String desc = "JSON";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = new ObjectMapper(new SmileFactory());
+        ObjectMapper m = new ObjectMapper();
         if (USE_AFTERBURNER) {
         	m.registerModule(new AfterburnerModule());
         	desc += "+Afterburner";
         }
-        new MediaItemWriteSmile().test(m,
+        new MediaItemWriteJson().test(m,
         		desc+"#1", input, MediaItem.class,
         		desc+"#2", input, MediaItem.class);
     }

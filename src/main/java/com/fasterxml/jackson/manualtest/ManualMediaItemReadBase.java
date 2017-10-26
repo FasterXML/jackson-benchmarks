@@ -1,4 +1,4 @@
-package com.fasterxml.jackson.perf.manual;
+package com.fasterxml.jackson.manualtest;
 
 import java.io.*;
 

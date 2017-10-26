@@ -1,11 +1,12 @@
-package com.fasterxml.jackson.perf.manual;
+package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
-public class MediaItemWriteJson
+public class MediaItemWriteCBOR
     extends ObjectWriterTestBase<MediaItem, MediaItem>
 {
     @Override
@@ -13,21 +14,21 @@ public class MediaItemWriteJson
 
     public static void main(String[] args) throws Exception
     {
-//    	final boolean USE_BYTES = true;
-    	final boolean USE_AFTERBURNER = true;
+//    	final boolean USE_AFTERBURNER = true;
+        final boolean USE_AFTERBURNER = false;
 
-    	if (args.length != 0) {
+        if (args.length != 0) {
             System.err.println("Usage: java ...");
             System.exit(1);
         }
-        String desc = "JSON";
+        String desc = "CBOR";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = new ObjectMapper();
+        ObjectMapper m = new ObjectMapper(new CBORFactory());
         if (USE_AFTERBURNER) {
-        	m.registerModule(new AfterburnerModule());
-        	desc += "+Afterburner";
+            m.registerModule(new AfterburnerModule());
+            desc += "+Afterburner";
         }
-        new MediaItemWriteJson().test(m,
+        new MediaItemWriteCBOR().test(m,
         		desc+"#1", input, MediaItem.class,
         		desc+"#2", input, MediaItem.class);
     }
