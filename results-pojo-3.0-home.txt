@@ -111,31 +111,31 @@ CBORManualWriteVanilla.writePojoMediaItem      thrpt  100  1323786.159 ± 10231.
 SmileManualWriteVanilla.writePojoMediaItem     thrpt  100  1320152.956 ±  5250.706  ops/s
 JsonManualWriteVanilla.writePojoMediaItem      thrpt  100   987616.582 ± 10655.951  ops/s
 
-Write - Column/Afterburner / 3.0.0-SNAP / home / 26-Oct-2017 / 1.8.0_152
-java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 5 -t 1 
-c.f.j.p.smile.SmileColumnWriteAfterburner.writePojoMediaItem  thrpt   50  1669437.416 ± 20528.247  ops/s
-c.f.j.p.cbor.CBORColumnWriteAfterburner.writePojoMediaItem    thrpt   50  1468708.310 ± 16998.091  ops/s
-c.f.j.p.json.JsonColumnWriteAfterburner.writePojoMediaItem    thrpt   50  1177896.156 ± 15331.886  ops/s
+Write - Column/Afterburner / 3.0.0-SNAP / home / 28-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1 
+c.f.j.p.smile.SmileColumnWriteAfterburner.writePojoMediaItem  thrpt  100  1679044.522 ± 14695.186  ops/s
+c.f.j.p.cbor.CBORColumnWriteAfterburner.writePojoMediaItem    thrpt  100  1483760.790 ± 13465.206  ops/s
+c.f.j.p.json.JsonColumnWriteAfterburner.writePojoMediaItem    thrpt  100  1178874.234 ±  7257.648  ops/s
 
-Write - Column/Vanilla / 3.0.0-SNAP / home / 26-Oct-2017 / 1.8.0_152
+Write - Column/Vanilla / 3.0.0-SNAP / home / 28-Oct-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnWriteVan.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1 
-c.f.j.p.smile.SmileColumnWriteVanilla.writePojoMediaItem  thrpt   50  1257322.379 ± 27033.405  ops/s
-c.f.j.p.cbor.CBORColumnWriteVanilla.writePojoMediaItem    thrpt   50  1217180.942 ± 30058.354  ops/s
-c.f.j.p.json.JsonColumnWriteVanilla.writePojoMediaItem    thrpt   50   958567.596 ± 15392.902  ops/s
+c.f.j.p.smile.SmileColumnWriteVanilla.writePojoMediaItem      thrpt  100  1258691.193 ± 22217.168  ops/s
+c.f.j.p.cbor.CBORColumnWriteVanilla.writePojoMediaItem        thrpt  100  1273361.285 ± 20209.217  ops/s
+c.f.j.p.json.JsonColumnWriteVanilla.writePojoMediaItem        thrpt  100   952253.890 ± 10818.610  ops/s
 
-Write - Untyped / 3.0.0-SNAP / home / xx-Oct-2017 / 1.8.0_152
+Write - Untyped / 3.0.0-SNAP / home / 28-Oct-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 10 -t 1
-c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt   50  966892.949 ±  8414.108  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt   50  846588.561 ±  5823.129  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt   50  731732.929 ±  9937.330  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt   50  726641.222 ± 13552.039  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt   50  305788.518 ±  2754.987  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt   50  299608.581 ±  1824.131  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt  100  962520.027 ± 7050.627  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt  100  854515.816 ± 4584.391  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writeUntypedMediaItem    thrpt  100  731882.097 ± 5688.633  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt  100  740507.692 ± 4895.099  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writeUntypedMediaItem           thrpt  100  307876.156 ± 1715.407  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeUntypedMediaItem  thrpt  100  300393.111 ± 1299.033  ops/s
 
-Write - Node / 3.0.0-SNAP / home / xx-Oct-2017 / 1.8.0_152
+Write - Node / 3.0.0-SNAP / home / 28-Oct-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 10 -t 1
-c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem            thrpt   50  1080863.086 ±  9617.119  ops/s
-c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem          thrpt   50   907454.920 ± 11654.259  ops/s
-c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem            thrpt   50   803716.259 ±  5792.646  ops/s
-c.f.j.p.ion.IonStdWriteVanilla.writeNodeMediaItem              thrpt   50   307749.529 ±  3283.258  ops/s
-c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem     thrpt   50   319169.663 ±  1572.642  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem         thrpt  100  1083310.763 ± 5224.501  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt  100   905709.436 ± 7073.131  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt  100   803084.301 ± 3161.354  ops/s
+c.f.j.p.ion.IonStdWriteVanilla.writeNodeMediaItem           thrpt  100   306500.719 ± 1802.187  ops/s
+c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem  thrpt  100   321684.494 ± 1080.084  ops/s
