@@ -9,7 +9,7 @@ public enum Size {
         if (str == null) return null;
         if ("SMALL".equals(str)) return SMALL;
         if ("LARGE".equals(str)) return LARGE;
-        String desc = (str == null) ? "NULL" : String.format("'%s'", str);
+        String desc = String.format("'%s'", str);
         throw new IllegalArgumentException("No Size value of "+desc);
     }
 }
