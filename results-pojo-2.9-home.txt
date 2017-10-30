@@ -100,7 +100,6 @@ c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem         thrpt  100    44
 
 Write - Vanilla / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanil.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
 c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem   thrpt  100  776207.129 ± 7248.212  ops/s
 c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem         thrpt  100  726896.580 ± 7909.666  ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem       thrpt  100  718551.060 ± 5781.159  ops/s
@@ -115,9 +114,20 @@ c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem  thrpt  100  247350.2
 c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem         thrpt  100  192189.006 ± 1428.420  ops/s
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem         thrpt  100   44431.026 ±  167.180  ops/s
 
+Write - Column-AB / 2.9.2 / home / 29-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1 
+c.f.j.p.cbor.CBORColumnWriteAfterburner.writePojoMediaItem    thrpt   50  1421690.742 ± 20085.534  ops/s
+c.f.j.p.smile.SmileColumnWriteAfterburner.writePojoMediaItem  thrpt   50  1587721.282 ± 21779.029  ops/s
+c.f.j.p.json.JsonColumnWriteAfterburner.writePojoMediaItem    thrpt   50  1091848.784 ± 17513.568  ops/s
+
+Write - Column-Vanilla / 2.9.2 / home / 29-Oct-2017 / 1.8.0_152
+java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnWriteVan.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1 
+c.f.j.p.cbor.CBORColumnWriteVanilla.writePojoMediaItem    thrpt   50  1100418.748 ± 38231.152  ops/s
+c.f.j.p.smile.SmileColumnWriteVanilla.writePojoMediaItem  thrpt   50   866407.146 ±  8794.144  ops/s
+c.f.j.p.json.JsonColumnWriteVanilla.writePojoMediaItem    thrpt   50   846583.769 ± 11351.245  ops/s
+
 Write - Untyped / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
 c.f.j.p.cbor.CBORStdWriteVanilla.writeUntypedMediaItem         thrpt  100  947780.425 ± 5464.101  ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writeUntypedMediaItem       thrpt  100  827950.644 ± 4316.363  ops/s
 c.f.j.p.json.JsonStdWriteVanilla.writeUntypedMediaItem         thrpt  100  743788.893 ± 5046.760  ops/s
@@ -128,7 +138,6 @@ c.f.j.p.bson.BSONStdWriteVanilla.writeUntypedMediaItem         thrpt  100  21501
 
 Write - Node / 2.9.0 / home / 30-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
 c.f.j.p.cbor.CBORStdWriteVanilla.writeNodeMediaItem         thrpt  100  1067824.464 ± 6349.644  ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt  100   907559.894 ± 8955.426  ops/s
 c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt  100   806293.628 ± 4913.396  ops/s
