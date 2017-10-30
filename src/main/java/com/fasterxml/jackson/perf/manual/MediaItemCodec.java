@@ -78,12 +78,13 @@ public class MediaItemCodec
          
     public void serialize(JsonGenerator generator, MediaItem item) throws IOException
     {
-        generator.writeStartObject();
+        generator.writeStartObject(item);
         generator.writeFieldName(FIELD_CONTENT);
         writeContent(generator, item.getContent());
         generator.writeFieldName(FIELD_IMAGES);
-        generator.writeStartArray();
-        for (Image i : item.getImages()) {
+        List<Image> items = item.getImages();
+        generator.writeStartArray(items, items.size());
+        for (Image i : items) {
             writeImage(generator, i);
         }
         generator.writeEndArray();
@@ -92,7 +93,7 @@ public class MediaItemCodec
 
     private void writeContent(JsonGenerator generator, MediaContent media) throws IOException
     {
-        generator.writeStartObject();
+        generator.writeStartObject(media);
         generator.writeFieldName(FIELD_PLAYER);
         generator.writeString(media.getPlayer().name());
         generator.writeFieldName(FIELD_URI);
@@ -132,7 +133,7 @@ public class MediaItemCodec
 
     private void writeImage(JsonGenerator generator, Image image) throws IOException
     {
-        generator.writeStartObject();
+        generator.writeStartObject(image);
         generator.writeFieldName(FIELD_URI);
         generator.writeString(image.getUri());
         String title = image.getTitle();
