@@ -2,12 +2,10 @@ Version: 2.9
 
 Read - Afterburner / 2.9.0 / home / 31-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
-Benchmark                                                      Mode  Cnt       Score      Error  Units
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt  100  611193.628 ± 7047.010  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt  100  659454.397 ± 5143.692  ops/s
 c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt  100  599116.287 ± 4867.355  ops/s
 c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt  100  684694.537 ± 4924.227  ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt  100  659454.397 ± 5143.692  ops/s
-c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt  100  611193.628 ± 7047.010  ops/s
 c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt  100  502278.406 ± 3838.110  ops/s
 c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt  100  346975.275 ± 2967.505  ops/s
 c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem   thrpt  100  275883.979 ± 4333.257  ops/s
@@ -19,11 +17,10 @@ c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt  100   28051
 
 Read - Vanilla / 2.9.0 / home / 31-Jul-2017 / 1.8.0_152
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMediaItem.*" -wi 4 -i 5 -f 20 -t 1
-
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt  100  425726.695 ±  5764.836  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt  100  431577.768 ± 10396.412  ops/s
 c.f.j.p.protob.ProtobufStdReadVanilla.readPojoMediaItem   thrpt  100  411313.900 ±  3675.059  ops/s
 c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem       thrpt  100  475917.875 ±  6294.808  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt  100  431577.768 ± 10396.412  ops/s
-c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt  100  425726.695 ±  5764.836  ops/s
 c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem    thrpt  100  395262.045 ±  3552.943  ops/s
 c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem         thrpt  100  362123.056 ±  2830.877  ops/s
 c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem           thrpt  100  279807.799 ±  1700.659  ops/s
