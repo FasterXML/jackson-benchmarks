@@ -171,8 +171,7 @@ public class MediaItemCodec
             }
         }
         // and fallback if order was changed
-        for (; parser.currentToken() == JsonToken.FIELD_NAME; parser.nextToken()) {
-            String field = parser.getCurrentName();
+        for (String field = parser.currentName(); field != null; field = parser.nextFieldName()) {
             Integer I = fieldToIndex.get(field);
             if (I != null) {
                 switch (I) {
@@ -249,8 +248,7 @@ public class MediaItemCodec
         
         // and if something reorder or missing, general loop:
 
-        for (; parser.currentToken() == JsonToken.FIELD_NAME; parser.nextToken()) {
-            String field = parser.getCurrentName();
+        for (String field = parser.currentName(); field != null; field = parser.nextFieldName()) {
             Integer I = fieldToIndex.get(field);
             if (I != null) {
                 switch (I) {
@@ -365,11 +363,10 @@ public class MediaItemCodec
             }
         }
 
-        for (; parser.currentToken() == JsonToken.FIELD_NAME; parser.nextToken()) {
-            String field = parser.getCurrentName();
+        for (String name = parser.currentName(); name != null; name = parser.nextFieldName()) {
             // read value token (or START_ARRAY)
             parser.nextToken();
-            Integer I = fieldToIndex.get(field);
+            Integer I = fieldToIndex.get(name);
             if (I != null) {
                 switch (I) {
                 case FIELD_IX_URI:
@@ -391,7 +388,7 @@ public class MediaItemCodec
                     continue;
                 }
             }
-            throw new IllegalStateException("Unexpected field '"+field+"'");
+            throw new IllegalStateException("Unexpected field '"+name+"'");
         }
         
         if (image.getUri() == null) throw new IllegalStateException("Missing field: " + FIELD_URI);
@@ -416,7 +413,7 @@ public class MediaItemCodec
         JsonToken curr = parser.currentToken();
         String msg = "Expected token "+expToken+"; got "+curr;
         if (curr == JsonToken.FIELD_NAME) {
-            msg += " (current field name '"+parser.getCurrentName()+"')";
+            msg += " (current field name '"+parser.currentName()+"')";
         }
         msg += ", location: "+parser.getTokenLocation();
         throw new IllegalStateException(msg);

@@ -1,6 +1,12 @@
 Version: 3.0.0-SNAPSHOT
 
-EXPERIMENTAL:
+EXPERIMENTAL: FieldNameMatcher (20-Nov-2017)
+
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt   25  568431.723 ± 15453.157  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt   25  523398.441 ± 12386.701  ops/s
+c.f.j.p.protob.ProtobufStdReadVanilla.readPojoMediaItem   thrpt   25  578489.647 ± 14985.529  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem       thrpt   25  599058.610 ±  9436.375  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem         thrpt   25  413404.859 ±  6744.487  ops/s
 
 Read - Afterburner / 3.0.0-SNAP / work / 20-Nov-2017 / 1.8.0_112
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1
