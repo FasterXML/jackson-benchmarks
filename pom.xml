@@ -16,7 +16,7 @@
 
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.jackson.bson>2.7.0</version.jackson.bson>
+        <version.jackson.bson>2.8.0</version.jackson.bson>
         <version.jmh>1.19</version.jmh>
     </properties>
 
