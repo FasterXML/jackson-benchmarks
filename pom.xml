@@ -22,7 +22,7 @@
         <version.jackson.base>${version.jackson.core}</version.jackson.base>
         <version.jackson.afterburner>${version.jackson.core}</version.jackson.afterburner>
         <version.jackson.other>${version.jackson.core}</version.jackson.other>
-        <version.jackson.bson>2.7.0</version.jackson.bson>
+        <version.jackson.bson>2.8.0</version.jackson.bson>
         <version.jmh>1.9.3</version.jmh>
     </properties>
 
