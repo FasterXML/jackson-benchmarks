@@ -4,7 +4,6 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.dataformat.avro.*;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -13,10 +12,8 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class AvroStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final AvroMapper MAPPER = new AvroMapper();
-    static {
-        MAPPER.registerModule(new AfterburnerModule());
-    }
+    private static final AvroMapper MAPPER = (AvroMapper) _withAfterburner(AvroMapper.builder())
+            .build();
 
     private final static AvroSchema _mediaItemSchema;
     static {

@@ -16,6 +16,6 @@ public class SmileStdWriteVanilla
             .build();
 
     public SmileStdWriteVanilla() {
-        super(SMILE_MAPPER);
+        super(MAPPER);
     }
 }

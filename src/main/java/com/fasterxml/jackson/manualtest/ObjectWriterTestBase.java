@@ -1,8 +1,11 @@
 package com.fasterxml.jackson.manualtest;
 
+import com.fasterxml.jackson.core.TokenStreamFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.cfg.MapperBuilder;
+import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
 abstract class ObjectWriterTestBase<T1,T2>
@@ -10,7 +13,16 @@ abstract class ObjectWriterTestBase<T1,T2>
     protected int hash;
 
     protected abstract int targetSizeMegs();
-    
+
+    protected static ObjectMapper _mapper(TokenStreamFactory f, boolean useAfterburner)
+    {
+        MapperBuilder<?,?> b = ObjectMapper.builder(f);
+        if (useAfterburner) {
+            b = b.addModule(new AfterburnerModule());
+        }
+        return b.build();
+    }
+
     protected void test(ObjectMapper mapper,
             String desc1, T1 inputValue1, Class<? extends T1> inputClass1,
             String desc2, T2 inputValue2, Class<? extends T2> inputClass2)

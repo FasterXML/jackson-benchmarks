@@ -1,8 +1,9 @@
 package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
@@ -15,18 +16,17 @@ public class MediaItemWriteSmile
     public static void main(String[] args) throws Exception
     {
 //    	final boolean USE_AFTERBURNER = true;
-    	final boolean USE_AFTERBURNER = false;
+        final boolean USE_AFTERBURNER = false;
 
-    	if (args.length != 0) {
+        if (args.length != 0) {
             System.err.println("Usage: java ...");
             System.exit(1);
         }
         String desc = "Smile";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = new ObjectMapper(new SmileFactory());
+        ObjectMapper m = _mapper(new SmileFactory(), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
-        	m.registerModule(new AfterburnerModule());
-        	desc += "+Afterburner";
+            desc += "+Afterburner";
         }
         new MediaItemWriteSmile().test(m,
         		desc+"#1", input, MediaItem.class,

@@ -2,9 +2,10 @@ package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+
 import com.fasterxml.jackson.dataformat.protobuf.ProtobufFactory;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.protob.ProtobufHelper;
@@ -28,9 +29,8 @@ public class MediaItemWriteProtobuf
         }
         String desc = "Protobuf";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = new ObjectMapper(new ProtobufFactory());
+        ObjectMapper m = _mapper(new ProtobufFactory(), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
-            m.registerModule(new AfterburnerModule());
             desc += "+Afterburner";
         }
         try {

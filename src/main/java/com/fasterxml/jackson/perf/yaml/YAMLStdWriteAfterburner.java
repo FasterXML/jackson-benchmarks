@@ -13,6 +13,6 @@ public class YAMLStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
     public YAMLStdWriteAfterburner() {
-        super(new YAMLMapper().registerModule(new AfterburnerModule()));
+        super(YAMLMapper.builder().addModule(new AfterburnerModule()).build());
     }
 }

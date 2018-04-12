@@ -15,8 +15,8 @@ public class YAMLStdReadAfterburner
 // could be full, but let's avoid since extra results not very useful
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new YAMLMapper()
-        .registerModule(new AfterburnerModule());
+    private static final ObjectMapper MAPPER = YAMLMapper.builder()
+            .addModule(new AfterburnerModule()).build();
 
     public YAMLStdReadAfterburner() {
         super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);

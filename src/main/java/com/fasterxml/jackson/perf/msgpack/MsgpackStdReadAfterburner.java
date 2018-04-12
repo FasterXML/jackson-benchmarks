@@ -19,8 +19,13 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class MsgpackStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper(new MessagePackFactory())
-        .registerModule(new AfterburnerModule());
+    // 11-Apr-2018, tatu: won't work until factory converted to 3.x
+    /*
+    private static final ObjectMapper MAPPER = ObjectMapper.builder(new MessagePackFactory())
+            .addModule(new AfterburnerModule())
+            .build();
+            */
+    private static final ObjectMapper MAPPER = new ObjectMapper(new MessagePackFactory());
 
     public MsgpackStdReadAfterburner() {
         super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);

@@ -2,7 +2,6 @@ package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 
 public class MediaItemReadSmile extends ManualMediaItemReadBase
 {
@@ -14,11 +13,9 @@ public class MediaItemReadSmile extends ManualMediaItemReadBase
 
 	public static void main(String[] args) throws Exception
 	{
-	    SmileFactory f = new SmileFactory();
 	    String desc = "Smile";
-	    ObjectMapper m = new ObjectMapper(f);
+	    ObjectMapper m = _mapper(new SmileFactory(), USE_AFTERBURNER);
 	    if (USE_AFTERBURNER) {
-	        m.registerModule(new AfterburnerModule());
 	        desc += "+Afterburner";
 	    }
 	    // true -> always use bytes

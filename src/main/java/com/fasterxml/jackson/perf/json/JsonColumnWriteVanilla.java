@@ -11,12 +11,11 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 @State(Scope.Thread)
 public class JsonColumnWriteVanilla extends WritePerfBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper();
-    static {
-        MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-    }
+    private static final ObjectMapper MAPPER = ObjectMapper.builder()
+            .annotationIntrospector(new AsArrayIntrospector())
+            .build();
 
-	public JsonColumnWriteVanilla() {
-		super(MAPPER);
-	}
+    public JsonColumnWriteVanilla() {
+        super(MAPPER);
+    }
 }

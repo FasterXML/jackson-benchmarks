@@ -2,7 +2,6 @@ package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.core.json.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 
 public class MediaItemReadJson extends ManualMediaItemReadBase
 {
@@ -15,16 +14,10 @@ public class MediaItemReadJson extends ManualMediaItemReadBase
         final boolean USE_BYTES = true;
         final boolean USE_AFTERBURNER = true;
 
-        JsonFactory f = new JsonFactory();
         String desc = "JSON";
-        ObjectMapper m;
+        ObjectMapper m = _mapper(new JsonFactory(), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
-            m = ObjectMapper.builder(f)
-                    .addModule(new AfterburnerModule())
-                    .build();
             desc += "+Afterburner";
-        } else {
-            m = new ObjectMapper(f);
         }
         if (USE_BYTES) {
             desc += "(bytes)";

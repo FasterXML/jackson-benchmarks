@@ -25,12 +25,12 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class JsonStdReadAsync
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper(new JsonFactory());
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
+    private final static InputConverter CONV = InputConverter.stdConverter(MAPPER);
 
     public JsonStdReadAsync() {
-        super(MediaItem.class, SMILES, MAPPER);
+        super(MediaItem.class, CONV, MAPPER);
     }
 
     @Override

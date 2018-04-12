@@ -14,9 +14,15 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class MsgpackStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
+    // 11-Apr-2018, tatu: won't work until factory converted to 3.x
+    /*
+    private static final ObjectMapper MAPPER = ObjectMapper.builder(new MessagePackFactory())
+            .addModule(new AfterburnerModule())
+            .build();
+            */
+    private static final ObjectMapper MAPPER = new ObjectMapper(new MessagePackFactory());
+
     public MsgpackStdWriteAfterburner() {
-        super(new ObjectMapper(new MessagePackFactory())
-            .registerModule(new AfterburnerModule())
-        );
+        super(MAPPER);
     }
 }

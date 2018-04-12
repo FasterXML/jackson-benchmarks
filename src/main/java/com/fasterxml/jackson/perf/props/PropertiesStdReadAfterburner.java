@@ -13,10 +13,9 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class PropertiesStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final JavaPropsMapper MAPPER = new JavaPropsMapper();
-    static {
-        MAPPER.registerModule(new AfterburnerModule());
-    }
+    private static final JavaPropsMapper MAPPER = JavaPropsMapper.builder()
+            .addModule(new AfterburnerModule())
+            .build();
 
     private final static InputConverter PROPS = InputConverter.stdConverter(MAPPER);
 

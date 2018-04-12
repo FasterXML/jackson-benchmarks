@@ -17,10 +17,9 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 public class JsonColumnReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper();
-    static {
-        MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-    }
+    private static final ObjectMapper MAPPER = ObjectMapper.builder()
+            .annotationIntrospector(new AsArrayIntrospector())
+            .build();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
     private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);

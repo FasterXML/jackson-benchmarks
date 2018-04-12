@@ -4,6 +4,7 @@ import java.io.*;
 
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
+
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
@@ -20,7 +21,7 @@ public class ManualMediaItemReadBase extends ObjectReaderTestBase
         _useBytes = useBytes;
         _descPrefix = desc;
     }
-	
+
     @Override
     protected int targetSizeMegs() { return 15; }
     

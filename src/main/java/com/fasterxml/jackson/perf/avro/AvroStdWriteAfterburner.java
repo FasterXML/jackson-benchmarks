@@ -13,10 +13,8 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class AvroStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final AvroMapper MAPPER = new AvroMapper();
-    static {
-        MAPPER.registerModule(new AfterburnerModule());
-    }
+    private static final AvroMapper MAPPER = (AvroMapper) _withAfterburner(AvroMapper.builder())
+            .build();
 
     private final static AvroSchema _mediaItemSchema;
     static {

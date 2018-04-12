@@ -12,12 +12,11 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class PropertiesStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final JavaPropsMapper PROPS_MAPPER = new JavaPropsMapper();
-    static {
-        PROPS_MAPPER.registerModule(new AfterburnerModule());
-    }
+    private static final JavaPropsMapper MAPPER = JavaPropsMapper.builder()
+            .addModule(new AfterburnerModule())
+            .build();
 
     public PropertiesStdWriteAfterburner() {
-        super(PROPS_MAPPER);
+        super(MAPPER);
     }
 }
