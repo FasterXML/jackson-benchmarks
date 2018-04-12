@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.EnumMap;
 
 import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.core.json.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.perf.model.MediaItems;
 

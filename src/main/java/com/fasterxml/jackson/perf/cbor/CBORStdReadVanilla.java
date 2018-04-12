@@ -13,13 +13,9 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class CBORStdReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
-    private final static CBORFactory _cf = new CBORFactory();
-    
-    private static final ObjectMapper MAPPER = new ObjectMapper(_cf);
-
-    private final static InputConverter CBORS = InputConverter.stdConverter(MAPPER);
+    private static final ObjectMapper MAPPER = new ObjectMapper( new CBORFactory());
 
     public CBORStdReadVanilla() {
-        super(MediaItem.class, CBORS, MAPPER);
+        super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);
     }
 }

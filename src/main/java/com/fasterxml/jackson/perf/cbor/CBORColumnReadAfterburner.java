@@ -18,9 +18,7 @@ public class CBORColumnReadAfterburner
             .annotationIntrospector(new AsArrayIntrospector())
             .build();
 
-    private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
-
     public CBORColumnReadAfterburner() {
-        super(MediaItem.class, SMILES, MAPPER);
+        super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);
     }
 }

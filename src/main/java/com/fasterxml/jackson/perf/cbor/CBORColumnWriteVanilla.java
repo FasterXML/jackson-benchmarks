@@ -13,13 +13,9 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 public class CBORColumnWriteVanilla
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER;
-    static {
-        CBORFactory f = new CBORFactory();
-    	    // configure differently?
-    	    MAPPER = new ObjectMapper(f);
-         MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-    }
+    private static final ObjectMapper MAPPER = _withAfterburner(ObjectMapper.builder(new CBORFactory()))
+            .annotationIntrospector(new AsArrayIntrospector())
+            .build();
 
     public CBORColumnWriteVanilla() {
         super(MAPPER);

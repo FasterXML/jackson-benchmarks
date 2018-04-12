@@ -14,10 +14,9 @@ import com.fasterxml.jackson.perf.model.MediaItems;
 public class CsvStdWriteAfterburner
     extends WritePerfBasicJackson<FlattenedMediaItem>
 {
-    private static final CsvMapper MAPPER = new CsvMapper();
-    static {
-        MAPPER.registerModule(new AfterburnerModule());
-    }
+    private static final CsvMapper MAPPER = CsvMapper.builder()
+            .addModule(new AfterburnerModule())
+            .build();
 
     private final static CsvSchema _mediaItemSchema;
     static {

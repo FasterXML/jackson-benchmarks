@@ -14,16 +14,10 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 public class CBORColumnReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private final static CBORFactory _cf = new CBORFactory();
-    
-    private static final ObjectMapper MAPPER = new ObjectMapper(_cf);
-    static {
-        MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-    }
-
-    private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);
+    private static final ObjectMapper MAPPER = _withAfterburner(ObjectMapper.builder(new CBORFactory()))
+            .build();
 
     public CBORColumnReadVanilla() {
-        super(MediaItem.class, SMILES, MAPPER);
+        super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);
     }
 }
