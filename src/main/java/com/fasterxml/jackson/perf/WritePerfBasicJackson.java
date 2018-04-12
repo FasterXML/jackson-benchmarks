@@ -9,6 +9,8 @@ import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.cfg.MapperBuilder;
+import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
@@ -62,5 +64,9 @@ public abstract class WritePerfBasicJackson<T>
         NopOutputStream out = new NopOutputStream();
         w.writeValue(out, value);
         return out.size();
+    }
+
+    protected static MapperBuilder<?,?> _withAfterburner(MapperBuilder<?,?> b) {
+        return b.addModule(new AfterburnerModule());
     }
 }

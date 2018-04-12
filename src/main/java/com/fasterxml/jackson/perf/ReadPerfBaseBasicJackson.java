@@ -10,6 +10,8 @@ import org.openjdk.jmh.infra.Blackhole;
 import com.fasterxml.jackson.core.FormatSchema;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.databind.cfg.MapperBuilder;
+import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 
 public abstract class ReadPerfBaseBasicJackson<T>
@@ -56,5 +58,9 @@ public abstract class ReadPerfBaseBasicJackson<T>
 
     protected Object read(byte[] input, ObjectReader reader) throws IOException {
         return reader.readValue(input);
+    }
+
+    protected static MapperBuilder<?,?> _withAfterburner(MapperBuilder<?,?> b) {
+        return b.addModule(new AfterburnerModule());
     }
 }

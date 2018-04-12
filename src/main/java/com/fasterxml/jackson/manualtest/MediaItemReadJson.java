@@ -1,31 +1,35 @@
 package com.fasterxml.jackson.manualtest;
 
-import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.json.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 
 public class MediaItemReadJson extends ManualMediaItemReadBase
 {
-	public MediaItemReadJson(ObjectMapper m, boolean useBytes, String desc) {
-		super(m, useBytes, desc);
-	}
+    public MediaItemReadJson(ObjectMapper m, boolean useBytes, String desc) {
+        super(m, useBytes, desc);
+    }
 
-	public static void main(String[] args) throws Exception
+    public static void main(String[] args) throws Exception
     {
-    	final boolean USE_BYTES = true;
-    	final boolean USE_AFTERBURNER = true;
+        final boolean USE_BYTES = true;
+        final boolean USE_AFTERBURNER = true;
 
-    	JsonFactory f = new JsonFactory();
+        JsonFactory f = new JsonFactory();
         String desc = "JSON";
-        ObjectMapper m = new ObjectMapper(f);
+        ObjectMapper m;
         if (USE_AFTERBURNER) {
-        	m.registerModule(new AfterburnerModule());
-        	desc += "+Afterburner";
+            m = ObjectMapper.builder(f)
+                    .addModule(new AfterburnerModule())
+                    .build();
+            desc += "+Afterburner";
+        } else {
+            m = new ObjectMapper(f);
         }
         if (USE_BYTES) {
-        	desc += "(bytes)";
+            desc += "(bytes)";
         } else {
-        	desc += "(String)";
+            desc += "(String)";
         }
         new MediaItemReadJson(m, USE_BYTES, desc).test();
     }

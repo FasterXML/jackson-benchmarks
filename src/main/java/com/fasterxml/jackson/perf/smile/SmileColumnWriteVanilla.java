@@ -5,7 +5,6 @@ import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
@@ -14,13 +13,9 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 public class SmileColumnWriteVanilla
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER;
-    static {
-        SmileFactory f = new SmileFactory();
-        // configure differently?
-        MAPPER = new ObjectMapper(f);
-        MAPPER.setAnnotationIntrospector(new AsArrayIntrospector());
-    }
+    private static final ObjectMapper MAPPER = ObjectMapper.builder(new SmileFactory())
+            .annotationIntrospector(new AsArrayIntrospector())
+            .build();
 
     public SmileColumnWriteVanilla() {
         super(MAPPER);
