@@ -62,7 +62,6 @@ public class InputConverter
         	throw new RuntimeException(e);
         }
     }
-
     public byte[] bytes(InputData type) {
         return _data.get(type);
     }
