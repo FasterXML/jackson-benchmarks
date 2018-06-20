@@ -113,7 +113,12 @@
         <artifactId>bson4jackson</artifactId>
         <version>${version.jackson.bson}</version>
       </dependency>
-
+      <dependency>
+	<groupId>org.mongodb</groupId>
+	<artifactId>mongo-java-driver</artifactId>
+	<version>3.6.3</version>
+      </dependency>
+      
       <dependency>
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-afterburner</artifactId>
