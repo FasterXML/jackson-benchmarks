@@ -10,8 +10,7 @@ import com.fasterxml.jackson.core.async.ByteArrayFeeder;
 import com.fasterxml.jackson.core.JsonParser;
 
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-
+import com.fasterxml.jackson.dataformat.smile.databind.SmileMapper;
 import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -26,7 +25,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class SmileStdReadAsync
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = ObjectMapper.builder(new SmileFactory())
+    private static final ObjectMapper MAPPER = SmileMapper.builder()
             .build();
 
     private final static InputConverter SMILES = InputConverter.stdConverter(MAPPER);

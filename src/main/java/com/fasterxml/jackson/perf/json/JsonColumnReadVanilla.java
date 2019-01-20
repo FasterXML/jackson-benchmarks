@@ -7,6 +7,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -17,7 +18,7 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 public class JsonColumnReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = ObjectMapper.builder()
+    private static final ObjectMapper MAPPER = JsonMapper.builder()
             .annotationIntrospector(new AsArrayIntrospector())
             .build();
 
