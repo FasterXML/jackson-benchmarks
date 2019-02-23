@@ -17,6 +17,7 @@ public class JacksonJrStdReadVanilla
     implements ReadPerfTestBasic
 {
     static final JSON json = JSON.std
+            .with(JSON.Feature.FAIL_ON_UNKNOWN_BEAN_PROPERTY)
             // 06-Jul-2016, tatu: important for apples-to-apples comparison:
             .without(JSON.Feature.USE_DEFERRED_MAPS);
 
