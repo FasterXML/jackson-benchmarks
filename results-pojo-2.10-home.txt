@@ -21,6 +21,20 @@ c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem           thrpt   15   79110.582
 c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt   15   80491.982 ±  1649.118  ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt   15   25606.113 ±  1577.694  ops/s
 
+Read - wasteful / 2.10.0-SNAPSHOT / home / 15-Jun-2019 / 1.8.0_162
+
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Pojo.*" -wi 4 -i 5 -f 20 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Node.*" -wi 4 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
+
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem   thrpt  100   6439.740 ±  462.409  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodedMediaItem  thrpt   25 183342.095 ± 3139.681  ops/s
+
+Read - other / 2.10.0-SNAPSHOT / home / 15-Jun-2019 / 1.8.0_162
+//java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
+//java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
+//java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -i 5 -f 20 -t 1
+
 ------ WRITE ------
 
 Write - Afterburner / 2.10.0-SNAPSHOT / home / 09-Jun-2019 / 1.8.0_162
