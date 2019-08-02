@@ -2,6 +2,7 @@ package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
+import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper;
 
 public class MediaItemReadCBOR extends ManualMediaItemReadBase
 {
@@ -14,7 +15,7 @@ public class MediaItemReadCBOR extends ManualMediaItemReadBase
     public static void main(String[] args) throws Exception
     {
         String desc = "CBOR";
-        ObjectMapper m = _mapper(new CBORFactory(), USE_AFTERBURNER);
+        ObjectMapper m = _mapper(CBORMapper.builder(new CBORFactory()), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
             desc += "+Afterburner";
         }

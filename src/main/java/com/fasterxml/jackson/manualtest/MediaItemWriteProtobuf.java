@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 import com.fasterxml.jackson.dataformat.protobuf.ProtobufFactory;
+import com.fasterxml.jackson.dataformat.protobuf.ProtobufMapper;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
 
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -29,7 +30,7 @@ public class MediaItemWriteProtobuf
         }
         String desc = "Protobuf";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = _mapper(new ProtobufFactory(), USE_AFTERBURNER);
+        ObjectMapper m = _mapper(ProtobufMapper.builder(new ProtobufFactory()), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
             desc += "+Afterburner";
         }

@@ -2,7 +2,6 @@ package com.fasterxml.jackson.manualtest;
 
 import java.io.*;
 
-import com.fasterxml.jackson.core.TokenStreamFactory;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.cfg.MapperBuilder;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
@@ -21,13 +20,12 @@ abstract class ObjectReaderTestBase
 
     protected abstract int targetSizeMegs();
 
-    protected static ObjectMapper _mapper(TokenStreamFactory f, boolean useAfterburner)
+    protected static ObjectMapper _mapper(MapperBuilder<?,?> builder, boolean useAfterburner)
     {
-        MapperBuilder<?,?> b = ObjectMapper.builder(f);
         if (useAfterburner) {
-            b = b.addModule(new AfterburnerModule());
+            builder = builder.addModule(new AfterburnerModule());
         }
-        return b.build();
+        return builder.build();
     }
     
     protected void testFromBytes(ObjectMapper mapper1, String desc1,

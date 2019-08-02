@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.manualtest;
 
-import com.fasterxml.jackson.core.TokenStreamFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -14,9 +13,8 @@ abstract class ObjectWriterTestBase<T1,T2>
 
     protected abstract int targetSizeMegs();
 
-    protected static ObjectMapper _mapper(TokenStreamFactory f, boolean useAfterburner)
+    protected static ObjectMapper _mapper(MapperBuilder<?,?> b, boolean useAfterburner)
     {
-        MapperBuilder<?,?> b = ObjectMapper.builder(f);
         if (useAfterburner) {
             b = b.addModule(new AfterburnerModule());
         }

@@ -2,8 +2,7 @@ package com.fasterxml.jackson.manualtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
-import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
@@ -24,7 +23,7 @@ public class MediaItemWriteCBOR
         }
         String desc = "CBOR";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = _mapper(new CBORFactory(), USE_AFTERBURNER);
+        ObjectMapper m = _mapper(CBORMapper.builder(new CBORFactory()), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
             desc += "+Afterburner";
         }

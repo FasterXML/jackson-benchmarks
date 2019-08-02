@@ -3,7 +3,7 @@ package com.fasterxml.jackson.manualtest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-
+import com.fasterxml.jackson.dataformat.smile.databind.SmileMapper;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
@@ -24,7 +24,7 @@ public class MediaItemWriteSmile
         }
         String desc = "Smile";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = _mapper(new SmileFactory(), USE_AFTERBURNER);
+        ObjectMapper m = _mapper(SmileMapper.builder(new SmileFactory()), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
             desc += "+Afterburner";
         }

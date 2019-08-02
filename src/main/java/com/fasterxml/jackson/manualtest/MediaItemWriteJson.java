@@ -3,7 +3,7 @@ package com.fasterxml.jackson.manualtest;
 import com.fasterxml.jackson.core.json.JsonFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
@@ -24,7 +24,7 @@ public class MediaItemWriteJson
         }
         String desc = "JSON";
         MediaItem input = MediaItems.stdMediaItem();
-        ObjectMapper m = _mapper(new JsonFactory(), USE_AFTERBURNER);
+        ObjectMapper m = _mapper(JsonMapper.builder(new JsonFactory()), USE_AFTERBURNER);
         if (USE_AFTERBURNER) {
             desc += "+Afterburner";
         }
