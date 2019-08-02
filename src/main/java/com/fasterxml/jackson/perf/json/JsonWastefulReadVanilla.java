@@ -58,6 +58,8 @@ public class JsonWastefulReadVanilla
     }
 
     protected Object readUntyped(byte[] data) throws Exception {
-        return new ObjectMapper().readValue(data, Map.class);
+        // 16-Jun-2019, tatu: `Object` is bit faster, skips resolution of `Map` probably?
+//        return new ObjectMapper().readValue(data, Map.class);
+        return new ObjectMapper().readValue(data, Object.class);
     }
 }
