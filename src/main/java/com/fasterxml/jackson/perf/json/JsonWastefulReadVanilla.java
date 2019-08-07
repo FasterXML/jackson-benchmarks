@@ -9,8 +9,8 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -24,7 +24,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class JsonWastefulReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final ObjectMapper MAPPER = new JsonMapper();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
     private final static InputConverter JSON_CONV = InputConverter.stdConverter(MAPPER);
@@ -66,8 +66,7 @@ public class JsonWastefulReadVanilla
 
     @SuppressWarnings("deprecation")
     private final ObjectMapper mapper() {
-        JsonFactory f = new JsonFactory();
-        f.disable(JsonFactory.Feature.INTERN_FIELD_NAMES);
-        return new ObjectMapper(f);
+        // 3.x disables intern()ing by default so no need to change
+        return new JsonMapper();
     }
 }
