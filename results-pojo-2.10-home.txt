@@ -62,7 +62,7 @@ java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4
 
 c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem  thrpt   50    9569.404 ±  171.881  ops/s
 c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem  thrpt   50  183791.275 ± 2989.968  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt  25   21363.537 ± 360.579  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt 50   87017.605 ± 1250.356  ops/s
 
 Read - other / 2.10.0-SNAPSHOT / home / 15-Jun-2019 / 1.8.0_162
 //java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 10 -t 1
