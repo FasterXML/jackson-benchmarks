@@ -9,6 +9,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.infra.Blackhole;
 
+import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
@@ -50,16 +51,23 @@ public class JsonWastefulReadVanilla
     }
 
     protected Object read(byte[] data) throws Exception {
-        return new ObjectMapper().readValue(data, MediaItem.class);
+        return mapper().readValue(data, MediaItem.class);
     }
 
     protected JsonNode readTree(byte[] data) throws Exception {
-        return new ObjectMapper().readTree(data);
+        return mapper().readTree(data);
     }
 
     protected Object readUntyped(byte[] data) throws Exception {
         // 16-Jun-2019, tatu: `Object` is bit faster, skips resolution of `Map` probably?
 //        return new ObjectMapper().readValue(data, Map.class);
-        return new ObjectMapper().readValue(data, Object.class);
+        return mapper().readValue(data, Object.class);
+    }
+
+    @SuppressWarnings("deprecation")
+    private final ObjectMapper mapper() {
+        JsonFactory f = new JsonFactory();
+        f.disable(JsonFactory.Feature.INTERN_FIELD_NAMES);
+        return new ObjectMapper(f);
     }
 }
