@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.perf.json;
 
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -18,6 +17,9 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 /**
  * Specialized variant where the ObjectMapper is newly constructed each time.
  * Mainly used to given an idea of startup overhead, and allow profiling it.
+ *<p>
+ * Note: input as {@code String}, no intern()ing, to reduce that overhead
+ * (to allow verifying other optimizations)
  */
 @State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.SECONDS)
@@ -35,30 +37,30 @@ public class JsonWastefulReadVanilla
 
     @Override
     public void readPojoMediaItem(Blackhole bh) throws Exception {
-        bh.consume(read(MINIMAL_CONV.mediaItemAsBytes()));
+        bh.consume(read(MINIMAL_CONV.mediaItemAsString()));
     }
 
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void readNodeMediaItem(Blackhole bh) throws Exception {
-        bh.consume(readTree(JSON_CONV.mediaItemAsBytes()));
+        bh.consume(readTree(JSON_CONV.mediaItemAsString()));
     }
     
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void readUntypedMediaItem(Blackhole bh) throws Exception {
-        bh.consume(readUntyped(JSON_CONV.mediaItemAsBytes()));
+        bh.consume(readUntyped(JSON_CONV.mediaItemAsString()));
     }
 
-    protected Object read(byte[] data) throws Exception {
+    protected Object read(String data) throws Exception {
         return mapper().readValue(data, MediaItem.class);
     }
 
-    protected JsonNode readTree(byte[] data) throws Exception {
+    protected JsonNode readTree(String data) throws Exception {
         return mapper().readTree(data);
     }
 
-    protected Object readUntyped(byte[] data) throws Exception {
+    protected Object readUntyped(String data) throws Exception {
         // 16-Jun-2019, tatu: `Object` is bit faster, skips resolution of `Map` probably?
 //        return new ObjectMapper().readValue(data, Map.class);
         return mapper().readValue(data, Object.class);
