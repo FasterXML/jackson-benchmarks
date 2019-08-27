@@ -65,9 +65,15 @@ c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem  thrpt   50  212949.578 �
 c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt 50   98513.891 ± 1164.041  ops/s
 
 Read - other / 2.10.0-SNAPSHOT / home / 15-Jun-2019 / 1.8.0_162
-//java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 10 -t 1
-//java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 10 -t 1
-//java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -i 5 -f 10 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*SmileStdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+
+c.f.j.p.smile.SmileStdReadAsync.readPojoMediaItem     thrpt   15  435168.553 ± 13700.080  ops/s
+c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem       thrpt   15  348489.590 ± 8607.389  ops/s
+c.f.j.p.json.JsonStringReadVanilla.readPojoMediaItem  thrpt   15  310250.908 ± 11397.839  ops/s
+c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem   thrpt   15  213817.381 ± 5063.079  ops/s
 
 ------ WRITE ------
 
