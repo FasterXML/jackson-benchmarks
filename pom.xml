@@ -19,7 +19,7 @@
 
         <version.jmh>1.19</version.jmh>
 
-        <version.jackson.bson>2.8.0</version.jackson.bson>
+        <version.jackson.bson>2.9.2</version.jackson.bson>
         <version.jackson.msgpack>0.8.16</version.jackson.msgpack>
         <!-- ^^^ requires jackson 2.8 -->
 
