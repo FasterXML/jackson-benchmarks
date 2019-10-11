@@ -108,3 +108,13 @@ c.f.j.p.msgpack.MsgpackStdWriteVanilla.writePojoMediaItem       thrpt   50   234
 c.f.j.p.props.PropertiesStdWriteVanilla.writePojoMediaItem      thrpt   50   244112.104 ±  1883.181  ops/s
 c.f.j.p.bson.BSONStdWriteVanilla.writePojoMediaItem             thrpt   50   192901.259 ±  1499.713  ops/s
 c.f.j.p.yaml.YAMLStdWriteVanilla.writePojoMediaItem             thrpt   50    44061.071 ±   480.797  ops/s
+
+Write - wasteful / 2.10.0.pr2-SNAPSHOT / home / 07-Aug-2019 / 1.8.0_162
+
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Pojo.*" -wi 8 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Untyped.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Node.*" -wi 4 -i 5 -f 3 -t 1
+
+c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem    thrpt   15   22873.766 ± 1450.037  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem thrpt   15   28244.127 ± 519.403  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem    thrpt   15  481295.174 ± 27784.985  ops/s
