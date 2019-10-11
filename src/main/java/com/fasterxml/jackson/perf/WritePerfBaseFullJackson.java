@@ -17,7 +17,7 @@ public abstract class WritePerfBaseFullJackson<T>
     implements WritePerfTestFull
 {
     protected final ObjectMapper MAPPER;
-    
+
     protected final ObjectWriter UNTYPED_WRITER;
 
     protected final ObjectWriter NODE_WRITER;
@@ -25,7 +25,7 @@ public abstract class WritePerfBaseFullJackson<T>
     // Note on these two variables: looks like there is some (de?)optimization
     // that changes results if we use conversion operations too early.
     // To avoid that, we will lazily do conversions
-    
+
     protected final AtomicReference<JsonNode> nodeRef = new AtomicReference<JsonNode>();
 
     protected final AtomicReference<Object> untypedRef = new AtomicReference<Object>();
