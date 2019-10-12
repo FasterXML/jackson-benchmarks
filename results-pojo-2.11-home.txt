@@ -1,0 +1,46 @@
+Version: 2.11
+
+Read - Afterburner / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 3 -t Read
+
+Read - Vanilla / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMediaItem.*" -wi 4 -i 5 -f 3 -t 1
+
+Read - Untyped / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -i 5 -f 5 -t 1
+
+Read - Tree / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 4 -i 5 -f 3  -t 1
+
+Read - wasteful / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Node.*" -wi 4 -i 5 -f 5 -t 1
+
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem     thrpt   25    9655.330 ±  193.541  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem  thrpt   25  100040.892 ± 2358.843  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem     thrpt   25  215665.188 ± 2765.373  ops/s
+
+Read - other / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*SmileStdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -i 5 -f 3 -t 1
+
+------ WRITE ------
+
+Write - Afterburner / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 3 -t 1
+
+Write - Vanilla / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVan.*PojoMediaItem.*" -wi 4 -i 5 -f 3 -t 1
+
+Write - wasteful / 2.11.0-SNAPSHOT / home / --2019 / 1.8.0_162
+
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Node.*" -wi 4 -i 5 -f 5 -t 1
+
+c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem     thrpt   50   12541.093 ±  200.510  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem  thrpt   50   19637.169 ±  243.335  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem     thrpt   50  360805.253 ± 3133.962  ops/s
