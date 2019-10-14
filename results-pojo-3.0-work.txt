@@ -75,6 +75,15 @@ c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem         thrpt   50  467006.260
 c.f.j.p.ion.IonStdReadVanilla.readNodeMediaItem           thrpt   50   92888.090 ± 1247.805  ops/s
 c.f.j.p.props.PropertiesStdReadVanilla.readNodeMediaItem  thrpt   50  100543.170 ±  613.668  ops/s
 
+Read - wasteful / 3.0.0-SNAPSHOT / work / 14-Oct-2019 / 1.8.0_102
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Node.*" -wi 4 -i 5 -f 5 -t 1
+
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   25   16787.778 ± 180.560  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   25  124189.721 ± 871.395  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   25  310556.574 ± 2826.068  ops/s
+
 ------ WRITE ------
 
 Write - Afterburner / 3.0.0-SNAP / work / 30-Oct-2017 / 1.8.0_152
@@ -132,3 +141,11 @@ java -Xmx256m -jar target/microbenchmarks.jar ".*ColumnWriteVan.*PojoMediaItem.*
 c.f.j.p.smile.SmileColumnWriteVanilla.writePojoMediaItem  thrpt  100  1207884.499 ± 24984.434  ops/s
 c.f.j.p.cbor.CBORColumnWriteVanilla.writePojoMediaItem    thrpt  100  1168563.725 ± 32079.196  ops/s
 c.f.j.p.json.JsonColumnWriteVanilla.writePojoMediaItem    thrpt  100   918482.679 ± 11034.797  ops/s
+
+Write - wasteful / 3.0.0-SNAPSHOT / work / 14-Oct-2019 / 1.8.0_102
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Node.*" -wi 4 -i 5 -f 5 -t 1
+c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem    thrpt   25   21928.233 ±   349.003  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem thrpt   25   22430.824 ±   159.259  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem    thrpt   25  344026.157 ± 3417.801  ops/s
