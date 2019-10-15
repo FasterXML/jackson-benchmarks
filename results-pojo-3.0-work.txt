@@ -80,9 +80,9 @@ java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Pojo.*" -wi 8 -i
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Node.*" -wi 4 -i 5 -f 5 -t 1
 
-c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   25   16787.778 ± 180.560  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   25  124189.721 ± 871.395  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   25  310556.574 ± 2826.068  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   25  18359.495 ± 211.856  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   25 118808.003 ± 1783.607  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   25  296617.445 ± 2851.647  ops/s
 
 ------ WRITE ------
 
@@ -146,6 +146,6 @@ Write - wasteful / 3.0.0-SNAPSHOT / work / 14-Oct-2019 / 1.8.0_102
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Node.*" -wi 4 -i 5 -f 5 -t 1
-c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem    thrpt   25   21928.233 ±   349.003  ops/s
-c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem thrpt   25   22430.824 ±   159.259  ops/s
-c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem    thrpt   25  344026.157 ± 3417.801  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem    thrpt   25  22977.678 ± 330.917  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem thrpt   25 134905.463 ± 1721.341  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem    thrpt   25 351318.642 ± 3208.243  ops/s
