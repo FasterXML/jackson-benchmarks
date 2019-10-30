@@ -5,13 +5,13 @@ import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.dataformat.ion.IonFactory;
-import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
+import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
 public class IonStdReadVanilla
-    extends ReadPerfBaseFullJackson<MediaItem>
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private final static IonFactory _cf = new IonFactory();
     

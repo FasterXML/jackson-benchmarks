@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.*;
 import de.undercouch.bson4jackson.BsonFactory;
 import de.undercouch.bson4jackson.BsonModule;
 
-import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
+import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
 public class BSONStdReadVanilla
-    extends ReadPerfBaseFullJackson<MediaItem>
+    extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper BSON_MAPPER = new ObjectMapper(new BsonFactory())
         .registerModule(new BsonModule());
