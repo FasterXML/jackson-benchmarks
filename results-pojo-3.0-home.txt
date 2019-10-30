@@ -71,9 +71,9 @@ java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Pojo.*" -wi 8 -i
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4 -i 5 -f 10 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Node.*" -wi 4 -i 5 -f 10 -t 1
 
-c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   50   9351.298 ±  121.134  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   50  72819.801 ± 1092.167  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   50  234183.201 ± 2357.866  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   50    9351.298 ±  121.134  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   50   72819.801 ± 1092.167  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   25  238506.136 ± 2881.188  ops/s
 
 Read - other / 3.0.0-SNAP / home / 27-Oct-2019 / 1.8.0_162
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 10 -t 1
