@@ -6,7 +6,6 @@ import org.openjdk.jmh.annotations.Scope;
 import com.fasterxml.jackson.databind.*;
 
 import com.fasterxml.jackson.dataformat.ion.IonObjectMapper;
-
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 

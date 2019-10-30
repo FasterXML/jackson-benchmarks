@@ -13,8 +13,6 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
 public class IonStdReadVanilla
-// 29-Oct-2017, tatu: Let's limit to basic set; technically easy to extend by uncommenting:
-//    extends ReadPerfBaseFullJackson<MediaItem>
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = IonObjectMapper.builder().build();
