@@ -47,16 +47,16 @@ c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem       thrpt   25  713905.517
 c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem         thrpt   25  507496.272 ± 29239.648  ops/s
 c.f.j.p.props.PropertiesStdReadVanilla.readNodeMediaItem  thrpt   25  107843.278 ±  9471.693  ops/s
 
-Read - wasteful / 2.11.0-SNAPSHOT / work / --2019 / 1.8.0_102
+Read - wasteful / 2.11.0-SNAPSHOT / work / 31-Oct-2019 / 1.8.0_102
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*Node.*" -wi 4 -i 5 -f 5 -t 1
 
-c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   25   18996.471 ± 269.358  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   25  180119.667 ± 4696.288  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   25  297021.691 ± 5198.058  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   25  21198.073 ± 315.496  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   25  204401.649 ± 3245.685  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   25  324169.837 ± 4447.979  ops/s
 
-Read - other / 2.11.0-SNAPSHOT / work / --2019 / 1.8.0_102
+Read - other / 2.11.0-SNAPSHOT / work / 30-Oct-2019 / 1.8.0_102
 java -Xmx256m -jar target/microbenchmarks.jar ".*SmileStdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadAsync.*PojoMediaI.*" -wi 4 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -i 5 -f 5 -t 1
@@ -115,11 +115,11 @@ c.f.j.p.smile.SmileStdWriteVanilla.writeNodeMediaItem       thrpt   25  1339474.
 c.f.j.p.json.JsonStdWriteVanilla.writeNodeMediaItem         thrpt   25  1209223.076 ± 20085.395  ops/s
 c.f.j.p.props.PropertiesStdWriteVanilla.writeNodeMediaItem  thrpt   25   400944.192 ±  8633.466  ops/s
 
-Write - wasteful / 2.11.0-SNAPSHOT / work / 30-Oct-2019 / 1.8.0_102
+Write - wasteful / 2.11.0-SNAPSHOT / work / 31-Oct-2019 / 1.8.0_102
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Pojo.*" -wi 8 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Untyped.*" -wi 4 -i 5 -f 5 -t 1
 java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*Node.*" -wi 4 -i 5 -f 5 -t 1
 
-c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem    thrpt   25   26133.461 ±  377.270  ops/s
-c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem thrpt   25  231297.724 ± 2375.398  ops/s
-c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem    thrpt   50  618340.941 ± 6974.148  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writePojoMediaItem    thrpt   25   26513.982 ±  437.381  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeUntypedMediaItem thrpt   25  245597.700 ± 1683.130  ops/s
+c.f.j.p.json.JsonWastefulWriteVanilla.writeNodeMediaItem    thrpt   25  631432.850 ± 8814.213  ops/s
