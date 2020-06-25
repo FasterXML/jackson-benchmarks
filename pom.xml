@@ -19,11 +19,11 @@
 
         <version.jmh>1.19</version.jmh>
 
-        <version.jackson.bson>2.8.0</version.jackson.bson>
-        <version.jackson.msgpack>0.8.16</version.jackson.msgpack>
+        <version.jackson.bson>2.9.2</version.jackson.bson>
+        <version.jackson.msgpack>0.8.20</version.jackson.msgpack>
         <!-- ^^^ requires jackson 2.8 -->
 
-        <version.aalto>1.1.1</version.aalto>
+        <version.aalto>1.2.2</version.aalto>
         <version.mongo-java>3.6.3</version.mongo-java>
     </properties>
 
