@@ -9,7 +9,7 @@ c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt   50  652695
 c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt   50  476372.461 ± 4440.748  ops/s
 c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt   50  322425.592 ± 4130.778  ops/s
 c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem   thrpt   50  262742.363 ± 6000.152  ops/s
-c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt   50  176774.263 ±  1835.628  ops/s
+c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt   50  184620.269 ± 2469.420  ops/s
 c.f.j.p.bson.BSONStdReadAfterburner.readPojoMediaItem         thrpt    5  162457.770 ±  5469.498  ops/s
 c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem           thrpt    5   87263.821 ±  1424.051  ops/s
 c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt    5   84597.274 ±  2608.164  ops/s
@@ -24,8 +24,8 @@ c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem       thrpt   50  455036.795
 c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem    thrpt   50  383047.462 ± 5900.651  ops/s
 c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem         thrpt   50  346702.027 ± 5204.591  ops/s
 c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem           thrpt   50  265417.344 ± 2088.749  ops/s
-c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem   thrpt    5  197027.663 ±  5678.937  ops/s
-c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem           thrpt   50  160475.796 ±  1575.724  ops/s
+c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem   thrpt    5  197027.663 ± 5678.937  ops/s
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem           thrpt   50  163141.597 ± 1569.694  ops/s
 c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem         thrpt    5  139818.629 ±  7900.300  ops/s
 c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem           thrpt    5   78677.138 ±  4149.553  ops/s
 c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt    5   79099.879 ±  3654.531  ops/s
