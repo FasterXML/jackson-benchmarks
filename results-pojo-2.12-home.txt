@@ -1,7 +1,7 @@
 Version: 2.12
 
 Read - Afterburner / 2.12.0-SNAPSHOT / home / 25-Jun-2020 / 1.8.0_162
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 1 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
 c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt   50  610961.541 ±  9520.871  ops/s
 c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt   50  642071.989 ± 9382.943  ops/s
 c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt   50  568008.427 ± 6399.482  ops/s
@@ -16,7 +16,7 @@ c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt    5   84597
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt    5   24506.041 ±  1634.385  ops/s
 
 Read - Vanilla / 2.12.0-SNAPSHOT / home / 25-Jun-2020 / 1.8.0_162
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMediaItem.*" -wi 4 -i 5 -f 1 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt   50  429384.918 ± 5095.951  ops/s
 c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt   50  426906.354 ± 2697.242  ops/s
 c.f.j.p.protob.ProtobufStdReadVanilla.readPojoMediaItem   thrpt   75  398378.650 ± 4129.517  ops/s
