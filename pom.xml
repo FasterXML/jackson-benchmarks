@@ -4,7 +4,7 @@
     <parent>
       <groupId>com.fasterxml.jackson</groupId>
       <artifactId>jackson-bom</artifactId>
-      <version>2.11.1</version>
+      <version>2.11.2</version>
     </parent>
 
     <artifactId>jackson-benchmarks</artifactId>
@@ -17,9 +17,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <version.jmh>1.19</version.jmh>
+        <version.jmh>1.21</version.jmh>
 
-        <version.jackson.bson>2.9.2</version.jackson.bson>
+        <version.jackson.bson>2.11.0</version.jackson.bson>
         <version.jackson.msgpack>0.8.20</version.jackson.msgpack>
         <!-- ^^^ requires jackson 2.8 -->
 
