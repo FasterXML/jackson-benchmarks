@@ -1,20 +1,25 @@
-Read - Afterburner / 3.0.0-SNAP / home / 27-Oct-2019 / 1.8.0_162
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1
-c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt   50  746160.502 ±  7625.982  ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt   50  652535.918 ±  6349.695  ops/s
-c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt   50  736712.222 ± 10376.947  ops/s
-c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt   50  703599.925 ±  6555.780  ops/s
-c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt   50  511708.665 ±  5985.970  ops/s
-c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt   50  336147.636 ±  2825.068  ops/s
+Version: 3.0.0-SNAPSHOT
+H/W: Mac mini (2018) 3.2G x 6
+OS: MacOS 10.15.6
+
+Read - Afterburner / 3.0.0-SNAP / home / 20-Sep-2020 / 1.8.0_265
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt   25  1155331.060 ± 5828.248  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt   25   997418.560 ± 4916.715  ops/s
+c.f.j.p.protob.ProtobufStdReadAfterburner.readPojoMediaItem   thrpt   25  1189820.530 ± 5133.844  ops/s
+c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem       thrpt   25  1059560.452 ± 5068.284  ops/s
+c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem         thrpt   25   787776.905 ± 1801.418  ops/s
+c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem           thrpt   25   569194.390 ± 2802.060  ops/s
 --- msgpack ---
-c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt   50  186035.239 ±  1574.717  ops/s
+c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem           thrpt   25   317444.032 ± 2994.236  ops/s
 --- bson ---
-c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem           thrpt   50   88088.693 ±   833.524  ops/s
-c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt   50   89171.825 ±   439.489  ops/s
-c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt   50   24329.870 ±   268.350  ops/s
+c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem           thrpt   25   149328.587 ± 1075.472  ops/s
+c.f.j.p.props.PropertiesStdReadAfterburner.readPojoMediaItem  thrpt   25   127846.005 ±  720.129  ops/s
+c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt   25    47638.484 ±  134.071  ops/s
 
 Read - Vanilla / 3.0.0-SNAP / home / 27-Oct-2019 / 1.8.0_162
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMediaItem.*" -wi 4 -i 5 -f 10 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem             thrpt   50  493887.913 ± 10125.640  ops/s
 c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem             thrpt   50  516179.454 ±  9963.342  ops/s
 c.f.j.p.protob.ProtobufStdReadVanilla.readPojoMediaItem       thrpt   50  514496.304 ±  7209.146  ops/s
