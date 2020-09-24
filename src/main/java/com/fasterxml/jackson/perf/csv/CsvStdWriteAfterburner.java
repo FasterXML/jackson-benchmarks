@@ -3,6 +3,7 @@ package com.fasterxml.jackson.perf.csv;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
+import com.fasterxml.jackson.dataformat.csv.CsvGenerator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
@@ -16,6 +17,7 @@ public class CsvStdWriteAfterburner
 {
     private static final CsvMapper MAPPER = CsvMapper.builder()
             .addModule(new AfterburnerModule())
+            .disable(CsvGenerator.Feature.STRICT_CHECK_FOR_QUOTING)
             .build();
 
     private final static CsvSchema _mediaItemSchema;
