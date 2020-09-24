@@ -15,7 +15,7 @@ public class CsvStdWriteVanilla
     extends WritePerfBasicJackson<FlattenedMediaItem>
 {
     private static final CsvMapper MAPPER = CsvMapper.builder()
-//            .enable(CsvGenerator.Feature.STRICT_CHECK_FOR_QUOTING)
+            .disable(CsvGenerator.Feature.STRICT_CHECK_FOR_QUOTING)
             .build();
     private final static CsvSchema _mediaItemSchema;
     static {
