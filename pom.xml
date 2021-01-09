@@ -17,7 +17,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <version.jmh>1.21</version.jmh>
+        <version.jmh>1.27</version.jmh>
 
         <version.jackson.bson>2.11.0</version.jackson.bson>
         <version.jackson.msgpack>0.8.22</version.jackson.msgpack>
