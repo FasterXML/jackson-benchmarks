@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.perf.data;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import com.fasterxml.jackson.core.*;
@@ -41,11 +40,7 @@ public class MinimalInputConverter
         if (schema != null) {
             w = w.with(schema);
         }
-        try {
-            return new MinimalInputConverter(w.writeValueAsBytes(value));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        return new MinimalInputConverter(w.writeValueAsBytes(value));
     }
 
     public byte[] mediaItemAsBytes() {

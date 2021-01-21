@@ -37,12 +37,8 @@ public class StringInputConverter
             data.put(input, new String(input.bytes(), UTF8));
         }
         // but can't avoid serializing typed values
-        try {
-	        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
-	        return new StringInputConverter(data, mib);
-        } catch (IOException e) {
-        	throw new RuntimeException(e);
-        }
+        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
+        return new StringInputConverter(data, mib);
     }
 
     public static StringInputConverter stdConverter(ObjectMapper targetMapper)
@@ -69,7 +65,7 @@ public class StringInputConverter
 	        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
 	        return new StringInputConverter(data, mib);
         } catch (IOException e) {
-        	throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 

@@ -1,7 +1,6 @@
 package com.fasterxml.jackson.perf.data;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.EnumMap;
 
 import com.fasterxml.jackson.core.*;
@@ -30,12 +29,8 @@ public class InputConverter
         	data.put(input, input.bytes());
         }
         // but can't avoid serializing typed values
-        try {
-	        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
-	        return new InputConverter(data, mib);
-        } catch (IOException e) {
-        	throw new RuntimeException(e);
-        }
+        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
+        return new InputConverter(data, mib);
     }
 
     public static InputConverter stdConverter(ObjectMapper targetMapper)
@@ -45,26 +40,23 @@ public class InputConverter
         final JsonFactory jsonF = new JsonFactory();
         final TokenStreamFactory targetF = targetMapper.tokenStreamFactory();
 
-        try {
-	        for (InputData input : InputData.values()) {
-	            JsonParser in = jsonF.createParser(ObjectReadContext.empty(),
-	                    input.bytes());
-	            bytes.reset();
-	            JsonGenerator out = targetF.createGenerator(ObjectWriteContext.empty(),
-	                    bytes);
-	            while (in.nextToken() != null) {
-	                out.copyCurrentStructure(in);
-	            }
-	            in.close();
-	            out.close();
-	            data.put(input, bytes.toByteArray());
-	        }
-	        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
-	        return new InputConverter(data, mib);
-        } catch (IOException e) {
-        	throw new RuntimeException(e);
+        for (InputData input : InputData.values()) {
+            JsonParser in = jsonF.createParser(ObjectReadContext.empty(),
+                    input.bytes());
+            bytes.reset();
+            JsonGenerator out = targetF.createGenerator(ObjectWriteContext.empty(),
+                    bytes);
+            while (in.nextToken() != null) {
+                out.copyCurrentStructure(in);
+            }
+            in.close();
+            out.close();
+            data.put(input, bytes.toByteArray());
         }
+        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
+        return new InputConverter(data, mib);
     }
+
     public byte[] bytes(InputData type) {
         return _data.get(type);
     }

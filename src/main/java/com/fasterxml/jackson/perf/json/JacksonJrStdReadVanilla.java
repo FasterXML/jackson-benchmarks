@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.perf.json;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.*;
@@ -23,11 +22,7 @@ public class JacksonJrStdReadVanilla
 
     static byte[] _mediaItemBytes;
     static {
-        try {
-            _mediaItemBytes = json.asBytes(MediaItems.stdMediaItem());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        _mediaItemBytes = json.asBytes(MediaItems.stdMediaItem());
     }
 
     public JacksonJrStdReadVanilla() { }
