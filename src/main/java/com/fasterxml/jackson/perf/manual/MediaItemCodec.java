@@ -79,9 +79,9 @@ public class MediaItemCodec
     public void serialize(JsonGenerator generator, MediaItem item) throws IOException
     {
         generator.writeStartObject(item);
-        generator.writeFieldName(FIELD_CONTENT);
+        generator.writeName(FIELD_CONTENT);
         writeContent(generator, item.getContent());
-        generator.writeFieldName(FIELD_IMAGES);
+        generator.writeName(FIELD_IMAGES);
         List<Image> items = item.getImages();
         generator.writeStartArray(items, items.size());
         for (Image i : items) {
@@ -94,35 +94,35 @@ public class MediaItemCodec
     private void writeContent(JsonGenerator generator, MediaContent media) throws IOException
     {
         generator.writeStartObject(media);
-        generator.writeFieldName(FIELD_PLAYER);
+        generator.writeName(FIELD_PLAYER);
         generator.writeString(media.getPlayer().name());
-        generator.writeFieldName(FIELD_URI);
+        generator.writeName(FIELD_URI);
         generator.writeString(media.getUri());
         String title = media.getTitle();
         if (title != null) {
-            generator.writeFieldName(FIELD_TITLE);
+            generator.writeName(FIELD_TITLE);
             generator.writeString(title);
         }
-        generator.writeFieldName(FIELD_WIDTH);
+        generator.writeName(FIELD_WIDTH);
         generator.writeNumber(media.getWidth());
-        generator.writeFieldName(FIELD_HEIGHT);
+        generator.writeName(FIELD_HEIGHT);
         generator.writeNumber(media.getHeight());
-        generator.writeFieldName(FIELD_FORMAT);
+        generator.writeName(FIELD_FORMAT);
         generator.writeString(media.getFormat());
-        generator.writeFieldName(FIELD_DURATION);
+        generator.writeName(FIELD_DURATION);
         generator.writeNumber(media.getDuration());
-        generator.writeFieldName(FIELD_SIZE);
+        generator.writeName(FIELD_SIZE);
         generator.writeNumber(media.getSize());
-        
-        generator.writeFieldName(FIELD_BITRATE);
+
+        generator.writeName(FIELD_BITRATE);
         generator.writeNumber(media.getBitrate());
 
         String copyright = media.getCopyright();
         if (copyright != null) {
-            generator.writeFieldName(FIELD_COPYRIGHT);
+            generator.writeName(FIELD_COPYRIGHT);
             generator.writeString(copyright);
         }
-        generator.writeFieldName(FIELD_PERSONS);
+        generator.writeName(FIELD_PERSONS);
         generator.writeStartArray();
         for (String person : media.getPersons()) {
             generator.writeString(person);
@@ -134,18 +134,18 @@ public class MediaItemCodec
     private void writeImage(JsonGenerator generator, Image image) throws IOException
     {
         generator.writeStartObject(image);
-        generator.writeFieldName(FIELD_URI);
+        generator.writeName(FIELD_URI);
         generator.writeString(image.getUri());
         String title = image.getTitle();
         if (title != null) {
-            generator.writeFieldName(FIELD_TITLE);
+            generator.writeName(FIELD_TITLE);
             generator.writeString(title);
         }
-        generator.writeFieldName(FIELD_WIDTH);
+        generator.writeName(FIELD_WIDTH);
         generator.writeNumber(image.getWidth());
-        generator.writeFieldName(FIELD_HEIGHT);
+        generator.writeName(FIELD_HEIGHT);
         generator.writeNumber(image.getHeight());
-        generator.writeFieldName(FIELD_SIZE);
+        generator.writeName(FIELD_SIZE);
         generator.writeString(image.getSize().name());
         generator.writeEndObject();
     }
@@ -161,9 +161,9 @@ public class MediaItemCodec
             reportIllegal(parser, JsonToken.START_OBJECT);
         }
         // first fast version when field-order is as expected
-        if (parser.nextFieldName(FIELD_CONTENT)) {
+        if (parser.nextName(FIELD_CONTENT)) {
             mc.setContent(readContent(parser));
-            if (parser.nextFieldName(FIELD_IMAGES)) {
+            if (parser.nextName(FIELD_IMAGES)) {
                 mc.setImages(readImages(parser));
                 parser.nextToken();
                 verifyCurrent(parser, JsonToken.END_OBJECT);
@@ -171,7 +171,7 @@ public class MediaItemCodec
             }
         }
         // and fallback if order was changed
-        for (String field = parser.currentName(); field != null; field = parser.nextFieldName()) {
+        for (String field = parser.currentName(); field != null; field = parser.nextName()) {
             Integer I = fieldToIndex.get(field);
             if (I != null) {
                 switch (I) {
@@ -205,31 +205,31 @@ public class MediaItemCodec
         boolean haveSize = false;
         
         // As with above, first fast path
-        if (parser.nextFieldName(FIELD_PLAYER)) {
+        if (parser.nextName(FIELD_PLAYER)) {
             media.setPlayer(MediaContent.Player.find(parser.nextTextValue()));
-            if (parser.nextFieldName(FIELD_URI)) {
+            if (parser.nextName(FIELD_URI)) {
                 media.setUri(parser.nextTextValue());
-                if (parser.nextFieldName(FIELD_TITLE)) {
+                if (parser.nextName(FIELD_TITLE)) {
                     media.setTitle(parser.nextTextValue());
-                    if (parser.nextFieldName(FIELD_WIDTH)) {
+                    if (parser.nextName(FIELD_WIDTH)) {
                         haveWidth = true;
                         media.setWidth(parser.nextIntValue(-1));
-                        if (parser.nextFieldName(FIELD_HEIGHT)) {
+                        if (parser.nextName(FIELD_HEIGHT)) {
                             haveHeight = true;
                             media.setHeight(parser.nextIntValue(-1));
-                            if (parser.nextFieldName(FIELD_FORMAT)) {
+                            if (parser.nextName(FIELD_FORMAT)) {
                                 media.setFormat(parser.nextTextValue());
-                                if (parser.nextFieldName(FIELD_DURATION)) {
+                                if (parser.nextName(FIELD_DURATION)) {
                                     haveDuration = true;
                                     media.setDuration(parser.nextLongValue(-1L));
-                                    if (parser.nextFieldName(FIELD_SIZE)) {
+                                    if (parser.nextName(FIELD_SIZE)) {
                                         haveSize = true;
                                         media.setSize(parser.nextLongValue(-1L));
-                                        if (parser.nextFieldName(FIELD_BITRATE)) {
+                                        if (parser.nextName(FIELD_BITRATE)) {
                                             media.setBitrate(parser.nextIntValue(-1));
-                                            if (parser.nextFieldName(FIELD_COPYRIGHT)) {
+                                            if (parser.nextName(FIELD_COPYRIGHT)) {
                                                 media.setCopyright(parser.nextTextValue());
-                                                if (parser.nextFieldName(FIELD_PERSONS)) {
+                                                if (parser.nextName(FIELD_PERSONS)) {
                                                     media.setPersons(readPersons(parser));
                                                     parser.nextToken();
                                                     verifyCurrent(parser, JsonToken.END_OBJECT);
@@ -248,7 +248,7 @@ public class MediaItemCodec
         
         // and if something reorder or missing, general loop:
 
-        for (String field = parser.currentName(); field != null; field = parser.nextFieldName()) {
+        for (String field = parser.currentName(); field != null; field = parser.nextName()) {
             Integer I = fieldToIndex.get(field);
             if (I != null) {
                 switch (I) {
@@ -342,17 +342,17 @@ public class MediaItemCodec
         boolean haveWidth = false;
         boolean haveHeight = false;
         Image image = new Image();
-        if (parser.nextFieldName(FIELD_URI)) {
+        if (parser.nextName(FIELD_URI)) {
             image.setUri(parser.nextTextValue());
-            if (parser.nextFieldName(FIELD_TITLE)) {
+            if (parser.nextName(FIELD_TITLE)) {
                 image.setTitle(parser.nextTextValue());
-                if (parser.nextFieldName(FIELD_WIDTH)) {
+                if (parser.nextName(FIELD_WIDTH)) {
                     image.setWidth(parser.nextIntValue(-1));
                     haveWidth = true;
-                    if (parser.nextFieldName(FIELD_HEIGHT)) {
+                    if (parser.nextName(FIELD_HEIGHT)) {
                         image.setHeight(parser.nextIntValue(-1));
                         haveHeight = true;
-                        if (parser.nextFieldName(FIELD_SIZE)) {
+                        if (parser.nextName(FIELD_SIZE)) {
                             image.setSize(Size.find(parser.nextTextValue()));
                             parser.nextToken();
                             verifyCurrent(parser, JsonToken.END_OBJECT);
@@ -363,7 +363,7 @@ public class MediaItemCodec
             }
         }
 
-        for (String name = parser.currentName(); name != null; name = parser.nextFieldName()) {
+        for (String name = parser.currentName(); name != null; name = parser.nextName()) {
             // read value token (or START_ARRAY)
             parser.nextToken();
             Integer I = fieldToIndex.get(name);
@@ -412,10 +412,10 @@ public class MediaItemCodec
     {
         JsonToken curr = parser.currentToken();
         String msg = "Expected token "+expToken+"; got "+curr;
-        if (curr == JsonToken.FIELD_NAME) {
+        if (curr == JsonToken.PROPERTY_NAME) {
             msg += " (current field name '"+parser.currentName()+"')";
         }
-        msg += ", location: "+parser.getTokenLocation();
+        msg += ", location: "+parser.currentTokenLocation();
         throw new IllegalStateException(msg);
     }
 }

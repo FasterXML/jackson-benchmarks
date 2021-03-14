@@ -4,7 +4,10 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
+
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
+import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper;
+
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -13,7 +16,11 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class CBORStdReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = new ObjectMapper( new CBORFactory());
+    private final static CBORFactory _cf = CBORFactory.builder()
+//            .disable(TokenStreamFactory.Feature.CANONICALIZE_FIELD_NAMES)
+            .build();
+    
+    private static final ObjectMapper MAPPER = new CBORMapper(_cf);
 
     public CBORStdReadVanilla() {
         super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);

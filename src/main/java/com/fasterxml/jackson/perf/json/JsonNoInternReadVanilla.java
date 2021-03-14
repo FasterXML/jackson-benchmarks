@@ -21,7 +21,7 @@ public class JsonNoInternReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = JsonMapper.builder(JsonFactory.builder()
-            .disable(JsonFactory.Feature.INTERN_FIELD_NAMES)
+            .disable(JsonFactory.Feature.INTERN_PROPERTY_NAMES)
             .build())
         .build();
 
