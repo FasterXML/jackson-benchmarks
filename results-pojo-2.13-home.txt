@@ -1,0 +1,40 @@
+Version: 2.12
+H/W: Mac mini (2018) 3.2G x 6
+OS: MacOS 10.15.6
+
+Read - Afterburner / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Read - Vanilla / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Read - Untyped / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Read - Tree / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Read - wasteful / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*" -wi 8 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Read - other / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*ReadAsy.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 5 -w 1 -i 5 -r 1 -f 9 -t 1
+
+---------------------- WRITE -----------------------
+
+Write - Afterburner / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAft.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Write - Vanilla / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+Write - Untyped / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVan.*UntypedMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Write - Tree / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVanilla.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Write - wasteful / 2.13.0-SNAPSHOT / home / -2021 / 1.8.0_272
+java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
