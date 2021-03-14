@@ -17,9 +17,9 @@ public class CBORStdReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
     private final static CBORFactory _cf = CBORFactory.builder()
-//            .disable(TokenStreamFactory.Feature.CANONICALIZE_FIELD_NAMES)
+//            .disable(com.fasterxml.jackson.core.TokenStreamFactory.Feature.CANONICALIZE_PROPERTY_NAMES)
             .build();
-    
+
     private static final ObjectMapper MAPPER = new CBORMapper(_cf);
 
     public CBORStdReadVanilla() {

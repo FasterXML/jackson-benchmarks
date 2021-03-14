@@ -17,7 +17,7 @@ public class SmileStdReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
     private final static SmileFactory _sf = SmileFactory.builder()
-//            .disable(JsonFactory.Feature.CANONICALIZE_FIELD_NAMES)
+//            .disable(com.fasterxml.jackson.core.TokenStreamFactory.Feature.CANONICALIZE_PROPERTY_NAMES)
             .build();
 
     private static final ObjectMapper MAPPER = new SmileMapper(_sf);
