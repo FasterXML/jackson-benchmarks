@@ -85,7 +85,7 @@ java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVan.*PojoMedia.*" -wi 4
 c.f.j.p.cbor.CBORStdWriteVanilla.writePojoMediaItem         thrpt   15  1227903.783 ± 33267.833  ops/s
 c.f.j.p.protob.ProtobufStdWriteVanilla.writePojoMediaItem   thrpt   15  1114913.403 ± 12408.081  ops/s
 c.f.j.p.smile.SmileStdWriteVanilla.writePojoMediaItem       thrpt   15  1093953.493 ± 16206.135  ops/s
-c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem    thrpt   15   936953.938 ±  4054.620  ops/s
+c.f.j.p.json.JacksonJrStdWriteVanilla.writePojoMediaItem    thrpt   25   980602.874 ±  7665.924  ops/s
 c.f.j.p.json.JsonStdWriteVanilla.writePojoMediaItem         thrpt   15   951920.303 ±  3055.163  ops/s
 c.f.j.p.csv.CsvStdWriteVanilla.writePojoMediaItem           thrpt   15   909807.283 ± 13916.920  ops/s
 c.f.j.p.xml.XMLStdWriteVanilla.writePojoMediaItem           thrpt   15   491786.061 ±  4094.924  ops/s
