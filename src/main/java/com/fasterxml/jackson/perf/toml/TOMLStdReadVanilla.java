@@ -1,25 +1,21 @@
-package com.fasterxml.jackson.perf.yaml;
+package com.fasterxml.jackson.perf.toml;
 
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+import com.fasterxml.jackson.dataformat.toml.TomlMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
-public class YAMLStdReadAfterburner
-// could be full, but let's avoid since extra results not very useful
+public class TOMLStdReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = YAMLMapper.builder()
-            .addModule(new AfterburnerModule())
-            .build();
+    private static final ObjectMapper MAPPER = new TomlMapper();
 
-    public YAMLStdReadAfterburner() {
+    public TOMLStdReadVanilla() {
         super(MediaItem.class, InputConverter.stdConverter(MAPPER), MAPPER);
     }
 }
