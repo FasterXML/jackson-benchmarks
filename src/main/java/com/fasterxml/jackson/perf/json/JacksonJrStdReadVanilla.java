@@ -7,6 +7,7 @@ import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.jr.ob.JSON;
+import com.fasterxml.jackson.perf.AuxStateSize;
 import com.fasterxml.jackson.perf.ReadPerfTestBasic;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
@@ -34,7 +35,8 @@ public class JacksonJrStdReadVanilla
 
     @Benchmark
     @Override
-    public void readPojoMediaItem(Blackhole bh) throws Exception {
+    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
+        size.set(_mediaItemBytes.length);
         bh.consume(read(_mediaItemBytes));
     }
 

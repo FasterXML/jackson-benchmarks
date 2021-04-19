@@ -58,8 +58,10 @@ public class JsonStringReadVanilla
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readPojoMediaItem(Blackhole bh) throws Exception {
-        bh.consume(read(_converter.mediaItemAsString(), MEDIA_ITEM_READER));
+    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
+        final String input = _converter.mediaItemAsString();
+        size.set(input.length());
+        bh.consume(read(input, MEDIA_ITEM_READER));
     }
 
     /*

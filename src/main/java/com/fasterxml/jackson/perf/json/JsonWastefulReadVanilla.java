@@ -10,6 +10,7 @@ import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.perf.AuxStateSize;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -36,8 +37,10 @@ public class JsonWastefulReadVanilla
     }
 
     @Override
-    public void readPojoMediaItem(Blackhole bh) throws Exception {
-        bh.consume(read(MINIMAL_CONV.mediaItemAsString()));
+    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
+        final String input = MINIMAL_CONV.mediaItemAsString();
+        size.set(input.length());
+        bh.consume(read(input));
     }
 
     @Benchmark
