@@ -1,0 +1,25 @@
+plugins {
+  id "io.morethan.jmhreport" version "0.9.0"
+}
+jmhReport {
+    if (!project.hasProperty("input")) {
+      throw new RuntimeException("Need to pass argument '-Pinput=' for input jmh json to process")
+    }
+    jmhResultPath = project.file(input)
+
+    if (!project.hasProperty("output")) {
+      throw new RuntimeException("Need to pass argument '-Poutput=' for output directory to create/use")
+    }
+    var outputFile = new java.io.File(output)
+    if (outputFile.exists()) {
+      if (!outputFile.isDirectory()) {
+        throw new RuntimeException("File '${output}` exists; needs to be directory")
+      }
+      // should we warn about this?
+      System.out.println("INFO: Directory '${outputFile}` already exists")
+    } else {
+      outputFile.mkdirs()
+    }
+
+    jmhReportOutput = project.file(output)
+}

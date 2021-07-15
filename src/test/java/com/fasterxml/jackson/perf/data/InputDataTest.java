@@ -7,7 +7,9 @@ public class InputDataTest extends TestCase
     public void testByteInput() throws Exception
     {
         for (InputData data : InputData.values()) {
-            assertNotNull(data.bytes());
+            final byte[] bytes = data.bytes();
+            assertNotNull(bytes);
+//            System.out.println("Format '"+data.name()+": "+bytes.length+" bytes");
         }
     }
 }

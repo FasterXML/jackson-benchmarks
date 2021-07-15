@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -44,10 +46,15 @@ public abstract class ReadPerfBaseBasicJackson<T>
      */
 
     @Benchmark
+    @BenchmarkMode(Mode.Throughput)
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readPojoMediaItem(Blackhole bh) throws Exception {
-        bh.consume(read(MINIMAL_CONV.mediaItemAsBytes(), MEDIA_ITEM_READER));
+    public void readPojoMediaItem(Blackhole bh, AuxStateSize size)
+        throws Exception
+    {
+        final byte[] input = MINIMAL_CONV.mediaItemAsBytes();
+        size.set(input.length);
+        bh.consume(read(input, MEDIA_ITEM_READER));
     }
 
     /*

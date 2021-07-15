@@ -20,8 +20,8 @@ public class StaxProvider
 
      public static XmlMapper xmlMapper(boolean afterburner) {
          XmlMapper.Builder builder = XmlMapper.builder(XmlFactory.builder()
-                 .inputFactory(_inputFactory)
-                 .outputFactory(_outputFactory)
+                 .xmlInputFactory(_inputFactory)
+                 .xmlOutputFactory(_outputFactory)
                  .build());
          if (afterburner) {
              builder = builder.addModule(new AfterburnerModule());

@@ -9,6 +9,7 @@ import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.perf.AuxStateSize;
 import com.fasterxml.jackson.perf.ReadPerfTestBasic;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 
@@ -46,7 +47,7 @@ public abstract class ManualReadPerfTest
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readPojoMediaItem(Blackhole bh) throws Exception {
+    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
         bh.consume(read(MINIMAL_CONV.mediaItemAsBytes(), _reader));
     }
 
