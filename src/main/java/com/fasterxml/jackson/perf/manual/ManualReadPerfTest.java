@@ -47,7 +47,7 @@ public abstract class ManualReadPerfTest
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override
-    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
+    public void readPojoMediaItem(Blackhole bh/*, AuxStateSize size*/) throws Exception {
         bh.consume(read(MINIMAL_CONV.mediaItemAsBytes(), _reader));
     }
 
