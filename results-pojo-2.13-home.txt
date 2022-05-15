@@ -33,13 +33,14 @@ c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem           thrpt   45  138147.535
 c.f.j.p.props.PropertiesStdReadVanilla.readPojoMediaItem  thrpt   45  123107.622 ±  386.351  ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt   45   45094.231 ±  492.289  ops/s
 
-Read - Untyped / 2.13.0-SNAPSHOT / home / 27-Mar-2021 / 1.8.0_272
+Read - Untyped / 2.13.3 / home / 14-May-2022 / 1.8.0_322
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt   45  709198.241 ± 2993.134  ops/s
-c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt   45  818997.470 ± 7226.757  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt   45  592449.942 ± 5028.438  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt   45  600838.161 ± 3066.660  ops/s
-c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt   45  128693.635 ±  942.217  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem         thrpt   45  711811.002 ± 6326.880  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem       thrpt   45  823909.010 ± 2873.556  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem    thrpt   45  586580.822 ± 3972.349  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem         thrpt   45  593672.646 ± 3724.082  ops/s
+c.f.j.p.props.PropertiesStdReadVanilla.readUntypedMediaItem  thrpt   45  131393.585 ±  331.926  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readUntypedMediaItem         thrpt   45  123112.977 ±  451.971  ops/s
 
 Read - Tree / 2.13.0-SNAPSHOT / home / 03-Apr-2021 / 1.8.0_272 (after no-recurse change)
 java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadV.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
