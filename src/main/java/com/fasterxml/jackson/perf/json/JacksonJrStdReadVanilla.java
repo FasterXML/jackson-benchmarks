@@ -30,8 +30,8 @@ public class JacksonJrStdReadVanilla
 
     @Benchmark
     @Override
-    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
-        size.set(_mediaItemBytes.length);
+    public void readPojoMediaItem(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        //size.set(_mediaItemBytes.length);
         bh.consume(read(_mediaItemBytes));
     }
 

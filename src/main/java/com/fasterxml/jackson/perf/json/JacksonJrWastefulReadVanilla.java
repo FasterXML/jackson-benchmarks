@@ -32,9 +32,9 @@ public class JacksonJrWastefulReadVanilla
     }
 
     @Override
-    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
+    public void readPojoMediaItem(Blackhole bh/*, AuxStateSize size*/) throws Exception {
         final byte[] input = MINIMAL_CONV.mediaItemAsBytes();
-        size.set(input.length);
+//        size.set(input.length);
         bh.consume(read(input));
     }
 
