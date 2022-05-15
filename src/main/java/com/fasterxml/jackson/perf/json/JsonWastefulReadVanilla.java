@@ -37,9 +37,9 @@ public class JsonWastefulReadVanilla
     }
 
     @Override
-    public void readPojoMediaItem(Blackhole bh, AuxStateSize size) throws Exception {
+    public void readPojoMediaItem(Blackhole bh/*, AuxStateSize size*/) throws Exception {
         final String input = MINIMAL_CONV.mediaItemAsString();
-        size.set(input.length());
+//        size.set(input.length());
         bh.consume(read(input));
     }
 
