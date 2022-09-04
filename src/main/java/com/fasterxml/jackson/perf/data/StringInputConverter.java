@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.EnumMap;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.core.json.JsonFactory;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.*;
+import tools.jackson.core.json.JsonFactory;
+import tools.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 /**

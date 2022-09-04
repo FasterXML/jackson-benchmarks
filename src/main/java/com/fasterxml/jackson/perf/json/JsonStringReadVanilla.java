@@ -9,7 +9,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.databind.*;
 import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.data.InputData;
 import com.fasterxml.jackson.perf.data.StringInputConverter;

@@ -9,11 +9,11 @@ import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.core.FormatSchema;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.cfg.MapperBuilder;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.core.FormatSchema;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectReader;
+import tools.jackson.databind.cfg.MapperBuilder;
+import tools.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 
 public abstract class ReadPerfBaseBasicJackson<T>

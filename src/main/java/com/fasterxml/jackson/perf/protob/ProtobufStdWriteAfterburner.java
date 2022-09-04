@@ -3,12 +3,12 @@ package com.fasterxml.jackson.perf.protob;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.databind.*;
 
-import com.fasterxml.jackson.dataformat.protobuf.ProtobufMapper;
-import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
+import tools.jackson.dataformat.protobuf.ProtobufMapper;
+import tools.jackson.dataformat.protobuf.schema.ProtobufSchema;
 
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.module.afterburner.AfterburnerModule;
 
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;

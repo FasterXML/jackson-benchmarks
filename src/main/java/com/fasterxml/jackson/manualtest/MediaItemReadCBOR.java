@@ -1,8 +1,8 @@
 package com.fasterxml.jackson.manualtest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
-import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.dataformat.cbor.CBORFactory;
+import tools.jackson.dataformat.cbor.databind.CBORMapper;
 
 public class MediaItemReadCBOR extends ManualMediaItemReadBase
 {

@@ -1,8 +1,8 @@
 package com.fasterxml.jackson.manualtest;
 
-import com.fasterxml.jackson.core.json.JsonFactory;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
+import tools.jackson.core.json.JsonFactory;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 public class MediaItemReadJson extends ManualMediaItemReadBase
 {

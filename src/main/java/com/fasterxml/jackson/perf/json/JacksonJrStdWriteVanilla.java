@@ -10,7 +10,8 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.jr.ob.JSON;
+import tools.jackson.jr.ob.JSON;
+
 import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;

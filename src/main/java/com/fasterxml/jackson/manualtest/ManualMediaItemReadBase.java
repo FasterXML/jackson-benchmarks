@@ -2,8 +2,8 @@ package com.fasterxml.jackson.manualtest;
 
 import java.io.*;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.core.*;
+import tools.jackson.databind.*;
 
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;

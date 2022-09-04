@@ -7,8 +7,8 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.perf.WritePerfTestBasic;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.NopOutputStream;

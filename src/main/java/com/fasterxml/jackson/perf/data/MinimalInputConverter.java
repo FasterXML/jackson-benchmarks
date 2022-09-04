@@ -2,9 +2,9 @@ package com.fasterxml.jackson.perf.data;
 
 import java.io.UnsupportedEncodingException;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import tools.jackson.core.*;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 public class MinimalInputConverter

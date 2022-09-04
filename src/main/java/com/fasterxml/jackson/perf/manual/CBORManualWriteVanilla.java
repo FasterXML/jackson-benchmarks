@@ -6,8 +6,8 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.dataformat.cbor.CBORFactory;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 @State(Scope.Thread)

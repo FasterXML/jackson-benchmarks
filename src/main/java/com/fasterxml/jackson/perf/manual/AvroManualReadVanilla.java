@@ -6,8 +6,8 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 
-import com.fasterxml.jackson.dataformat.avro.AvroMapper;
-import com.fasterxml.jackson.dataformat.avro.AvroSchema;
+import tools.jackson.dataformat.avro.AvroMapper;
+import tools.jackson.dataformat.avro.AvroSchema;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 

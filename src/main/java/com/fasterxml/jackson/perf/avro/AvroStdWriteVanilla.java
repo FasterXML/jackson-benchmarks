@@ -3,7 +3,7 @@ package com.fasterxml.jackson.perf.avro;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
-import com.fasterxml.jackson.dataformat.avro.*;
+import tools.jackson.dataformat.avro.*;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 

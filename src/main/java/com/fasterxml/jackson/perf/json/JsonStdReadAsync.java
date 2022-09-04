@@ -6,10 +6,10 @@ import java.io.IOException;
 
 import org.openjdk.jmh.annotations.Scope;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.core.async.ByteArrayFeeder;
+import tools.jackson.core.*;
+import tools.jackson.core.async.ByteArrayFeeder;
 
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.databind.*;
 
 import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.data.InputConverter;

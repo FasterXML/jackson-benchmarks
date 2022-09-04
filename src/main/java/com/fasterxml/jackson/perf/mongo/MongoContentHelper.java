@@ -6,7 +6,7 @@ import java.util.Map;
 import org.bson.BasicBSONEncoder;
 import org.bson.BasicBSONObject;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 

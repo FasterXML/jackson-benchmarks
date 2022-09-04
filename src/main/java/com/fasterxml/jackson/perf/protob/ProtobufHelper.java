@@ -2,8 +2,8 @@ package com.fasterxml.jackson.perf.protob;
 
 import java.io.IOException;
 
-import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
-import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchemaLoader;
+import tools.jackson.dataformat.protobuf.schema.ProtobufSchema;
+import tools.jackson.dataformat.protobuf.schema.ProtobufSchemaLoader;
 
 public class ProtobufHelper
 {

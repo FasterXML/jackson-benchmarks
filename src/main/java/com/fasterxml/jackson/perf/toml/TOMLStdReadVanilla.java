@@ -3,9 +3,9 @@ package com.fasterxml.jackson.perf.toml;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.databind.*;
 
-import com.fasterxml.jackson.dataformat.toml.TomlMapper;
+import tools.jackson.dataformat.toml.TomlMapper;
 
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;

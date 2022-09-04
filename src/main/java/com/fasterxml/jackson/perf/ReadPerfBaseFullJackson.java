@@ -6,8 +6,8 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.core.FormatSchema;
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.core.FormatSchema;
+import tools.jackson.databind.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.data.InputData;
 

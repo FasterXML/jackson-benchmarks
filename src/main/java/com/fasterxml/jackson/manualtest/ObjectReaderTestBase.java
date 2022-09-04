@@ -2,9 +2,9 @@ package com.fasterxml.jackson.manualtest;
 
 import java.io.*;
 
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.cfg.MapperBuilder;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.databind.*;
+import tools.jackson.databind.cfg.MapperBuilder;
+import tools.jackson.module.afterburner.AfterburnerModule;
 
 abstract class ObjectReaderTestBase
 {

@@ -6,8 +6,8 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 
-import com.fasterxml.jackson.core.json.JsonFactory;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.json.JsonFactory;
+import tools.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.perf.model.MediaItems;
 
 @State(Scope.Thread)

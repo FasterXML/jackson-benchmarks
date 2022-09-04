@@ -1,10 +1,10 @@
 package com.fasterxml.jackson.manualtest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.cfg.MapperBuilder;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectWriter;
+import tools.jackson.databind.SerializationFeature;
+import tools.jackson.databind.cfg.MapperBuilder;
+import tools.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
 abstract class ObjectWriterTestBase<T1,T2>

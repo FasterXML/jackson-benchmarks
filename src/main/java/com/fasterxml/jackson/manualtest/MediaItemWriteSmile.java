@@ -1,9 +1,9 @@
 package com.fasterxml.jackson.manualtest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 
-import com.fasterxml.jackson.dataformat.smile.SmileFactory;
-import com.fasterxml.jackson.dataformat.smile.databind.SmileMapper;
+import tools.jackson.dataformat.smile.SmileFactory;
+import tools.jackson.dataformat.smile.databind.SmileMapper;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 

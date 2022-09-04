@@ -7,8 +7,8 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectReader;
+import tools.jackson.core.JsonParser;
+import tools.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.perf.AuxStateSize;
 import com.fasterxml.jackson.perf.ReadPerfTestBasic;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
