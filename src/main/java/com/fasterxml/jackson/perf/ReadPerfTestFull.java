@@ -13,4 +13,7 @@ public interface ReadPerfTestFull extends ReadPerfTestBasic
     public void readNodeWebxml(Blackhole bh) throws Exception;
     public void readNodeMenu(Blackhole bh) throws Exception;
     public void readNodeMediaItem(Blackhole bh) throws Exception;
+
+    public void readCurrencyPojoDefault(Blackhole bh) throws Exception;
+    public void readCurrencyPojoFast(Blackhole bh) throws Exception;
 }

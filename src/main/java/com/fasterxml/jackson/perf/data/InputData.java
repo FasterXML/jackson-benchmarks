@@ -10,6 +10,8 @@ public enum InputData
     WEBXML_WS("json/webxml_ws.json"),
     MENU_WS("json/menu_ws.json"),
 
+    // Data for alternate POJOs or untyped
+    CURRENCY_WS("json/USD.json")
     ;
 
     private final byte[] _json;
