@@ -9,10 +9,12 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.infra.Blackhole;
 
+import com.fasterxml.jackson.core.StreamReadFeature;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.data.InputData;
 import com.fasterxml.jackson.perf.data.StringInputConverter;
+import com.fasterxml.jackson.perf.model.Currency;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 /**
@@ -34,7 +36,10 @@ public class JsonStringReadVanilla
     protected final ObjectReader UNTYPED_READER;
     protected final ObjectReader NODE_READER;
     protected final ObjectReader MEDIA_ITEM_READER;
-    
+
+    protected final ObjectReader CURRENCY_READER_DEFAULT;
+    protected final ObjectReader CURRENCY_READER_FAST;
+
     protected final StringInputConverter _converter;
 
     public JsonStringReadVanilla() {
@@ -43,6 +48,10 @@ public class JsonStringReadVanilla
         UNTYPED_READER = MAPPER.readerFor(Object.class);
         NODE_READER = MAPPER.readerFor(JsonNode.class);
         MEDIA_ITEM_READER = MAPPER.readerFor(MediaItem.class);
+        CURRENCY_READER_DEFAULT = MAPPER.readerFor(Currency.class);
+        CURRENCY_READER_FAST = CURRENCY_READER_DEFAULT
+                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER);
+
     }
 
     protected Object read(String input, ObjectReader reader) throws IOException {
@@ -62,6 +71,24 @@ public class JsonStringReadVanilla
         final String input = _converter.mediaItemAsString();
 //        size.set(input.length());
         bh.consume(read(input, MEDIA_ITEM_READER));
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readCurrencyPojoDefault(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        final String input = _converter.asString(InputData.CURRENCY_WS);
+//        size.set(input.length());
+        bh.consume(read(input, CURRENCY_READER_DEFAULT));
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readCurrencyPojoFast(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        final String input = _converter.asString(InputData.CURRENCY_WS);
+//        size.set(input.length());
+        bh.consume(read(input, CURRENCY_READER_FAST));
     }
 
     /*
