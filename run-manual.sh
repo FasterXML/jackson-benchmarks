@@ -1,3 +1,3 @@
 #!/bin/sh
 
-java -cp target/microbenchmarks.jar com.fasterxml.jackson.perf.manual.$*
+java -cp target/perf.jar com.fasterxml.jackson.perf.manual.$*
