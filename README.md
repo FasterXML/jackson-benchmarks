@@ -32,11 +32,20 @@ to use basic JMH settings over runs.
 
 ### POJO: MediaItem
 
+`MediaItem` POJO comes from: https://github.com/eishay/jvm-serializers tests suite.
+Test input generated is about 300 bytes as JSON, and between 200 and 500 bytes across other formats (converted from JSON which is considered canonical).
+
+Settings to run tests include:
+
 * Standard: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 * Afterburner: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 
 1
 
 ### POJO: Currency (floating-point)
+
+`Currency` POJO, and data file `./json/USD.json` (about 2kB) come from [Awesome JSON Datasets](https://github.com/jdorfman/awesome-json-datasets#currency).
+
+Settings to run tests include:
 
 * Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*Json.*readCurrencyPojoDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
 * FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*Json.*readCurrencyPojoFast.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
