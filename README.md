@@ -47,6 +47,8 @@ Settings to run tests include:
 
 Settings to run tests include:
 
-* Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*Json.*readCurrencyPojoDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
-* FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*Json.*readCurrencyPojoFast.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
-* All: java -Xmx256m -jar target/microbenchmarks.jar ".*readCurrencyPojo.*" -wi 4 -w 1 -i 5 -r 1 -f 1 -t 1
+```
+* Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyPojoDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyPojoFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* All: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.readCurrencyPojo.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+```

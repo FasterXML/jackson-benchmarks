@@ -15,7 +15,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.SECONDS)
-public class ProtobufStdReadVanilla
+public class ProtobStdReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper(new ProtobufFactory());
@@ -24,7 +24,7 @@ public class ProtobufStdReadVanilla
 
     private final static MinimalInputConverter CONV = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
 
-    public ProtobufStdReadVanilla() {
+    public ProtobStdReadVanilla() {
         super(MediaItem.class, CONV, MAPPER, _mediaItemSchema);
     }
 }

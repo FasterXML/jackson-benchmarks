@@ -3,7 +3,7 @@ H/W: Mac mini (2018) 3.2G x 6
 OS: MacOS 10.15.7
 
 Read - Afterburner / 2.14.2 / home / 04-Mar-2023 / 1.8.0_362
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem         thrpt   45  1063084.122 ±  3821.543  ops/s
 c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem         thrpt   45   875443.933 ±  6317.124  ops/s
@@ -20,7 +20,7 @@ c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem         thrpt   45   12511
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem         thrpt   45    44625.410 ±   569.710  ops/s
 
 Read - Vanilla / 2.14.2 / home / 04-Mar-2023 / 1.8.0_362
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem         thrpt   45  802516.909 ± 5612.173  ops/s
 c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem         thrpt   45  696177.470 ± 8274.947  ops/s
@@ -38,32 +38,32 @@ c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem         thrpt   45  119842.389
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem         thrpt   45   43126.356 ±  628.684  ops/s
 
 Read - Untyped / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Read - Tree / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322 (after no-recurse change)
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadV.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadV.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Read - wasteful / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulR.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Read - other / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*ReadAsy.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-java -Xmx256m -jar target/microbenchmarks.jar ".*ringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadDataI.*PojoMediaI.*" -wi 5 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*ReadAsy.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*ringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadDataI.*PojoMediaI.*" -wi 5 -w 1 -i 5 -r 1 -f 9 -t 1
 
 ---------------------- WRITE -----------------------
 
 Write - Afterburner / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteAft.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdWriteAft.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Write - Vanilla / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdWriteVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Write - Untyped / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteV.*UntypedMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdWriteV.*UntypedMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Write - Tree / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*StdWriteVan.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdWriteVan.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 Write - wasteful / 2.14-SNAP / home / ??-May-2022 / 1.8.0_322
-java -Xmx256m -jar target/microbenchmarks.jar ".*JsonWastefulW.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulW.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1

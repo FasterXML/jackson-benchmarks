@@ -8,12 +8,12 @@ import com.fasterxml.jackson.perf.WritePerfBaseFullJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
-public class PropertiesStdWriteVanilla
+public class PropsStdWriteVanilla
     extends WritePerfBaseFullJackson<MediaItem>
 {
     private static final JavaPropsMapper PROPS_MAPPER = new JavaPropsMapper();
 
-    public PropertiesStdWriteVanilla() {
+    public PropsStdWriteVanilla() {
         super(PROPS_MAPPER);
     }
 }

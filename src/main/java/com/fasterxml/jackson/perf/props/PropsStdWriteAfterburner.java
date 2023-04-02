@@ -9,7 +9,7 @@ import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
-public class PropertiesStdWriteAfterburner
+public class PropsStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
     private static final JavaPropsMapper PROPS_MAPPER = new JavaPropsMapper();
@@ -17,7 +17,7 @@ public class PropertiesStdWriteAfterburner
         PROPS_MAPPER.registerModule(new AfterburnerModule());
     }
 
-    public PropertiesStdWriteAfterburner() {
+    public PropsStdWriteAfterburner() {
         super(PROPS_MAPPER);
     }
 }
