@@ -16,7 +16,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.SECONDS)
-public class ProtobufStdReadAfterburner
+public class ProtobStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = new ObjectMapper(new ProtobufFactory());
@@ -27,7 +27,7 @@ public class ProtobufStdReadAfterburner
     private final static ProtobufSchema _mediaItemSchema = ProtobufHelper.mediaItemSchema();
     private final static MinimalInputConverter CONV = MinimalInputConverter.minimalConverter(MAPPER, _mediaItemSchema);
 
-    public ProtobufStdReadAfterburner() {
+    public ProtobStdReadAfterburner() {
         super(MediaItem.class, CONV, MAPPER, _mediaItemSchema);
     }
 }
