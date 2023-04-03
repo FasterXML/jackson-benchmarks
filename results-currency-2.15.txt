@@ -1,0 +1,17 @@
+## 2.15
+
+### Java 8 / JSON
+
+java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 5
+
+### Java 17 / JSON
+
+java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 9
+
+### Java 8 / all
+
+java -Xmx256m -jar target/perf.jar ".*ReadVan.*readCurrencyPojo.*" -wi 4 -w 1 -i 3 -r 1 -f 3
+
+### Java 17 / all
+
+java -Xmx256m -jar target/perf.jar ".*ReadVan.*readCurrencyPojo.*" -wi 4 -w 1 -i 3 -r 1 -f 3
