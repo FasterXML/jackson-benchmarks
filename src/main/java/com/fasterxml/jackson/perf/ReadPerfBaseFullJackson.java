@@ -7,9 +7,12 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.infra.Blackhole;
 
 import tools.jackson.core.FormatSchema;
+import tools.jackson.core.StreamReadFeature;
 import tools.jackson.databind.*;
+
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.data.InputData;
+import com.fasterxml.jackson.perf.model.Currency;
 
 public abstract class ReadPerfBaseFullJackson<T>
 	extends ReadPerfBaseBasicJackson<T>
@@ -20,12 +23,13 @@ public abstract class ReadPerfBaseFullJackson<T>
     protected final ObjectReader UNTYPED_READER;
     protected final ObjectReader NODE_READER;
 
+    protected final ObjectReader CURRENCY_READER_DEFAULT;
+    protected final ObjectReader CURRENCY_READER_FAST;
+
     protected ReadPerfBaseFullJackson(Class<T> type, InputConverter conv, ObjectMapper mapper)
     {
-        super(type, conv, mapper);
-        FULL_CONVERTER = conv;
-        UNTYPED_READER = mapper.readerFor(Object.class);
-        NODE_READER = mapper.readerFor(JsonNode.class);
+        this(type, conv, mapper, null);
+        
     }
 
     protected ReadPerfBaseFullJackson(Class<T> type, InputConverter conv,
@@ -45,6 +49,40 @@ public abstract class ReadPerfBaseFullJackson<T>
             r = r.with(schema);
         }
         NODE_READER = r;
+
+        // This is unlikely to actually work but:
+        r = mapper.readerFor(Currency.class);
+        if (schema != null) {
+            r = r.with(schema);
+        }
+        CURRENCY_READER_DEFAULT = r;
+
+        r = mapper.readerFor(Currency.class)
+                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER);
+        if (schema != null) {
+            r = r.with(schema);
+        }
+        CURRENCY_READER_FAST = r;
+    }
+
+    /*
+    /**********************************************************************
+    /* Secondary POJO tests
+    /**********************************************************************
+     */
+    
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readCurrencyPojoDefault(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        bh.consume(read(FULL_CONVERTER.bytes(InputData.CURRENCY_WS), CURRENCY_READER_DEFAULT));
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readCurrencyPojoFast(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        bh.consume(read(FULL_CONVERTER.bytes(InputData.CURRENCY_WS), CURRENCY_READER_FAST));
     }
     
     /*

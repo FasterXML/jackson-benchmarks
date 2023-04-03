@@ -10,7 +10,7 @@ import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
-public class PropertiesStdReadVanilla
+public class PropsStdReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
     private static final JavaPropsMapper MAPPER = new JavaPropsMapper();
@@ -21,7 +21,7 @@ public class PropertiesStdReadVanilla
 
     private final static InputConverter PROPS = InputConverter.stdConverter(MAPPER);
 
-    public PropertiesStdReadVanilla() {
+    public PropsStdReadVanilla() {
         super(MediaItem.class, PROPS, MAPPER, SCHEMA);
     }
 }
