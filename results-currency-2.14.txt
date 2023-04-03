@@ -31,9 +31,3 @@ java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -
 Benchmark                                    Mode  Cnt      Score      Error  Units
 JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   25  59011.234 ±  264.965  ops/s
 JsonStdReadVanilla.readCurrencyPojoFast     thrpt   25  58594.680 ± 1887.888  ops/s
-
-## 2.15
-
-### Java 8 / JSON
-
-### Java 17 / JSON
