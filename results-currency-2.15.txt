@@ -5,16 +5,16 @@
 java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 5
 
 Benchmark                                    Mode  Cnt      Score     Error  Units
-JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  60731.251 ± 609.859  ops/s
-JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  69526.068 ± 843.255  ops/s
+JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  61012.389 ± 529.749  ops/s
+JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  70684.408 ± 621.934  ops/s
 
 ### Java 17 / JSON
 
 java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 9
 
 Benchmark                                    Mode  Cnt      Score      Error  Units
-JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  55856.137 ±  796.086  ops/s
-JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  57304.171 ± 1794.216  ops/s
+JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  56405.881 ± 1022.490  ops/s
+JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  58975.778 ± 1147.913  ops/s
 
 ### Java 8 / all
 
