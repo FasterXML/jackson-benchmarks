@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.util.LookupCache;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Param;
@@ -16,7 +13,10 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.JavaType;
 import tools.jackson.databind.type.TypeFactory;
+import tools.jackson.databind.util.LookupCache;
 
 @State(Scope.Benchmark)
 public class JavaTypeResolution
@@ -64,6 +64,7 @@ public class JavaTypeResolution
 
     public static final class CustomObject {}
 
+    @SuppressWarnings("serial")
     public static final class CustomList<U> extends ArrayList<U> {}
 
     public enum CacheMode {
@@ -110,5 +111,10 @@ public class JavaTypeResolution
 
         @Override
         public void clear() {}
+
+        @Override
+        public LookupCache<Object, JavaType> snapshot() {
+            return this;
+        }
     }
 }
