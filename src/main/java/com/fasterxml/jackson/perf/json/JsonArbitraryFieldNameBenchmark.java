@@ -1,13 +1,15 @@
 package com.fasterxml.jackson.perf.json;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonFactoryBuilder;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.TSFBuilder;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
@@ -34,24 +36,24 @@ public class JsonArbitraryFieldNameBenchmark {
     public enum FactoryMode {
         DEFAULT() {
             @Override
-            JsonFactory apply(JsonFactory factory) {
+            <F extends JsonFactory, B extends TSFBuilder<F, B>> B apply(B factory) {
                 return factory;
             }
         },
         NO_INTERN() {
             @Override
-            JsonFactory apply(JsonFactory factory) {
+            <F extends JsonFactory, B extends TSFBuilder<F, B>> B apply(B factory) {
                 return factory.disable(JsonFactory.Feature.INTERN_FIELD_NAMES);
             }
         },
         NO_CANONICALIZE() {
             @Override
-            JsonFactory apply(JsonFactory factory) {
+            <F extends JsonFactory, B extends TSFBuilder<F, B>> B apply(B factory) {
                 return factory.disable(JsonFactory.Feature.CANONICALIZE_FIELD_NAMES);
             }
         };
 
-        abstract JsonFactory apply(JsonFactory factory);
+        abstract <F extends JsonFactory, B extends TSFBuilder<F, B>> B apply(B factory);
     }
 
     /**
@@ -109,10 +111,11 @@ public class JsonArbitraryFieldNameBenchmark {
 
     @Setup
     public void setup() {
-        factory = mode.apply(new JsonFactory());
-        ObjectMapper mapper = new ObjectMapper(factory)
+        factory = mode.apply(new JsonFactoryBuilder()).build();
+        ObjectMapper mapper = JsonMapper.builder(factory)
                 // Use FAIL_ON_UNKNOWN_PROPERTIES to ensure the benchmark inputs are valid
-                .enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+                .enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+                .build();
         reader = mapper.readerFor(shape.typereference);
     }
 
@@ -128,24 +131,13 @@ public class JsonArbitraryFieldNameBenchmark {
      * fields to cover a mix of reused and arbitrary json keys.
      */
     public static final class SimpleClass {
+        @JsonProperty("fieldWithMap")
         public Map<String, Boolean> fieldWithMap;
-
+        @JsonProperty("stringOne")
         public String stringOne;
-
+        @JsonProperty("stringTwo")
         public String stringTwo;
-
+        @JsonProperty("stringThree")
         public String stringThree;
-
-        @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-        SimpleClass(
-                @JsonProperty("fieldWithMap") Map<String, Boolean> fieldWithMap,
-                @JsonProperty("stringOne") String stringOne,
-                @JsonProperty("stringTwo") String stringTwo,
-                @JsonProperty("stringThree") String stringThree) {
-            this.fieldWithMap = fieldWithMap;
-            this.stringOne = stringOne;
-            this.stringTwo = stringTwo;
-            this.stringThree = stringThree;
-        }
     }
 }
