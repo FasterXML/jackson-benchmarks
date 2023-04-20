@@ -8,6 +8,13 @@ Benchmark                                    Mode  Cnt      Score     Error  Uni
 JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  61012.389 ± 529.749  ops/s
 JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  70684.408 ± 621.934  ops/s
 
+java -Xmx256m -jar target/perf.jar ".*Json.*StdWriteVanilla.writeCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 5
+
+Benchmark                                      Mode  Cnt      Score     Error  Units
+JsonStdWriteVanilla.writeCurrencyPojoDefault  thrpt   25  54065.042 ± 457.264  ops/s
+JsonStdWriteVanilla.writeCurrencyPojoFast     thrpt   25  68396.099 ± 430.756  ops/s
+
+
 ### Java 17 / JSON
 
 java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 9
