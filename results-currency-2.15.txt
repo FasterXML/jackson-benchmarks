@@ -8,6 +8,12 @@ Benchmark                                    Mode  Cnt      Score     Error  Uni
 JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  61012.389 ± 529.749  ops/s
 JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  70684.408 ± 621.934  ops/s
 
+java -Xmx256m -jar target/perf.jar ".*Json.*StdWriteVanilla.writeCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 5
+
+Benchmark                                      Mode  Cnt      Score     Error  Units
+JsonStdWriteVanilla.writeCurrencyPojoDefault  thrpt   25  56956.808 ± 692.258  ops/s
+JsonStdWriteVanilla.writeCurrencyPojoFast     thrpt   25  67980.186 ± 431.886  ops/s
+
 ### Java 17 / JSON
 
 java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 9
@@ -15,6 +21,12 @@ java -Xmx256m -jar target/perf.jar ".*Json.*StdReadVanilla.readCurrencyPojo.*" -
 Benchmark                                    Mode  Cnt      Score      Error  Units
 JsonStdReadVanilla.readCurrencyPojoDefault  thrpt   45  56405.881 ± 1022.490  ops/s
 JsonStdReadVanilla.readCurrencyPojoFast     thrpt   45  58975.778 ± 1147.913  ops/s
+
+java -Xmx256m -jar target/perf.jar ".*Json.*StdWriteVanilla.writeCurrencyPojo.*" -wi 3 -w 1 -i 5 -r 1 -f 5
+
+Benchmark                                      Mode  Cnt      Score      Error  Units
+JsonStdWriteVanilla.writeCurrencyPojoDefault  thrpt   25  55172.044 ±  434.920  ops/s
+JsonStdWriteVanilla.writeCurrencyPojoFast     thrpt   25  69496.599 ± 1300.986  ops/s
 
 ### Java 8 / all
 
@@ -29,6 +41,20 @@ c.f.j.p.smile.SmileStdReadVanilla.readCurrencyPojoDefault     thrpt    9  139763
 c.f.j.p.smile.SmileStdReadVanilla.readCurrencyPojoFast        thrpt    9  139750.505 ± 6702.794  ops/s
 c.f.j.p.toml.TOMLStdReadVanilla.readCurrencyPojoDefault       thrpt    9   14041.580 ±   89.200  ops/s
 c.f.j.p.toml.TOMLStdReadVanilla.readCurrencyPojoFast          thrpt    9   13996.960 ±   89.777  ops/s
+
+
+Benchmark                                                     Mode  Cnt       Score       Error  Units
+java -Xmx256m -jar target/perf.jar ".*StdWriteVan.*writeCurrencyPojo.*" -wi 4 -w 1 -i 5 -r 1 -f 5
+c.f.j.p.cbor.CBORStdWriteVanilla.writeCurrencyPojoDefault    thrpt   25  333055.712 ± 13589.371  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeCurrencyPojoFast       thrpt   25  333235.422 ± 14024.735  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeCurrencyPojoDefault    thrpt   25   56707.088 ±   450.002  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeCurrencyPojoFast       thrpt   25   67469.997 ±   649.434  ops/s
+c.f.j.p.props.PropsStdWriteVanilla.writeCurrencyPojoDefault  thrpt   25   47243.483 ±   790.296  ops/s
+c.f.j.p.props.PropsStdWriteVanilla.writeCurrencyPojoFast     thrpt   25   46578.938 ±   261.722  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeCurrencyPojoDefault  thrpt   25  206126.259 ±  2291.091  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeCurrencyPojoFast     thrpt   25  207640.086 ±  2915.558  ops/s
+c.f.j.p.toml.TOMLStdWriteVanilla.writeCurrencyPojoDefault    thrpt   25   47212.103 ±   641.152  ops/s
+c.f.j.p.toml.TOMLStdWriteVanilla.writeCurrencyPojoFast       thrpt   25   47627.584 ±   342.252  ops/s
 
 ### Java 17 / all
 
@@ -45,3 +71,15 @@ c.f.j.p.smile.SmileStdReadVanilla.readCurrencyPojoFast     thrpt    9  117318.50
 c.f.j.p.toml.TOMLStdReadVanilla.readCurrencyPojoDefault    thrpt    9   20530.346 ±  306.853  ops/s
 c.f.j.p.toml.TOMLStdReadVanilla.readCurrencyPojoFast       thrpt    9   20531.955 ±  174.614  ops/s
 
+java -Xmx256m -jar target/perf.jar ".*StdWriteVan.*writeCurrencyPojo.*" -wi 4 -w 1 -i 3 -r 1 -f 3
+Benchmark                                                     Mode  Cnt       Score       Error  Units
+c.f.j.p.cbor.CBORStdWriteVanilla.writeCurrencyPojoDefault    thrpt    9  309500.443 ± 25594.014  ops/s
+c.f.j.p.cbor.CBORStdWriteVanilla.writeCurrencyPojoFast       thrpt    9  303616.729 ± 26793.865  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeCurrencyPojoDefault    thrpt    9   53327.734 ±  5915.373  ops/s
+c.f.j.p.json.JsonStdWriteVanilla.writeCurrencyPojoFast       thrpt    9   70114.536 ±  2574.878  ops/s
+c.f.j.p.props.PropsStdWriteVanilla.writeCurrencyPojoDefault  thrpt    9   45171.784 ±  2151.701  ops/s
+c.f.j.p.props.PropsStdWriteVanilla.writeCurrencyPojoFast     thrpt    9   46026.605 ±   615.950  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeCurrencyPojoDefault  thrpt    9  192000.467 ±  3688.685  ops/s
+c.f.j.p.smile.SmileStdWriteVanilla.writeCurrencyPojoFast     thrpt    9  190236.856 ±  4140.056  ops/s
+c.f.j.p.toml.TOMLStdWriteVanilla.writeCurrencyPojoDefault    thrpt    9   47080.894 ±  1491.130  ops/s
+c.f.j.p.toml.TOMLStdWriteVanilla.writeCurrencyPojoFast       thrpt    9   47663.538 ±   546.777  ops/s

@@ -12,6 +12,7 @@ import org.openjdk.jmh.infra.Blackhole;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.perf.WritePerfTestFull;
+import com.fasterxml.jackson.perf.model.CurrencySampleProvider;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
@@ -42,6 +43,27 @@ public class JsonWastefulWriteVanilla
         _untyped = MAPPER.convertValue(_value, Map.class);
     }
 
+    /*
+    /**********************************************************************
+    /* POJO writing tests
+    /**********************************************************************
+     */
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void writeCurrencyPojoDefault(Blackhole bh) throws Exception {
+        bh.consume(write(CurrencySampleProvider.getSample()));
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void writeCurrencyPojoFast(Blackhole bh) throws Exception {
+        // NOTE! Does not use Fast writes...
+        bh.consume(write(CurrencySampleProvider.getSample()));
+    }
+    
     @Benchmark
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Override

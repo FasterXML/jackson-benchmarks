@@ -10,7 +10,6 @@ import org.openjdk.jmh.infra.Blackhole;
 
 import tools.jackson.databind.*;
 import tools.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.perf.AuxStateSize;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -69,7 +68,6 @@ public class JsonWastefulReadVanilla
         return mapper().readValue(data, Object.class);
     }
 
-    @SuppressWarnings("deprecation")
     private final ObjectMapper mapper() {
         // 3.x disables intern()ing by default so no need to change
         return new JsonMapper();
