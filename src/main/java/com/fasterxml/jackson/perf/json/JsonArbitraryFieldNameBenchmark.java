@@ -120,7 +120,32 @@ public class JsonArbitraryFieldNameBenchmark {
                 },
                 () -> "{\"fieldWithMap\":{\"" + ThreadLocalRandom.current().nextInt()
                         + "\":true},\"stringOne\":\"a\",\"stringTwo\":\"a\",\"stringThree\":\"a\"}"),
+        BEAN_WITH_LARGE_KEY_MAP(
+                new TypeReference<SimpleClass>() {
+                },
+                new Supplier<String>() {
+                    private final String json = generateSimpleInstanceJson(10_000);
+
+                    @Override
+                    public String get() {
+                        return json;
+                    }
+                }
+        ),
         ;
+
+        private static String generateSimpleInstanceJson(int n) {
+            StringBuilder builder = new StringBuilder();
+            builder.append("{\"fieldWithMap\":{");
+            for (int i = 0; i < n; i++) {
+                builder.append("\"").append(i).append("\":").append(i % 2 == 0);
+                if (i < n-1) {
+                    builder.append(',');
+                }
+            }
+            builder.append("},\"stringOne\":\"a\",\"stringTwo\":\"a\",\"stringThree\":\"a\"}");
+            return builder.toString();
+        }
 
         private final TypeReference<?> typereference;
         private final Supplier<byte[]> bytesSupplier;
