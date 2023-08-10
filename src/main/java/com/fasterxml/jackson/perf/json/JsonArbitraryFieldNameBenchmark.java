@@ -18,6 +18,9 @@ import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -51,7 +54,8 @@ public class JsonArbitraryFieldNameBenchmark {
             <F extends JsonFactory, B extends TSFBuilder<F, B>> B apply(B factory) {
                 return factory.disable(JsonFactory.Feature.CANONICALIZE_FIELD_NAMES);
             }
-        };
+        },
+        ;
 
         abstract <F extends JsonFactory, B extends TSFBuilder<F, B>> B apply(B factory);
     }
@@ -62,38 +66,47 @@ public class JsonArbitraryFieldNameBenchmark {
     public enum InputType {
         INPUT_STREAM() {
             @Override
-            JsonParser create(JsonFactory factory, Supplier<String> jsonSupplier) throws IOException {
-                return factory.createParser(new ByteArrayInputStream(jsonSupplier.get().getBytes(StandardCharsets.UTF_8)));
+            JsonParser create(JsonFactory factory, Supplier<byte[]> bytesSupplier) throws IOException {
+                return factory.createParser(new ByteArrayInputStream(bytesSupplier.get()));
             }
         },
         READER() {
             @Override
-            JsonParser create(JsonFactory factory, Supplier<String> jsonSupplier) throws IOException {
-                // Instead of using 'new StringReader(jsonSupplier.get())', we construct an InputStreamReader
+            JsonParser create(JsonFactory factory, Supplier<byte[]> bytesSupplier) throws IOException {
+                // Instead of using 'new StringReader(bytesSupplier.get())', we construct an InputStreamReader
                 // to more closely match overhead of INPUT_STREAM for comparison.
                 return factory.createParser(new InputStreamReader(
-                        new ByteArrayInputStream(jsonSupplier.get().getBytes(StandardCharsets.UTF_8)),
+                        new ByteArrayInputStream(bytesSupplier.get()),
                         StandardCharsets.UTF_8));
             }
-        };
+        },
+        ;
 
-        abstract JsonParser create(JsonFactory factory, Supplier<String> jsonSupplier) throws IOException;
+        abstract JsonParser create(JsonFactory factory, Supplier<byte[]> jsonSupplier) throws IOException;
     }
 
     public enum InputShape {
+        KEY_MAP(
+                new TypeReference<Map<String, Boolean>>() {
+                },
+                () -> "{\"key\":true}"),
         RANDOM_KEY_MAP(
-                new TypeReference<Map<String, Boolean>>() {},
+                new TypeReference<Map<String, Boolean>>() {
+                },
                 () -> "{\"" + ThreadLocalRandom.current().nextInt() + "\":true}"),
         BEAN_WITH_RANDOM_KEY_MAP(
-                new TypeReference<SimpleClass>() {},
+                new TypeReference<SimpleClass>() {
+                },
                 () -> "{\"fieldWithMap\":{\"" + ThreadLocalRandom.current().nextInt()
-                        + "\":true},\"stringOne\":\"a\",\"stringTwo\":\"a\",\"stringThree\":\"a\"}");
+                        + "\":true},\"stringOne\":\"a\",\"stringTwo\":\"a\",\"stringThree\":\"a\"}"),
+        ;
 
         private final TypeReference<?> typereference;
-        private final Supplier<String> jsonSupplier;
+        private final Supplier<byte[]> bytesSupplier;
+
         InputShape(TypeReference<?> typereference, Supplier<String> jsonSupplier) {
             this.typereference = typereference;
-            this.jsonSupplier = jsonSupplier;
+            this.bytesSupplier = () -> jsonSupplier.get().getBytes(StandardCharsets.UTF_8);
         }
     }
 
@@ -121,7 +134,7 @@ public class JsonArbitraryFieldNameBenchmark {
 
     @Benchmark
     public Object parse() throws IOException {
-        try (JsonParser parser = type.create(factory, shape.jsonSupplier)) {
+        try (JsonParser parser = type.create(factory, shape.bytesSupplier)) {
             return reader.readValue(parser);
         }
     }
@@ -139,5 +152,17 @@ public class JsonArbitraryFieldNameBenchmark {
         public String stringTwo;
         @JsonProperty("stringThree")
         public String stringThree;
+    }
+
+    public static void main(String[] _args) throws Exception {
+        new Runner(new OptionsBuilder()
+                .include(JsonArbitraryFieldNameBenchmark.class.getName())
+                .warmupIterations(2)
+                .warmupTime(TimeValue.seconds(5))
+                .measurementIterations(4)
+                .measurementTime(TimeValue.seconds(5))
+                .mode(Mode.AverageTime)
+                .forks(1)
+                .build()).run();
     }
 }
