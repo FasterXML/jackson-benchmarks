@@ -26,6 +26,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.StringReader;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
@@ -91,6 +92,13 @@ public class JsonArbitraryFieldNameBenchmark {
                 CharBuffer charBuffer = Charset.forName("UTF-8").decode(byteBuffer);
                 CharBufferReader charBufferReader = new CharBufferReader(charBuffer);
                 return factory.createParser(charBufferReader);
+            }
+        },
+        STRING_READER() {
+            @Override
+            JsonParser create(JsonFactory factory, Supplier<byte[]> jsonSupplier) throws IOException {
+                StringReader reader = new StringReader(new String(jsonSupplier.get(), Charset.forName("UTF-8")));
+                return factory.createParser(reader);
             }
         },
         ;
