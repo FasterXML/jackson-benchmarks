@@ -56,7 +56,8 @@ public class JsonStringReadVanilla
                 .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER);
         CURRENCY_BIGDEC_READER_DEFAULT = MAPPER.readerFor(CurrencyBigDecimal.class);
         CURRENCY_BIGDEC_READER_FAST = CURRENCY_READER_DEFAULT
-                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER);
+                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER)
+                .with(StreamReadFeature.USE_FAST_BIG_NUMBER_PARSER);
 
     }
 

@@ -75,7 +75,8 @@ public abstract class ReadPerfBaseFullJackson<T>
         CURRENCY_BIGDEC_READER_DEFAULT = r;
 
         r = mapper.readerFor(CurrencyBigDecimal.class)
-                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER);
+                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER)
+                .with(StreamReadFeature.USE_FAST_BIG_NUMBER_PARSER);
         if (schema != null) {
             r = r.with(schema);
         }
