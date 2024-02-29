@@ -2,39 +2,39 @@ Version: 2.16.1
 H/W: Mac mini (2018) 3.2G x 6
 OS: MacOS 13.2.1
 
-Read - Afterburner / 2.16.0-SNAPSHOT / home / 29-Aug-2023 / 1.8.0_362
+Read - Afterburner / 2.16.1 / home / 28-Feb-2025 / 1.8.0_382
 java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
-c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem        thrpt    5  1009931.248 ±   9529.353  ops/s
-c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem        thrpt    5   745975.405 ±   4189.398  ops/s
-c.f.j.p.protob.ProtobStdReadAfterburner.readPojoMediaItem    thrpt    5   970805.241 ±   3610.665  ops/s
-c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem      thrpt    5   938175.603 ±  14213.359  ops/s
-c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem        thrpt    5   691188.909 ±   5792.965  ops/s
-c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem          thrpt    5   482576.309 ± 101265.586  ops/s
-c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem  thrpt    5   413768.754 ±   6875.122  ops/s
-c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem          thrpt    5   285715.866 ±   4330.093  ops/s
-c.f.j.p.bson.BSONStdReadAfterburner.readPojoMediaItem        thrpt    5   270038.525 ±   3062.903  ops/s
-c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem          thrpt    5   147502.189 ±    770.130  ops/s
-c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem      thrpt    5   123376.482 ±   4060.960  ops/s
-c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem        thrpt    5   127121.822 ±    705.264  ops/s
-c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem        thrpt    5    45420.183 ±    553.356  ops/s
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem        thrpt   45  1016159.607 ±  3460.729  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem        thrpt   45   741290.040 ±  2332.600  ops/sc
+c.f.j.p.protob.ProtobStdReadAfterburner.readPojoMediaItem    thrpt   45   966382.410 ±  6548.430  ops/sc
+c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem      thrpt   45   931864.690 ±  2576.978  ops/s
+c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem        thrpt   45   715029.449 ±  2793.853  ops/s
+c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem          thrpt   45   487246.527 ±  3554.898  ops/scc
+c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem  thrpt   45   393939.464 ± 12625.239  ops/s
+c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem          thrpt   45   282479.875 ±  2102.321  ops/s
+c.f.j.p.bson.BSONStdReadAfterburner.readPojoMediaItem        thrpt   45   267544.989 ±  1762.845  ops/s
+c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem          thrpt   45   146339.409 ±  2011.590  ops/s
+c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem      thrpt   45   123712.967 ±   762.262  ops/s
+c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem        thrpt   45   126111.779 ±   427.556  ops/sc
+c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem        thrpt   45    45018.156 ±   477.892  ops/s
 
-Read - Vanilla / 2.16.0-SNAPSHOT / home / 29-Aug-2023 / 1.8.0_362
+Read - Vanilla / 2.16.1 / home / 28-Feb-2024 / 1.8.0_382
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem        thrpt    5  771138.710 ± 13400.196  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem        thrpt    5  614311.806 ± 26276.993  ops/s
-c.f.j.p.protob.ProtobStdReadVanilla.readPojoMediaItem    thrpt    5  759630.149 ± 13960.878  ops/s
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem      thrpt    5  783277.836 ±  7195.128  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem   thrpt    5  618019.558 ±  4718.178  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem        thrpt    5  550503.384 ±  4615.119  ops/s
-c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem          thrpt    5  436081.020 ±  4056.070  ops/s
-c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem  thrpt    5  345198.268 ±  4486.469  ops/s
-c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem          thrpt    5  252190.313 ±  7169.398  ops/s
-c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem        thrpt    5  242168.487 ±  2193.402  ops/s
-c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem          thrpt    5  138706.081 ±  1464.764  ops/s
-c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem      thrpt    5  121926.832 ±  3459.563  ops/s
-c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem        thrpt    5  117237.682 ±  1069.034  ops/s
-c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem        thrpt    5   43811.019 ±   328.433  ops/s
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem        thrpt   45  777847.429 ± 6026.330  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem        thrpt   45  623028.433 ± 5435.355  ops/s
+c.f.j.p.protob.ProtobStdReadVanilla.readPojoMediaItem    thrpt   45  745195.327 ± 6186.179  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem      thrpt   45  771988.274 ± 4884.400  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem   thrpt   45  598556.199 ± 4915.116  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem        thrpt   45  552995.460 ± 6234.667  ops/s
+c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem          thrpt   45  434798.966 ± 3592.617  ops/sc
+c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem  thrpt   45  343323.786 ± 2440.625  ops/sc
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem          thrpt   45  252953.560 ± 1965.878  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem        thrpt   45  237718.187 ±  559.668  ops/s
+c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem          thrpt   45  134347.874 ± 1548.786  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem      thrpt   45  122254.664 ±  594.834  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem        thrpt   45  120748.884 ±  882.131  ops/s
+c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem        thrpt   45   42668.642 ±  576.829  ops/s
 
 Read - Untyped / 2.16.1 / home / 28-Feb-2024 / 1.8.0_382
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
