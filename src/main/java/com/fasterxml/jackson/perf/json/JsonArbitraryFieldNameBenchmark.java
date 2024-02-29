@@ -122,7 +122,7 @@ public class JsonArbitraryFieldNameBenchmark {
         ),
         ;
 
-        private static String generateSimpleInstanceJson(int n) {
+        static String generateSimpleInstanceJson(int n) {
             StringBuilder builder = new StringBuilder();
             builder.append("{\"fieldWithMap\":{");
             for (int i = 0; i < n; i++) {
@@ -135,8 +135,8 @@ public class JsonArbitraryFieldNameBenchmark {
             return builder.toString();
         }
 
-        private final TypeReference<?> typereference;
-        private final Supplier<byte[]> bytesSupplier;
+        final TypeReference<?> typereference;
+        final Supplier<byte[]> bytesSupplier;
 
         InputShape(TypeReference<?> typereference, Supplier<String> jsonSupplier) {
             this.typereference = typereference;

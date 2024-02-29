@@ -13,6 +13,7 @@ import tools.jackson.databind.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.data.InputData;
 import com.fasterxml.jackson.perf.model.Currency;
+import com.fasterxml.jackson.perf.model.CurrencyBigDecimal;
 
 public abstract class ReadPerfBaseFullJackson<T>
 	extends ReadPerfBaseBasicJackson<T>
@@ -25,6 +26,9 @@ public abstract class ReadPerfBaseFullJackson<T>
 
     protected final ObjectReader CURRENCY_READER_DEFAULT;
     protected final ObjectReader CURRENCY_READER_FAST;
+
+    protected final ObjectReader CURRENCY_BIGDEC_READER_DEFAULT;
+    protected final ObjectReader CURRENCY_BIGDEC_READER_FAST;
 
     protected ReadPerfBaseFullJackson(Class<T> type, InputConverter conv, ObjectMapper mapper)
     {
@@ -50,8 +54,8 @@ public abstract class ReadPerfBaseFullJackson<T>
         }
         NODE_READER = r;
 
-        // This is unlikely to actually work but:
         r = mapper.readerFor(Currency.class);
+        // This is unlikely to actually work but:
         if (schema != null) {
             r = r.with(schema);
         }
@@ -63,6 +67,21 @@ public abstract class ReadPerfBaseFullJackson<T>
             r = r.with(schema);
         }
         CURRENCY_READER_FAST = r;
+
+        // And same for BigDecimal-variant
+        r = mapper.readerFor(CurrencyBigDecimal.class);
+        if (schema != null) {
+            r = r.with(schema);
+        }
+        CURRENCY_BIGDEC_READER_DEFAULT = r;
+
+        r = mapper.readerFor(CurrencyBigDecimal.class)
+                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER)
+                .with(StreamReadFeature.USE_FAST_BIG_NUMBER_PARSER);
+        if (schema != null) {
+            r = r.with(schema);
+        }
+        CURRENCY_BIGDEC_READER_FAST = r;
     }
 
     /*
@@ -83,6 +102,20 @@ public abstract class ReadPerfBaseFullJackson<T>
     @Override
     public void readCurrencyPojoFast(Blackhole bh/*, AuxStateSize size*/) throws Exception {
         bh.consume(read(FULL_CONVERTER.bytes(InputData.CURRENCY_WS), CURRENCY_READER_FAST));
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readCurrencyBigDecPojoDefault(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        bh.consume(read(FULL_CONVERTER.bytes(InputData.CURRENCY_WS), CURRENCY_BIGDEC_READER_DEFAULT));
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.SECONDS)
+    @Override
+    public void readCurrencyBigDecPojoFast(Blackhole bh/*, AuxStateSize size*/) throws Exception {
+        bh.consume(read(FULL_CONVERTER.bytes(InputData.CURRENCY_WS), CURRENCY_BIGDEC_READER_FAST));
     }
     
     /*

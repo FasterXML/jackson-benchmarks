@@ -68,14 +68,12 @@ public class JavaTypeResolution
     public static final class CustomList<U> extends ArrayList<U> {}
 
     public enum CacheMode {
-        @SuppressWarnings("unused") // used by JMH
         DEFAULT() {
             @Override
             TypeFactory apply(TypeFactory input) {
                 return input;
             }
         },
-        @SuppressWarnings("unused") // used by JMH
         NONE() {
             @Override
             TypeFactory apply(TypeFactory input) {

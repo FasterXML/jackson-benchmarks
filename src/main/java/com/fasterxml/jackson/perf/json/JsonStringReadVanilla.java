@@ -17,6 +17,7 @@ import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.data.InputData;
 import com.fasterxml.jackson.perf.data.StringInputConverter;
 import com.fasterxml.jackson.perf.model.Currency;
+import com.fasterxml.jackson.perf.model.CurrencyBigDecimal;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 /**
@@ -41,6 +42,8 @@ public class JsonStringReadVanilla
 
     protected final ObjectReader CURRENCY_READER_DEFAULT;
     protected final ObjectReader CURRENCY_READER_FAST;
+    protected final ObjectReader CURRENCY_BIGDEC_READER_DEFAULT;
+    protected final ObjectReader CURRENCY_BIGDEC_READER_FAST;
 
     protected final StringInputConverter _converter;
 
@@ -53,6 +56,10 @@ public class JsonStringReadVanilla
         CURRENCY_READER_DEFAULT = MAPPER.readerFor(Currency.class);
         CURRENCY_READER_FAST = CURRENCY_READER_DEFAULT
                 .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER);
+        CURRENCY_BIGDEC_READER_DEFAULT = MAPPER.readerFor(CurrencyBigDecimal.class);
+        CURRENCY_BIGDEC_READER_FAST = CURRENCY_READER_DEFAULT
+                .with(StreamReadFeature.USE_FAST_DOUBLE_PARSER)
+                .with(StreamReadFeature.USE_FAST_BIG_NUMBER_PARSER);
 
     }
 
@@ -91,6 +98,18 @@ public class JsonStringReadVanilla
         final String input = _converter.asString(InputData.CURRENCY_WS);
 //        size.set(input.length());
         bh.consume(read(input, CURRENCY_READER_FAST));
+    }
+
+    @Override
+    public void readCurrencyBigDecPojoDefault(Blackhole bh) throws Exception {
+        final String input = _converter.asString(InputData.CURRENCY_WS);
+        bh.consume(read(input, CURRENCY_BIGDEC_READER_DEFAULT));
+    }
+
+    @Override
+    public void readCurrencyBigDecPojoFast(Blackhole bh) throws Exception {
+        final String input = _converter.asString(InputData.CURRENCY_WS);
+        bh.consume(read(input, CURRENCY_BIGDEC_READER_FAST));
     }
 
     /*

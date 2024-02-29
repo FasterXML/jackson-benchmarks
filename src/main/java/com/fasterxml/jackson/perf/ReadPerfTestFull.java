@@ -16,4 +16,6 @@ public interface ReadPerfTestFull extends ReadPerfTestBasic
 
     public void readCurrencyPojoDefault(Blackhole bh) throws Exception;
     public void readCurrencyPojoFast(Blackhole bh) throws Exception;
+    public void readCurrencyBigDecPojoDefault(Blackhole bh) throws Exception;
+    public void readCurrencyBigDecPojoFast(Blackhole bh) throws Exception;
 }
