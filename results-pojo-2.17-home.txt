@@ -1,8 +1,8 @@
-Version: 2.17.0-rc1
+Version: 2.17
 H/W: Mac mini (2018) 3.2G x 6
 OS: MacOS 13.2.1
 
-Read - Afterburner / 2.17.0-rc1 / home / 29-Feb-2025 / 1.8.0_382
+Read - Afterburner / 2.17.0-rc1 / home / 29-Feb-2024 / 1.8.0_382
 java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem        thrpt   45  981338.536 ±  3315.960  ops/s
 c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem        thrpt   45  748518.446 ±  3325.680  ops/s
