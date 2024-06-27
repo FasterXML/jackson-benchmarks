@@ -41,7 +41,7 @@ Settings to run tests include:
 * Afterburner: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 
 1
 
-### POJO: Currency (floating-point)
+### POJO: Currency (floating-point (double))
 
 `Currency` POJO, and data file `./json/USD.json` (about 2kB) come from [Awesome JSON Datasets](https://github.com/jdorfman/awesome-json-datasets#currency).
 
@@ -51,4 +51,14 @@ Settings to run tests include:
 * Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyPojoDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
 * FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyPojoFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
 * All: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.readCurrencyPojo.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+```
+
+### POJO: Currency (BigDecimal)
+
+Same as above, but instead of reading as `double` values are read as `BigDecimal`. Run using
+
+```
+* Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyBigDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyBigFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* All: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.readCurrencyBig.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
 ```
