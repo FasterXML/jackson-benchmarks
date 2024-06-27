@@ -9,7 +9,9 @@ syntax: glob
 jmh.out
 
 # building
-target
+/target
+.gradle
+.mvn/wrapper/maven-wrapper.jar
 
 # Eclipse
 .classpath
