@@ -1,4 +1,4 @@
 #!/bin/sh
 
-java -Xmx256m -jar target/perf.jar ".*JsonStdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonStdReadVan.*PojoMedia.*" -wi 1 -w 1 -i 999 -r 1 -f 1 -t 1
 
