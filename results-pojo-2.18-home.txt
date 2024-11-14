@@ -1,0 +1,54 @@
+Version: 2.18
+H/W: Mac mini (2018) 3.2G x 6
+OS: MacOS 13.6.9
+
+Read - Afterburner / 2.18.1 / home / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Read - Vanilla / 2.18.1 / home     / xx-Nov-2024 / 1.8.0_412
+java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem        thrpt    5  731364.441 ±  8766.505  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem        thrpt    5  594115.059 ± 11977.854  ops/s
+c.f.j.p.protob.ProtobStdReadVanilla.readPojoMediaItem    thrpt    5  670172.445 ± 15732.761  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem      thrpt    5  740379.067 ± 15996.244  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem   thrpt    5  565946.938 ± 12555.945  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem        thrpt    5  529191.379 ± 15066.313  ops/s
+c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem          thrpt    5  397401.868 ±  7680.003  ops/s
+c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem  thrpt    5  346344.561 ±  5059.847  ops/s
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem          thrpt    5  237213.366 ±  4271.989  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem        thrpt    5  229169.873 ±  8045.811  ops/s
+c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem          thrpt    5  128103.228 ±   810.091  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem      thrpt    5  112865.574 ±  2612.973  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem        thrpt    5  111416.243 ±  1960.642  ops/s
+c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem        thrpt    5   43596.787 ±   332.636  ops/s
+
+Read - Untyped / 2.18.1 / home     / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Read - Tree / 2.18.1 / home        / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdReadV.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Read - wasteful / 2.18.1 / home    / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Read - other / 2.18.1 / home       / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*ReadAsy.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*ringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadDataI.*PojoMediaI.*" -wi 5 -w 1 -i 5 -r 1 -f 9 -t 1
+
+---------------------- WRITE -----------------------
+
+Write - Afterburner / 2.18.1 / home / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdWriteAft.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Write - Vanilla / 2.18.1 / home    / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdWriteVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Write - Untyped / 2.18.1 / home    / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdWriteV.*UntypedMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Write - Tree / 2.18.1 / home       / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*StdWriteVan.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+
+Write - wasteful / 2.18.1 / home   / xx-Nov-2024 / 1.8.0_382
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulW.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
