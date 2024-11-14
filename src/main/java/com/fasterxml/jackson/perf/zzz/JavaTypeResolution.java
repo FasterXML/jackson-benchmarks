@@ -21,14 +21,13 @@ import tools.jackson.databind.util.LookupCache;
 @State(Scope.Benchmark)
 public class JavaTypeResolution
 {
-
     @Param
     public CacheMode cache;
     private TypeFactory tf;
 
     @Setup
     public void setup() {
-        tf = cache.apply(TypeFactory.defaultInstance().withModifier(null));
+        tf = cache.apply(new TypeFactory().withModifier(null));
     }
 
     @Benchmark
@@ -112,6 +111,11 @@ public class JavaTypeResolution
 
         @Override
         public LookupCache<Object, JavaType> snapshot() {
+            return this;
+        }
+
+        @Override
+        public LookupCache<Object, JavaType> emptyCopy() {
             return this;
         }
     }
