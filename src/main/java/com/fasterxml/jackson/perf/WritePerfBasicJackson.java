@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.infra.Blackhole;
 
 import com.fasterxml.jackson.core.FormatSchema;
@@ -36,6 +37,18 @@ public abstract class WritePerfBasicJackson<T>
         }
         MEDIA_ITEM_WRITER = w;
         item = value;
+    }
+
+    // Let's print process ID for profiler
+    @Setup
+    public void setup() {
+        // On Java 9+ could use:
+//        long pid = ProcessHandle.current().pid();
+        // But for now:
+        String name = java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
+        String pid = name.split("@")[0];
+        
+        System.out.print("[JMH Process ID: " + pid + "]");
     }
 
     /*
