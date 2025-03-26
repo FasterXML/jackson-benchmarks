@@ -4,6 +4,19 @@ OS: MacOS 13.6.9
 
 Read - Afterburner / 2.19.0-SNAP / home / xx-Nov-2024 / 
 java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem        thrpt   45  926496.966 ±  4965.212  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem        thrpt   45  684314.476 ±  5779.641  ops/s
+c.f.j.p.protob.ProtobStdReadAfterburner.readPojoMediaItem    thrpt   45  849407.087 ±  3462.656  ops/s
+c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem      thrpt   45  854224.637 ±  1922.027  ops/s
+c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem        thrpt   45  644925.579 ±  4739.687  ops/s
+c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem          thrpt   45  438474.241 ±  1877.167  ops/s
+c.f.j.p.msgpack.MsgpackStdReadAfterburner.readPojoMediaItem  thrpt   45  375447.586 ± 12406.717  ops/s
+c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem          thrpt   45  261685.496 ±   704.748  ops/s
+c.f.j.p.bson.BSONStdReadAfterburner.readPojoMediaItem        thrpt   45  250726.869 ±   517.332  ops/s
+c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem          thrpt   45  135252.643 ±   454.177  ops/s
+c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem      thrpt   45  110757.276 ±   354.210  ops/s
+c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem        thrpt   45  117797.077 ±   504.255  ops/s
+c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem        thrpt   45   42669.869 ±   574.882  ops/s
 
 Read - Vanilla / 2.19.0-SNAP / home     / xx-Nov-2024 / 
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
