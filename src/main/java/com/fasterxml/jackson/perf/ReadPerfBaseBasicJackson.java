@@ -7,6 +7,7 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.infra.Blackhole;
 
 import tools.jackson.core.FormatSchema;
@@ -37,6 +38,18 @@ public abstract class ReadPerfBaseBasicJackson<T>
             r = r.with(schema);
         }
         MEDIA_ITEM_READER = r;
+    }
+
+    // Let's print process ID for profiler
+    @Setup
+    public void setup() {
+        // On Java 9+ could use:
+//        long pid = ProcessHandle.current().pid();
+        // But for now:
+        String name = java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
+        String pid = name.split("@")[0];
+        
+        System.out.print("[JMH Process ID: " + pid + "]");
     }
 
     /*
