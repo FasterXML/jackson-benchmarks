@@ -3,7 +3,7 @@ package com.fasterxml.jackson.perf.smile;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
-import tools.jackson.dataformat.smile.databind.SmileMapper;
+import tools.jackson.dataformat.smile.SmileMapper;
 import com.fasterxml.jackson.perf.WritePerfBaseFullJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 

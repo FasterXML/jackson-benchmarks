@@ -2,7 +2,7 @@ package com.fasterxml.jackson.manualtest;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.dataformat.smile.SmileFactory;
-import tools.jackson.dataformat.smile.databind.SmileMapper;
+import tools.jackson.dataformat.smile.SmileMapper;
 
 public class MediaItemReadSmile extends ManualMediaItemReadBase
 {

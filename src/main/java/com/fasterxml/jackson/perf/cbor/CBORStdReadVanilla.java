@@ -6,7 +6,7 @@ import org.openjdk.jmh.annotations.Scope;
 import tools.jackson.databind.*;
 
 import tools.jackson.dataformat.cbor.CBORFactory;
-import tools.jackson.dataformat.cbor.databind.CBORMapper;
+import tools.jackson.dataformat.cbor.CBORMapper;
 
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;

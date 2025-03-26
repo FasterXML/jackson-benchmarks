@@ -4,7 +4,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.databind.*;
-import tools.jackson.dataformat.smile.databind.SmileMapper;
+import tools.jackson.dataformat.smile.SmileMapper;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 import com.fasterxml.jackson.perf.util.AsArrayIntrospector;

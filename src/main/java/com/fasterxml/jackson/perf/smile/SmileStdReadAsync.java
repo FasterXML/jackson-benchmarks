@@ -2,15 +2,13 @@ package com.fasterxml.jackson.perf.smile;
 
 import org.openjdk.jmh.annotations.State;
 
-import java.io.IOException;
-
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.core.async.ByteArrayFeeder;
 import tools.jackson.core.JsonParser;
 
 import tools.jackson.databind.*;
-import tools.jackson.dataformat.smile.databind.SmileMapper;
+import tools.jackson.dataformat.smile.SmileMapper;
 import com.fasterxml.jackson.perf.*;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -35,7 +33,7 @@ public class SmileStdReadAsync
     }
 
     @Override
-    protected Object read(byte[] input, ObjectReader reader) throws IOException {
+    protected Object read(byte[] input, ObjectReader reader) {
         JsonParser p = MAPPER.createNonBlockingByteArrayParser();
         ((ByteArrayFeeder) p.nonBlockingInputFeeder()).feedInput(input, 0, input.length);
         Object result = reader.readValue(p);

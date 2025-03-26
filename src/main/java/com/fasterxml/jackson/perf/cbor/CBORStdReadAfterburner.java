@@ -4,7 +4,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.databind.*;
-import tools.jackson.dataformat.cbor.databind.CBORMapper;
+import tools.jackson.dataformat.cbor.CBORMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;

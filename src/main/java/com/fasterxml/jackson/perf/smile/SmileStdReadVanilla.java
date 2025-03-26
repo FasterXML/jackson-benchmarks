@@ -6,7 +6,7 @@ import org.openjdk.jmh.annotations.Scope;
 import tools.jackson.databind.*;
 
 import tools.jackson.dataformat.smile.SmileFactory;
-import tools.jackson.dataformat.smile.databind.SmileMapper;
+import tools.jackson.dataformat.smile.SmileMapper;
 
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;

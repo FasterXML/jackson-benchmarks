@@ -206,11 +206,11 @@ public class MediaItemCodec
         
         // As with above, first fast path
         if (parser.nextName(FIELD_PLAYER)) {
-            media.setPlayer(MediaContent.Player.find(parser.nextTextValue()));
+            media.setPlayer(MediaContent.Player.find(parser.nextStringValue()));
             if (parser.nextName(FIELD_URI)) {
-                media.setUri(parser.nextTextValue());
+                media.setUri(parser.nextStringValue());
                 if (parser.nextName(FIELD_TITLE)) {
-                    media.setTitle(parser.nextTextValue());
+                    media.setTitle(parser.nextStringValue());
                     if (parser.nextName(FIELD_WIDTH)) {
                         haveWidth = true;
                         media.setWidth(parser.nextIntValue(-1));
@@ -218,7 +218,7 @@ public class MediaItemCodec
                             haveHeight = true;
                             media.setHeight(parser.nextIntValue(-1));
                             if (parser.nextName(FIELD_FORMAT)) {
-                                media.setFormat(parser.nextTextValue());
+                                media.setFormat(parser.nextStringValue());
                                 if (parser.nextName(FIELD_DURATION)) {
                                     haveDuration = true;
                                     media.setDuration(parser.nextLongValue(-1L));
@@ -228,7 +228,7 @@ public class MediaItemCodec
                                         if (parser.nextName(FIELD_BITRATE)) {
                                             media.setBitrate(parser.nextIntValue(-1));
                                             if (parser.nextName(FIELD_COPYRIGHT)) {
-                                                media.setCopyright(parser.nextTextValue());
+                                                media.setCopyright(parser.nextStringValue());
                                                 if (parser.nextName(FIELD_PERSONS)) {
                                                     media.setPersons(readPersons(parser));
                                                     parser.nextToken();
@@ -253,13 +253,13 @@ public class MediaItemCodec
             if (I != null) {
                 switch (I) {
                 case FIELD_IX_PLAYER:
-                    media.setPlayer(MediaContent.Player.find(parser.nextTextValue()));
+                    media.setPlayer(MediaContent.Player.find(parser.nextStringValue()));
                     continue;
                 case FIELD_IX_URI:
-                    media.setUri(parser.nextTextValue());
+                    media.setUri(parser.nextStringValue());
                     continue;
                 case FIELD_IX_TITLE:
-                    media.setTitle(parser.nextTextValue());
+                    media.setTitle(parser.nextStringValue());
                     continue;
                 case FIELD_IX_WIDTH:
                     media.setWidth(parser.nextIntValue(-1));
@@ -270,7 +270,7 @@ public class MediaItemCodec
                     haveHeight = true;
                     continue;
                 case FIELD_IX_FORMAT:
-                    media.setFormat(parser.nextTextValue());
+                    media.setFormat(parser.nextStringValue());
                     continue;
                 case FIELD_IX_DURATION:
                     media.setDuration(parser.nextLongValue(-1L));
@@ -287,7 +287,7 @@ public class MediaItemCodec
                     media.setPersons(readPersons(parser));
                     continue;
                 case FIELD_IX_COPYRIGHT:
-                    media.setCopyright(parser.nextTextValue());
+                    media.setCopyright(parser.nextStringValue());
                     continue;
                 }
             }
@@ -330,7 +330,7 @@ public class MediaItemCodec
         }
         List<String> persons = new ArrayList<String>();
         String str;
-        while ((str = parser.nextTextValue()) != null) {
+        while ((str = parser.nextStringValue()) != null) {
             persons.add(str);
         }
         verifyCurrent(parser, JsonToken.END_ARRAY);
@@ -343,9 +343,9 @@ public class MediaItemCodec
         boolean haveHeight = false;
         Image image = new Image();
         if (parser.nextName(FIELD_URI)) {
-            image.setUri(parser.nextTextValue());
+            image.setUri(parser.nextStringValue());
             if (parser.nextName(FIELD_TITLE)) {
-                image.setTitle(parser.nextTextValue());
+                image.setTitle(parser.nextStringValue());
                 if (parser.nextName(FIELD_WIDTH)) {
                     image.setWidth(parser.nextIntValue(-1));
                     haveWidth = true;
@@ -353,7 +353,7 @@ public class MediaItemCodec
                         image.setHeight(parser.nextIntValue(-1));
                         haveHeight = true;
                         if (parser.nextName(FIELD_SIZE)) {
-                            image.setSize(Size.find(parser.nextTextValue()));
+                            image.setSize(Size.find(parser.nextStringValue()));
                             parser.nextToken();
                             verifyCurrent(parser, JsonToken.END_OBJECT);
                             return image;
@@ -370,10 +370,10 @@ public class MediaItemCodec
             if (I != null) {
                 switch (I) {
                 case FIELD_IX_URI:
-                    image.setUri(parser.getText());
+                    image.setUri(parser.getString());
                     continue;
                 case FIELD_IX_TITLE:
-                    image.setTitle(parser.getText());
+                    image.setTitle(parser.getString());
                     continue;
                 case FIELD_IX_WIDTH:
                     image.setWidth(parser.getIntValue());
@@ -384,7 +384,7 @@ public class MediaItemCodec
                     haveHeight = true;
                     continue;
                 case FIELD_IX_SIZE:
-                    image.setSize(Size.find(parser.getText()));
+                    image.setSize(Size.find(parser.getString()));
                     continue;
                 }
             }
