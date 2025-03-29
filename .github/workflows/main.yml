@@ -2,11 +2,11 @@ name: Build and Run Tests
 on:
   push:
     branches:
-    - main
+    - master
     - "2.19"
   pull_request:
     branches:
-    - main
+    - master
     - "2.19"
   # Also run once per day anyway, at 10:00 UTC (18:00 PT)
   schedule:
