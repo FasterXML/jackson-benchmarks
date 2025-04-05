@@ -10,20 +10,16 @@ on:
     - 3.x
     - 2.x
     - "2.19"
-  # Also run once per day anyway, at 10:00 UTC (18:00 PT)
-  schedule:
-    - cron: "0 10 * * *"
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: 'ubuntu-22.04'
     strategy:
       fail-fast: false
       matrix:
         java_version: ['17', '21', '23']
-        os: ['ubuntu-22.04']
     env:
       JAVA_OPTS: "-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     steps:
