@@ -69,14 +69,15 @@ c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem    thrpt   50  415273.703 ± 1
 c.f.j.p.props.PropsStdReadVanilla.readNodeMediaItem  thrpt   50  108816.372 ± 1530.972  ops/s
 c.f.j.p.toml.TOMLStdReadVanilla.readNodeMediaItem    thrpt   50  135373.645 ± 3077.921  ops/s
 
-Read - wasteful / 3.0.0-rc1 / home / 26-Mar-2025 / 17.0.14
+Read - wasteful / 3.0.0-rc3 / home / 15-Apr-2025 / 17.0.14
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Pojo.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Untyped.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Node.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
 
-c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   50  17065.436 ± 66.372  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   50  91085.961 ± 335.736  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   50  216671.823 ± 1010.582  ops/s
+
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   50  15295.082 ± 186.436  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   50  74996.091 ± 813.080  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   50  155312.027 ± 9626.685  ops/s
 
 Read - other / 3.0.0-rc1 / home / 26-Mar-2025 / 17.0.14
 java -Xmx256m -jar target/perf.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
@@ -86,7 +87,7 @@ java -Xmx256m -jar target/perf.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -w 1 -i 
 c.f.j.p.smile.SmileStdReadAsync.readPojoMediaItem    thrpt   50  517057.522 ± 7839.792  ops/s
 c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem      thrpt   50  424108.272 ± 1836.690  ops/s
 c.f.j.p.JsonStringReadVanilla.readPojoMediaItem      thrpt   50  355670.889 ± 2395.359  ops/s
-c.f.j.p.
+c.f.j.p.JsonStdReadDataInput.readPojoMediaItem       thrpt   25  107930.852 ± 679.684  ops/s
 
 ... old:
 c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem     thrpt   50  221695.420 ±  1624.943  ops/s
