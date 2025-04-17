@@ -80,7 +80,8 @@ public abstract class ReadPerfBaseBasicJackson<T>
         return reader.readValue(input);
     }
 
-    protected static MapperBuilder<?,?> _withAfterburner(MapperBuilder<?,?> b) {
-        return b.addModule(new AfterburnerModule());
+    protected static <B extends MapperBuilder<?,?>> B _withAfterburner(B b) {
+        b.addModule(new AfterburnerModule());
+        return b;
     }
 }

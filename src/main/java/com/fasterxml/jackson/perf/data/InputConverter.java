@@ -53,7 +53,9 @@ public class InputConverter
             out.close();
             data.put(input, bytes.toByteArray());
         }
-        byte[] mib = targetMapper.writeValueAsBytes(MediaItems.stdMediaItem());
+        byte[] mib = targetMapper
+                .writer()
+                .writeValueAsBytes(MediaItems.stdMediaItem());
         return new InputConverter(data, mib);
     }
 

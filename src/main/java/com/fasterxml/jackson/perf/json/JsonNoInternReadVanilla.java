@@ -7,6 +7,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.core.json.JsonFactory;
+import tools.jackson.core.json.JsonWriteFeature;
 import tools.jackson.databind.*;
 import tools.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
@@ -23,6 +24,8 @@ public class JsonNoInternReadVanilla
     private static final ObjectMapper MAPPER = JsonMapper.builder(JsonFactory.builder()
             .disable(JsonFactory.Feature.INTERN_PROPERTY_NAMES)
             .build())
+        .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
+        .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
         .build();
 
     // pass non-null ObjectMapper: will remove whitespace, if any

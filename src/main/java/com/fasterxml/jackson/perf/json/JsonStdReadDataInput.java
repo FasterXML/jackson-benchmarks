@@ -8,6 +8,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.core.JsonParser;
+import tools.jackson.core.json.JsonWriteFeature;
 import tools.jackson.databind.*;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -23,8 +24,9 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class JsonStdReadDataInput
     extends ReadPerfBaseFullJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = JsonMapper.builder()
+    private static final JsonMapper MAPPER = JsonMapper.builder()
             .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
+            .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
             .build();
 
     // pass non-null ObjectMapper: will remove whitespace, if any

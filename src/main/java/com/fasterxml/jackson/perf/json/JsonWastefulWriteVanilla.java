@@ -9,8 +9,12 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
+import tools.jackson.core.json.JsonWriteFeature;
+import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
+
 import com.fasterxml.jackson.perf.WritePerfTestFull;
 import com.fasterxml.jackson.perf.model.CurrencySampleProvider;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -29,7 +33,10 @@ import com.fasterxml.jackson.perf.util.NopOutputStream;
 public class JsonWastefulWriteVanilla
     implements WritePerfTestFull
 {
-    private final static ObjectMapper MAPPER = new ObjectMapper();
+    private final static JsonMapper MAPPER = JsonMapper.builder()
+            .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
+            .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
+            .build();
 
     private final MediaItem _value;
 
