@@ -18,8 +18,22 @@ c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem      thrpt   45  110757.
 c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem        thrpt   45  117797.077 ±   504.255  ops/s
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem        thrpt   45   42669.869 ±   574.882  ops/s
 
-Read - Vanilla / 2.19.0-SNAP / home     / xx-Nov-2024 / 
-java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+Read - Vanilla / 2.19.0-rc2 / home / 18-Apr-2025 / 17.0.14
+java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+c.f.j.p.AvroStdReadVanilla.readPojoMediaItem             thrpt   45  603116.841 ±  3689.898  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem        thrpt   15  482148.280 ±  6131.080  ops/s
+c.f.j.p.protob.ProtobStdReadVanilla.readPojoMediaItem    thrpt   45  611100.236 ±  7936.754  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem      thrpt   45  646420.343 ±  6552.972  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem   thrpt   45  506237.110 ±  2320.727  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem        thrpt   15  437942.949 ±  8626.750  ops/s
+c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem          thrpt   15  353985.899 ±  5981.137  ops/s
+c.f.j.p.msgpack.MsgpackStdReadVanilla.readPojoMediaItem  thrpt   15  361508.405 ±  7377.989  ops/s
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem          thrpt   15  204483.676 ±  3531.625  ops/s
+c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem        thrpt   15  225193.636 ±  2905.761  ops/s
+c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem          thrpt   15  123268.380 ±   452.199  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem      thrpt   15  104965.348 ±  2538.818  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem        thrpt   15  132792.554 ±  1733.285  ops/s
+c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem        thrpt   15   40880.932 ±  1364.406  ops/s
 
 Read - Untyped / 2.19.0-SNAP / home     / xx-Nov-2024 / 1.8.0_412
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
