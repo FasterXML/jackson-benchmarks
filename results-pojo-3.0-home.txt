@@ -69,15 +69,14 @@ c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem    thrpt   50  415273.703 ± 1
 c.f.j.p.props.PropsStdReadVanilla.readNodeMediaItem  thrpt   50  108816.372 ± 1530.972  ops/s
 c.f.j.p.toml.TOMLStdReadVanilla.readNodeMediaItem    thrpt   50  135373.645 ± 3077.921  ops/s
 
-Read - wasteful / 3.0.0-rc3 / home / 15-Apr-2025 / 17.0.14
+Read - wasteful / 3.0.0-rc5 / home / 23-May-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Pojo.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Untyped.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Node.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
 
-
-c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   50  15295.082 ± 186.436  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   50  74996.091 ± 813.080  ops/s
-c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   50  155312.027 ± 9626.685  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem    thrpt   50  10597.028 ±  97.666  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt   50  80227.111 ± 429.917  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt   50 173825.577 ± 726.858  ops/s
 
 Read - other / 3.0.0-rc1 / home / 26-Mar-2025 / 17.0.14
 java -Xmx256m -jar target/perf.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
