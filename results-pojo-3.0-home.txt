@@ -52,22 +52,22 @@ c.f.j.p.smile.SmileColumnReadVanilla.readPojoMediaItem  thrpt   50  885634.360 �
 c.f.j.p.cbor.CBORColumnReadVanilla.readPojoMediaItem    thrpt   50  690014.862 ± 15830.485  ops/s
 c.f.j.p.json.JsonColumnReadVanilla.readPojoMediaItem    thrpt   50  575150.871 ±  3766.921  ops/s
 
-Read - Untyped / 3.0.0-rc1 / home / 26-Mar-2025 / 17.0.14
+Read - Untyped / 3.0.0-rc5 / home / 23-May-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
-c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem     thrpt   50  669437.301 ± 2524.018  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem       thrpt   50  470440.611 ± 7102.602  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem  thrpt   50  446532.862 ± 1943.578  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem       thrpt   50  423473.891 ± 2653.032  ops/s
-c.f.j.p.props.PropsStdReadVanilla.readUntypedMediaItem     thrpt   50  109637.092 ±  370.897  ops/s
-c.f.j.p.toml.TOMLStdReadVanilla.readUntypedMediaItem       thrpt   50  140342.737 ±  801.937  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem     thrpt   50  662006.908 ± 2974.705  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem       thrpt   50  481771.491 ± 2058.453  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem  thrpt   50  448269.744 ± 1267.422  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem       thrpt   50  461986.523 ± 1985.739  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readUntypedMediaItem     thrpt   50  112508.108 ± 1195.189  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readUntypedMediaItem       thrpt   50  140851.880 ±  704.801  ops/s
 
-Read - Tree / 3.0.0-rc1 / home / 26-Mar-2025 / 17.0.14
+Read - Tree / 3.0.0-rc5 / home / 23-May-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
-c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem  thrpt   50  649875.545 ± 2615.748  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readNodeMediaItem    thrpt   50  461245.057 ± 5651.508  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem    thrpt   50  415273.703 ± 1835.311  ops/s
-c.f.j.p.props.PropsStdReadVanilla.readNodeMediaItem  thrpt   50  108816.372 ± 1530.972  ops/s
-c.f.j.p.toml.TOMLStdReadVanilla.readNodeMediaItem    thrpt   50  135373.645 ± 3077.921  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem  thrpt   50  644569.502 ± 3072.930  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readNodeMediaItem    thrpt   50  473501.003 ± 1239.948  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem    thrpt   50  451423.985 ± 3017.472  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readNodeMediaItem  thrpt   50  111823.763 ± 1049.018  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readNodeMediaItem    thrpt   50  138883.522 ±  657.075  ops/s
 
 Read - wasteful / 3.0.0-rc5 / home / 23-May-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Pojo.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
