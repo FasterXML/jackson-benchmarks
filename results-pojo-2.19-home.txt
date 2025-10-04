@@ -39,17 +39,36 @@ c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem        thrpt   25   42122.646 
 
 Read - Untyped / 2.19.2 / home / 03-Oct-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem     thrpt   25  699512.111 ± 8329.787  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readUntypedMediaItem       thrpt   25  513216.347 ± 6298.785  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readUntypedMediaItem  thrpt   25  479700.839 ± 2143.291  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readUntypedMediaItem       thrpt   25  480625.425 ± 1837.873  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readUntypedMediaItem     thrpt   25  113341.964 ±  751.530  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readUntypedMediaItem       thrpt   25  136475.476 ± 1709.901  ops/s
 
-Read - Tree / 2.19.0-SNAP / home        / xx-Nov-2024 / 1.8.0_412
+Read - Tree / 2.19.2 / home / 03-Oct-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*StdReadV.*NodeMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+c.f.j.p.smile.SmileStdReadVanilla.readNodeMediaItem  thrpt   25  674977.149 ± 6035.707  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readNodeMediaItem    thrpt   25  503159.728 ± 1499.817  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readNodeMediaItem    thrpt   25  471030.765 ± 2114.836  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readNodeMediaItem  thrpt   25  112429.881 ± 1837.178  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readNodeMediaItem    thrpt   25  135758.216 ± 1778.626  ops/s
 
-Read - wasteful / 2.19.0-SNAP / home    / xx-Nov-2024 / 1.8.0_412
-java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*" -wi 8 -w 1 -i 5 -r 1 -f 9 -t 1
+Read - wasteful / 2.19.2 / home / 03-Oct-2025 / 17.0.15
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*" -wi 8 -w 1 -i 5 -r 1 -f 5 -t 1
+JsonWastefulReadVanilla.readNodeMediaItem     thrpt   25  276998.455 ± 2067.769  ops/s
+JsonWastefulReadVanilla.readUntypedMediaItem  thrpt   25  158785.023 ± 1146.942  ops/s
+JsonWastefulReadVanilla.readPojoMediaItem     thrpt   25   19426.281 ±  223.353  ops/s
 
-Read - other / 2.19.0-SNAP / home       / xx-Nov-2024 / 1.8.0_412
-java -Xmx256m -jar target/perf.jar ".*ReadAsy.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-java -Xmx256m -jar target/perf.jar ".*ringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-java -Xmx256m -jar target/perf.jar ".*StdReadDataI.*PojoMediaI.*" -wi 5 -w 1 -i 5 -r 1 -f 9 -t 1
+Read - other / 2.19.2 / home / 03-Oct-2025 / 17.0.15
+java -Xmx256m -jar target/perf.jar ".*ReadAsy.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+java -Xmx256m -jar target/perf.jar ".*ringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadDataI.*PojoMediaI.*" -wi 5 -w 1 -i 5 -r 1 -f 5 -t 1
+
+c.f.j.p.smile.SmileStdReadAsync.readPojoMediaItem  thrpt   25  630525.961 ± 3518.470  ops/s
+c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem    thrpt   25  506485.176 ± 6774.106  ops/s
+c.f.j.p.json.JsonStringReadVanilla.readPojoMediaItem thrpt 25  431877.389 ± 5424.207  ops/s
+c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem  thrpt 25  111242.885 ± 466.531  ops/s
 
 ---------------------- WRITE -----------------------
 
