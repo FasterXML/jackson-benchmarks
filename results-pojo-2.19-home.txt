@@ -37,6 +37,15 @@ c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem      thrpt   25  107771.266 
 c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem        thrpt   25  137226.539 ± 1074.362  ops/s
 c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem        thrpt   25   42122.646 ±  531.906  ops/s
 
+Read - Manual / 2.19.2 / home / 06-Oct-2025 / 17.0.15
+java -Xmx256m -jar target/perf.jar ".*ManualRead.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+ProtobufManualReadVanilla.readPojoMediaItem  thrpt   25   906189.883 ±  6295.959  ops/s
+SmileManualReadVanilla.readPojoMediaItem     thrpt   25  1019047.768 ± 10985.638  ops/s
+AvroManualReadVanilla.readPojoMediaItem      thrpt   25   917860.719 ± 11661.797  ops/s
+CBORManualReadVanilla.readPojoMediaItem      thrpt   25   695921.006 ±  4529.449  ops/s
+JsonManualReadVanilla.readPojoMediaItem      thrpt   25   723529.979 ±  6144.168  ops/s
+XMLManualReadVanilla.readPojoMediaItem       thrpt   25   275827.259 ±  2007.250  ops/s
+
 Read - Untyped / 2.19.2 / home / 03-Oct-2025 / 17.0.15
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*UntypedMed.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
 c.f.j.p.smile.SmileStdReadVanilla.readUntypedMediaItem     thrpt   25  699512.111 ± 8329.787  ops/s
