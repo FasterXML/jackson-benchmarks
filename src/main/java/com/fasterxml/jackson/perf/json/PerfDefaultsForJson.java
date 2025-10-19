@@ -11,10 +11,9 @@ interface PerfDefaultsForJson
 {
     public static JsonFactoryBuilder jsonFactoryBuilder() {
         return JsonFactory.builder()
-            .recyclerPool(
-                    //JsonRecyclerPools.threadLocalPool()
-                    JsonRecyclerPools.defaultPool()
-            );
+            .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
+//            .recyclerPool(JsonRecyclerPools.threadLocalPool())
+            ;
     }
 
     public static JsonFactory jsonFactory() {
@@ -31,8 +30,6 @@ interface PerfDefaultsForJson
 
     public static JsonMapper.Builder jsonMapperBuilder(JsonFactory f) {
         return JsonMapper.builder(f)
-                .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
-                .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES);
-
+                .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS);
     }
 }
