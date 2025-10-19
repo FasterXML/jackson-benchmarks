@@ -7,9 +7,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.core.json.JsonFactory;
-import tools.jackson.core.json.JsonWriteFeature;
 import tools.jackson.databind.*;
-import tools.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseFullJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -21,12 +19,12 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class JsonNoInternReadVanilla
     extends ReadPerfBaseFullJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = JsonMapper.builder(JsonFactory.builder()
-            .disable(JsonFactory.Feature.INTERN_PROPERTY_NAMES)
-            .build())
-        .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
-        .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
-        .build();
+    private static final ObjectMapper MAPPER =
+            PerfDefaultsForJson.jsonMapperBuilder(
+                    PerfDefaultsForJson.jsonFactoryBuilder()
+                        .disable(JsonFactory.Feature.INTERN_PROPERTY_NAMES)
+                        .build())
+            .build();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
     private final static InputConverter JSON_CONV = InputConverter.stdConverter(MAPPER);

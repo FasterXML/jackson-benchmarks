@@ -8,7 +8,6 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.infra.Blackhole;
 
-import tools.jackson.core.json.JsonWriteFeature;
 import tools.jackson.databind.*;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -28,10 +27,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class JsonWastefulReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final JsonMapper MAPPER = JsonMapper.builder()
-            .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
-            .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
-            .build();
+    private static final JsonMapper MAPPER = PerfDefaultsForJson.jsonMapper();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
     private final static InputConverter JSON_CONV = InputConverter.stdConverter(MAPPER);

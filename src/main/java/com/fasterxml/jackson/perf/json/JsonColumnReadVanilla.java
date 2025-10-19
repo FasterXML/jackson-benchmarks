@@ -7,7 +7,6 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.databind.*;
-import tools.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -18,9 +17,10 @@ import com.fasterxml.jackson.perf.util.AsArrayIntrospector;
 public class JsonColumnReadVanilla
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = JsonMapper.builder()
-            .annotationIntrospector(new AsArrayIntrospector())
-            .build();
+    private static final ObjectMapper MAPPER =
+            PerfDefaultsForJson.jsonMapperBuilder()
+                .annotationIntrospector(new AsArrayIntrospector())
+                .build();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
     private final static InputConverter NO_OP = InputConverter.stdConverter(MAPPER);

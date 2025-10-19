@@ -9,8 +9,6 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
-import tools.jackson.core.json.JsonWriteFeature;
-import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
@@ -33,10 +31,7 @@ import com.fasterxml.jackson.perf.util.NopOutputStream;
 public class JsonWastefulWriteVanilla
     implements WritePerfTestFull
 {
-    private final static JsonMapper MAPPER = JsonMapper.builder()
-            .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
-            .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
-            .build();
+    private final static JsonMapper MAPPER = PerfDefaultsForJson.jsonMapper();
 
     private final MediaItem _value;
 

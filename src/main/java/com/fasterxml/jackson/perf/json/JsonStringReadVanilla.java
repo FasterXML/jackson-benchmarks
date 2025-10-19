@@ -10,7 +10,6 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.infra.Blackhole;
 
 import tools.jackson.core.StreamReadFeature;
-import tools.jackson.core.json.JsonWriteFeature;
 import tools.jackson.databind.*;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -32,10 +31,7 @@ public class JsonStringReadVanilla
 // overrides
     implements ReadPerfTestFull
 {
-    private static final JsonMapper MAPPER = JsonMapper.builder()
-            .disable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
-            .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
-            .build();
+    private static final JsonMapper MAPPER = PerfDefaultsForJson.jsonMapper();
 
     // pass non-null ObjectMapper: will remove whitespace, if any
     private final static StringInputConverter STRING_CONVERTER = StringInputConverter.stdConverter(MAPPER);
