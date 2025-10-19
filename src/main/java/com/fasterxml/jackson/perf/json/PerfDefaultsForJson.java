@@ -12,7 +12,10 @@ interface PerfDefaultsForJson
     public static JsonFactoryBuilder jsonFactoryBuilder() {
         return JsonFactory.builder()
             .disable(JsonWriteFeature.ESCAPE_FORWARD_SLASHES)
-//            .recyclerPool(JsonRecyclerPools.threadLocalPool())
+            //.recyclerPool(JsonRecyclerPools.threadLocalPool())
+            //.recyclerPool(JsonRecyclerPools.nonRecyclingPool())
+            //.recyclerPool(JsonRecyclerPools.newConcurrentDequePool())
+            //.recyclerPool(JsonRecyclerPools.newBoundedPool(10))
             ;
     }
 
