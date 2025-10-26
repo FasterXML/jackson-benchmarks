@@ -19,7 +19,7 @@ public interface PerfDefaultsGeneral
             //.recyclerPool(JsonRecyclerPools.threadLocalPool())
             //.recyclerPool(JsonRecyclerPools.nonRecyclingPool())
             //.recyclerPool(JsonRecyclerPools.newConcurrentDequePool())
-            .recyclerPool(JsonRecyclerPools.newBoundedPool(10))
+            //.recyclerPool(JsonRecyclerPools.newBoundedPool(10))
             ;
     }
 
