@@ -3,7 +3,7 @@
     <parent>
       <groupId>tools.jackson</groupId>
       <artifactId>jackson-bom</artifactId>
-      <version>3.0.1-SNAPSHOT</version>
+      <version>3.0.4</version>
     </parent>
 
     <artifactId>jackson-benchmarks</artifactId>
