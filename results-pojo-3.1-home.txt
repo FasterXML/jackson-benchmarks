@@ -1,0 +1,94 @@
+Read - Afterburner / 3.1.0 / home / 22-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMediaItem.*"  -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+c.f.j.p.avro.AvroStdReadAfterburner.readPojoMediaItem      thrpt   25  690632.043 ± 2731.955  ops/s
+c.f.j.p.cbor.CBORStdReadAfterburner.readPojoMediaItem      thrpt   25  547319.321 ± 2764.383  ops/s
+c.f.j.p.protob.ProtobStdReadAfterburner.readPojoMediaItem  thrpt   25  708696.197 ± 2706.792  ops/s
+c.f.j.p.smile.SmileStdReadAfterburner.readPojoMediaItem    thrpt   25  734266.377 ± 2150.511  ops/s
+c.f.j.p.json.JsonStdReadAfterburner.readPojoMediaItem      thrpt   25  535451.783 ± 1782.005  ops/s
+c.f.j.p.csv.CsvStdReadAfterburner.readPojoMediaItem        thrpt   25  362385.009 ± 2245.375  ops/s
+c.f.j.p.xml.XMLStdReadAfterburner.readPojoMediaItem        thrpt   25  222332.052 ± 1233.788  ops/s
+--- msgpack ---
+--- bson ---
+c.f.j.p.ion.IonStdReadAfterburner.readPojoMediaItem        thrpt   25  106968.654 ±  563.273  ops/s
+c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem    thrpt   25  101162.030 ±  881.279  ops/s
+c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem      thrpt   25  141075.576 ± 1847.960  ops/s
+c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem      thrpt   25   41533.741 ±  211.949  ops/s
+
+Read - Vanilla / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Read - Manual / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*ManualRead.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Read - Column-Afterburner / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*ColumnReadAfter.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Read - Column-Vanilla / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*ColumnReadVan.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Read - Untyped / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.*UntypedMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Read - Tree / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.*NodeMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Read - wasteful / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Node.*" -wi 3 -w 1 -i 5 -r 1 -f 10 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Untyped.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulR.*Pojo.*" -wi 6 -w 1 -i 5 -r 1 -f 10 -t 1
+
+c.f.j.p.json.JsonWastefulReadVanilla.readNodeMediaItem    thrpt 50  170976.093 ± 2474.347  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readUntypedMediaItem thrpt 50   77907.855 ± 2791.073  ops/s
+c.f.j.p.json.JsonWastefulReadVanilla.readPojoMediaItem  thrpt   50    9678.774 ±   65.639  ops/s
+
+Read - other / 3.1.0-rc5 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*StdReadAsync.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+java -Xmx256m -jar target/perf.jar ".*StringReadVan.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+java -Xmx256m -jar target/perf.jar ".*StdReadDataI.*PojoMediaI.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+
+c.f.j.p.smile.SmileStdReadAsync.readPojoMediaItem    thrpt  50  535076.195 ± 3400.483  ops/s
+c.f.j.p.json.JsonStdReadAsync.readPojoMediaItem      thrpt  50  436679.941 ± 5991.610  ops/s
+c.f.j.p.json.JsonStringReadVanilla.readPojoMediaItem thrpt  50  387411.491 ± 2429.317  ops/s
+c.f.j.p.json.JsonStdReadDataInput.readPojoMediaItem  thrpt  50  110206.613 ±  157.575  ops/s
+
+------ WRITE ------
+
+Write - Afterburner / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*StdWriteAfter.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+c.f.j.p.cbor.CBORStdWriteAfterburner.writePojoMediaItem      thrpt   25  1087797.444 ±  6051.574  ops/s
+c.f.j.p.protob.ProtobStdWriteAfterburner.writePojoMediaItem  thrpt   25  1302358.313 ± 15575.567  ops/s
+c.f.j.p.smile.SmileStdWriteAfterburner.writePojoMediaItem    thrpt   25  1126399.581 ±  7229.595  ops/s
+c.f.j.p.json.JsonStdWriteAfterburner.writePojoMediaItem      thrpt   25   923399.561 ±  7204.761  ops/s
+c.f.j.p.csv.CsvStdWriteAfterburner.writePojoMediaItem        thrpt   25   864340.461 ±  5534.289  ops/s
+c.f.j.p.xml.XMLStdWriteAfterburner.writePojoMediaItem        thrpt   25   381555.383 ±  1220.524  ops/s
+c.f.j.p.avro.AvroStdWriteAfterburner.writePojoMediaItem      thrpt   25   436397.557 ±  5208.892  ops/s
+c.f.j.p.ion.IonStdWriteAfterburner.writePojoMediaItem        thrpt   25   337814.296 ±  3506.877  ops/s
+--- msgpack --
+--- bson --
+c.f.j.p.props.PropsStdWriteAfterburner.writePojoMediaItem    thrpt   25   393856.874 ±  3908.221  ops/s
+c.f.j.p.toml.TOMLStdWriteAfterburner.writePojoMediaItem      thrpt   25   485552.639 ±  5679.627  ops/s
+c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem      thrpt   25    65282.649 ±   655.884  ops/s
+
+Write - Vanilla / 3.1.0 / home / xx-Mar-2026 / 1.17.15
+java -Xmx256m -jar target/perf.jar ".*StdWriteVanil.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Write - Manual / 3.1.0 / home / xx-Mar-2026 / 17.0.14
+java -Xmx256m -jar target/perf.jar ".*ManualWrite.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Write - Column/Afterburner / 3.1.0 / home / xx-Mar-2026 / 17.0.14
+java -Xmx256m -jar target/perf.jar ".*ColumnWriteAfter.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Write - Column/Vanilla / 3.1.0 / home / xx-Mar-2026 / 17.0.14
+java -Xmx256m -jar target/perf.jar ".*ColumnWriteVan.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Write - Untyped / 3.1.0 / home / xx-Mar-2026 / 17.0.14
+java -Xmx256m -jar target/perf.jar ".*StdWriteVanilla.*UntypedMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Write - Node / 3.1.0 / home / xx-Mar-2026 / 17.0.14
+java -Xmx256m -jar target/perf.jar ".*StdWriteVanilla.*NodeMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 5 -t 1
+
+Write - wasteful / 3.1.0 / home / xx-Mar-2026 / 17.0.18
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulW.*Node.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulW.*Untyped.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
+java -Xmx256m -jar target/perf.jar ".*JsonWastefulW.*PojoMed.*" -wi 4 -w 1 -i 5 -r 1 -f 10 -t 1
