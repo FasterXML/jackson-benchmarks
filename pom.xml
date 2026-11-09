@@ -3,7 +3,7 @@
     <parent>
       <groupId>tools.jackson</groupId>
       <artifactId>jackson-bom</artifactId>
-      <version>3.3.0-SNAPSHOT</version>
+      <version>3.3.0</version>
     </parent>
 
     <artifactId>jackson-benchmarks</artifactId>
@@ -18,8 +18,8 @@
 
         <version.jmh>1.37</version.jmh>
 
-        <version.jackson.bson>2.15.1</version.jackson.bson>
-        <version.jackson.msgpack>0.9.8</version.jackson.msgpack>
+        <version.jackson.bson>2.18.0</version.jackson.bson>
+        <version.jackson.msgpack>0.9.12</version.jackson.msgpack>
 
         <version.aalto>1.3.2</version.aalto>
         <version.mongo-java>3.12.14</version.mongo-java>
