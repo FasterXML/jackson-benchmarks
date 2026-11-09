@@ -183,6 +183,12 @@
               <showDeprecation>true</showDeprecation>
               <showWarnings>true</showWarnings>
               <optimize>true</optimize>
+              <!-- JDK 23+ javac no longer runs classpath-discovered annotation
+                   processors by default: must name JMH's processor explicitly
+                -->
+              <annotationProcessors>
+                <annotationProcessor>org.openjdk.jmh.generators.BenchmarkProcessor</annotationProcessor>
+              </annotationProcessors>
             </configuration>
 	  </plugin>
 	  <plugin>
@@ -200,6 +206,12 @@
 		    <transformer
 		       implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 		      <mainClass>org.openjdk.jmh.Main</mainClass>
+		      <!-- Shaded jar must stay multi-release: Blackbird (and others)
+			   have Java-version-specific classes under META-INF/versions
+			-->
+		      <manifestEntries>
+			<Multi-Release>true</Multi-Release>
+		      </manifestEntries>
 		    </transformer>
 		  </transformers>
 		</configuration>

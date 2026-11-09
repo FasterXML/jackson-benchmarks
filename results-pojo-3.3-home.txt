@@ -14,6 +14,11 @@ c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem    thrpt   15   95783.44
 c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem      thrpt   15  135407.047 ±  1250.641  ops/s
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem      thrpt   15   41290.424 ±   575.212  ops/s
 
+Read - Blackbird / 3.2.4 / home / 09-Nov-2026 / 17.0.19
+java -Xmx256m -jar target/perf.jar ".*StdReadBlack.*PojoMediaItem.*"  -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
+
+--- msgpack --
+
 Read - Vanilla / 3.3.0 / home / 08-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
 c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem       thrpt   15  587620.579 ± 9895.880  ops/s
@@ -74,6 +79,9 @@ c.f.j.p.props.PropsStdWriteAfterburner.writePojoMediaItem    thrpt   15   365736
 c.f.j.p.toml.TOMLStdWriteAfterburner.writePojoMediaItem      thrpt   15   483917.568 ± 3411.527  ops/s
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem      thrpt   15    61607.794 ±  807.764  ops/s
 
+Write - Blackbird / 3.2.4 / home / 09-Nov-2026 / 17.0.19
+java -Xmx256m -jar target/perf.jar ".*StdWriteBlack.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
+--- msgpack ---
 
 Write - Vanilla / 3.3.0 / home / 08-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdWriteVanil.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
