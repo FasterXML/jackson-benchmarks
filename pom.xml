@@ -18,7 +18,7 @@
 
         <version.jmh>1.37</version.jmh>
 
-        <version.jackson.bson>2.15.1</version.jackson.bson>
+        <version.jackson.bson>3.2.0</version.jackson.bson>
         <version.jackson.msgpack>0.9.8</version.jackson.msgpack>
 
         <version.aalto>1.3.2</version.aalto>
