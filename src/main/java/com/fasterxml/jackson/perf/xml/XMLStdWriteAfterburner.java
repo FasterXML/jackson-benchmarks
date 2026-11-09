@@ -3,6 +3,7 @@ package com.fasterxml.jackson.perf.xml;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
+import tools.jackson.databind.*;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
@@ -10,7 +11,9 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class XMLStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
+    private static final ObjectMapper MAPPER = StaxProvider.xmlMapper(true);
+
     public XMLStdWriteAfterburner() {
-        super(StaxProvider.xmlMapper(true));
+        super(MAPPER);
     }
 }

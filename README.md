@@ -16,7 +16,7 @@ Tests usually run with
 
 or directly with something like
 
-    java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+    java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.*PojoMediaItem.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
 
 (see `results-pojo-2.13-home.txt` and others for specific invocations used for each group of numbers)
 
@@ -37,9 +37,10 @@ Test input generated is about 300 bytes as JSON, and between 200 and 500 bytes a
 
 Settings to run tests include:
 
-* Standard: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
-* Afterburner: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 
+* Standard: java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
+* Afterburner: java -Xmx256m -jar target/perf.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 
 1
+* Blackbird: java -Xmx256m -jar target/perf.jar ".*StdReadBlackbird.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 ### POJO: Currency (floating-point (double))
 
@@ -48,9 +49,9 @@ Settings to run tests include:
 Settings to run tests include:
 
 ```
-* Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyPojoDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
-* FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyPojoFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
-* All: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.readCurrencyPojo.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* Default/JSON: java -Xmx256m -jar target/perf.jar ".*JsonStdReadVanilla.readCurrencyPojoDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* FastFP/JSON: java -Xmx256m -jar target/perf.jar ".*JsonStdReadVanilla.readCurrencyPojoFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* All: java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.readCurrencyPojo.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
 ```
 
 ### POJO: Currency (BigDecimal)
@@ -58,7 +59,7 @@ Settings to run tests include:
 Same as above, but instead of reading as `double` values are read as `BigDecimal`. Run using
 
 ```
-* Default/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyBigDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
-* FastFP/JSON: java -Xmx256m -jar target/microbenchmarks.jar ".*JsonStdReadVanilla.readCurrencyBigFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
-* All: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVanilla.readCurrencyBig.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* Default/JSON: java -Xmx256m -jar target/perf.jar ".*JsonStdReadVanilla.readCurrencyBigDefault.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* FastFP/JSON: java -Xmx256m -jar target/perf.jar ".*JsonStdReadVanilla.readCurrencyBigFast.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
+* All: java -Xmx256m -jar target/perf.jar ".*StdReadVanilla.readCurrencyBig.*" -wi 4 -w 1 -i 5 -r 1 -f 3 -t 1
 ```

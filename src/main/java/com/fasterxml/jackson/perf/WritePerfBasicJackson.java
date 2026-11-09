@@ -12,6 +12,7 @@ import tools.jackson.core.FormatSchema;
 import tools.jackson.databind.*;
 import tools.jackson.databind.cfg.MapperBuilder;
 import tools.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.module.blackbird.BlackbirdModule;
 import com.fasterxml.jackson.perf.model.MediaItems;
 import com.fasterxml.jackson.perf.util.NopOutputStream;
 
@@ -81,6 +82,11 @@ public abstract class WritePerfBasicJackson<T>
 
     protected static <B extends MapperBuilder<?,?>> B _withAfterburner(B b) {
         b.addModule(new AfterburnerModule());
+        return b;
+    }
+
+    protected static <B extends MapperBuilder<?,?>> B _withBlackbird(B b) {
+        b.addModule(new BlackbirdModule());
         return b;
     }
 }

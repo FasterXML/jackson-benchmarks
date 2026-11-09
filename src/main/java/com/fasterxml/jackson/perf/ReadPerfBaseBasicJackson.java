@@ -15,6 +15,7 @@ import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.ObjectReader;
 import tools.jackson.databind.cfg.MapperBuilder;
 import tools.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.module.blackbird.BlackbirdModule;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 
 public abstract class ReadPerfBaseBasicJackson<T>
@@ -82,6 +83,11 @@ public abstract class ReadPerfBaseBasicJackson<T>
 
     protected static <B extends MapperBuilder<?,?>> B _withAfterburner(B b) {
         b.addModule(new AfterburnerModule());
+        return b;
+    }
+
+    protected static <B extends MapperBuilder<?,?>> B _withBlackbird(B b) {
+        b.addModule(new BlackbirdModule());
         return b;
     }
 }
