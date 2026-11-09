@@ -4,7 +4,6 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.dataformat.javaprop.JavaPropsMapper;
-import tools.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.InputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -13,8 +12,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class PropsStdReadAfterburner
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final JavaPropsMapper MAPPER = JavaPropsMapper.builder()
-            .addModule(new AfterburnerModule())
+    private static final JavaPropsMapper MAPPER = _withAfterburner(JavaPropsMapper.builder())
             .build();
 
     private final static InputConverter PROPS = InputConverter.stdConverter(MAPPER);

@@ -7,8 +7,6 @@ import tools.jackson.databind.*;
 
 import tools.jackson.dataformat.ion.IonObjectMapper;
 
-import tools.jackson.module.afterburner.AfterburnerModule;
-
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
@@ -16,8 +14,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class IonStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = IonObjectMapper.builder()
-            .addModule(new AfterburnerModule())
+    private static final ObjectMapper MAPPER = _withAfterburner(IonObjectMapper.builder())
             .build();
 
     public IonStdWriteAfterburner() {
