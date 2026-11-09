@@ -7,12 +7,12 @@ import tools.jackson.databind.ObjectMapper;
 
 import tools.jackson.dataformat.toml.TomlMapper;
 
-import com.fasterxml.jackson.perf.WritePerfBasicJackson;
+import com.fasterxml.jackson.perf.WritePerfBaseFullJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
 @State(Scope.Thread)
 public class TOMLStdWriteBlackbird
-    extends WritePerfBasicJackson<MediaItem>
+    extends WritePerfBaseFullJackson<MediaItem>
 {
     private static final ObjectMapper MAPPER = _withBlackbird(TomlMapper.builder())
             .build();
