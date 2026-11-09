@@ -8,6 +8,7 @@ import com.fasterxml.aalto.stax.OutputFactoryImpl;
 import tools.jackson.dataformat.xml.XmlFactory;
 import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.module.afterburner.AfterburnerModule;
+import tools.jackson.module.blackbird.BlackbirdModule;
 
 public class StaxProvider
 {
@@ -19,13 +20,23 @@ public class StaxProvider
      }
 
      public static XmlMapper xmlMapper(boolean afterburner) {
-         XmlMapper.Builder builder = XmlMapper.builder(XmlFactory.builder()
-                 .xmlInputFactory(_inputFactory)
-                 .xmlOutputFactory(_outputFactory)
-                 .build());
+         XmlMapper.Builder builder = _builder();
          if (afterburner) {
              builder = builder.addModule(new AfterburnerModule());
          }
          return builder.build();
 	}
+
+     public static XmlMapper xmlMapperWithBlackbird() {
+         return _builder()
+                 .addModule(new BlackbirdModule())
+                 .build();
+     }
+
+     private static XmlMapper.Builder _builder() {
+         return XmlMapper.builder(XmlFactory.builder()
+                 .xmlInputFactory(_inputFactory)
+                 .xmlOutputFactory(_outputFactory)
+                 .build());
+     }
 }

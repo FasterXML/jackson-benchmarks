@@ -40,6 +40,7 @@ Settings to run tests include:
 * Standard: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadVan.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 * Afterburner: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadAfter.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 
 1
+* Blackbird: java -Xmx256m -jar target/microbenchmarks.jar ".*StdReadBlackbird.*PojoMedia.*" -wi 4 -w 1 -i 5 -r 1 -f 9 -t 1
 
 ### POJO: Currency (floating-point (double))
 
