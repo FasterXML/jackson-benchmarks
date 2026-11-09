@@ -16,20 +16,20 @@ c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem      thrpt   15   41290.42
 
 Read - Vanilla / 3.3.0 / home / 08-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
-c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem       thrpt   15  599522.292 ± 3494.284  ops/s
-c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem       thrpt   15  584644.377 ± 5743.967  ops/s
-c.f.j.p.protob.ProtobStdReadVanilla.readPojoMediaItem   thrpt   15  632721.191 ± 3670.047  ops/s
-c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem     thrpt   15  646556.499 ± 3601.600  ops/s
-c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem  thrpt   15  538771.199 ± 2699.612  ops/s
-c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem       thrpt   15  528063.758 ± 3201.817  ops/s
-c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem         thrpt   15  344520.031 ± 8026.673  ops/s
-c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem         thrpt   15  197831.717 ±  659.908  ops/s
+c.f.j.p.avro.AvroStdReadVanilla.readPojoMediaItem       thrpt   15  587620.579 ± 9895.880  ops/s
+c.f.j.p.cbor.CBORStdReadVanilla.readPojoMediaItem       thrpt   15  569723.768 ± 5212.746  ops/s
+c.f.j.p.protob.ProtobStdReadVanilla.readPojoMediaItem   thrpt   15  626796.905 ± 9108.509  ops/s
+c.f.j.p.smile.SmileStdReadVanilla.readPojoMediaItem     thrpt   15  646281.487 ± 3079.482  ops/s
+c.f.j.p.json.JacksonJrStdReadVanilla.readPojoMediaItem  thrpt   15  538131.669 ± 1926.363  ops/s
+c.f.j.p.json.JsonStdReadVanilla.readPojoMediaItem       thrpt   15  528493.090 ± 2606.154  ops/s
+c.f.j.p.csv.CsvStdReadVanilla.readPojoMediaItem         thrpt   15  336633.714 ± 3673.608  ops/s
+c.f.j.p.xml.XMLStdReadVanilla.readPojoMediaItem         thrpt   15  199846.793 ± 1461.402  ops/s
 --- msgpack --
---- bson ---
-c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem         thrpt   15  108208.854 ± 1843.916  ops/s
-c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem     thrpt   15   99258.238 ± 2850.732  ops/s
-c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem       thrpt   15  128765.459 ±  514.038  ops/s
-c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem       thrpt   15   40859.814 ±  524.937  ops/
+c.f.j.p.bson.BSONStdReadVanilla.readPojoMediaItem       thrpt   15  226511.372 ± 1337.773  ops/s
+c.f.j.p.ion.IonStdReadVanilla.readPojoMediaItem         thrpt   15  104718.302 ± 1000.490  ops/s
+c.f.j.p.props.PropsStdReadVanilla.readPojoMediaItem     thrpt   15  102616.941 ± 1929.854  ops/s
+c.f.j.p.toml.TOMLStdReadVanilla.readPojoMediaItem       thrpt   15  132576.992 ±  980.424  ops/s
+c.f.j.p.yaml.YAMLStdReadVanilla.readPojoMediaItem       thrpt   15   39102.182 ±  700.265  ops/s
 
 Read - Manual / 3.3.0 / home / 08-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*ManualRead.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
