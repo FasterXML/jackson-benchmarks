@@ -5,7 +5,6 @@ import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.dataformat.yaml.YAMLMapper;
-import tools.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
@@ -13,8 +12,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class YAMLStdWriteAfterburner
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = YAMLMapper.builder()
-            .addModule(new AfterburnerModule())
+    private static final ObjectMapper MAPPER = _withAfterburner(YAMLMapper.builder())
             .build();
 
     public YAMLStdWriteAfterburner() {
