@@ -133,6 +133,10 @@
         <artifactId>jackson-module-afterburner</artifactId>
       </dependency>
       <dependency>
+        <groupId>tools.jackson.module</groupId>
+        <artifactId>jackson-module-blackbird</artifactId>
+      </dependency>
+      <dependency>
         <groupId>tools.jackson.jr</groupId>
         <artifactId>jackson-jr-objects</artifactId>
       </dependency>
