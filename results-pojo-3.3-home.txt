@@ -14,10 +14,21 @@ c.f.j.p.props.PropsStdReadAfterburner.readPojoMediaItem    thrpt   15   95783.44
 c.f.j.p.toml.TOMLStdReadAfterburner.readPojoMediaItem      thrpt   15  135407.047 ±  1250.641  ops/s
 c.f.j.p.yaml.YAMLStdReadAfterburner.readPojoMediaItem      thrpt   15   41290.424 ±   575.212  ops/s
 
-Read - Blackbird / 3.2.4 / home / 09-Nov-2026 / 17.0.19
+Read - Blackbird / 3.3.0 / home / 09-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdReadBlack.*PojoMediaItem.*"  -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
-
+c.f.j.p.avro.AvroStdReadBlackbird.readPojoMediaItem      thrpt   15  658547.012 ± 39578.869  ops/s
+c.f.j.p.cbor.CBORStdReadBlackbird.readPojoMediaItem      thrpt   15  628415.097 ±  3799.499  ops/s
+c.f.j.p.protob.ProtobStdReadBlackbird.readPojoMediaItem  thrpt   15  672537.111 ± 37283.926  ops/s
+c.f.j.p.smile.SmileStdReadBlackbird.readPojoMediaItem    thrpt   15  730744.460 ±  2910.829  ops/s
+c.f.j.p.json.JsonStdReadBlackbird.readPojoMediaItem      thrpt   15  616613.449 ±  4112.452  ops/s
+c.f.j.p.csv.CsvStdReadBlackbird.readPojoMediaItem        thrpt   15  346229.994 ±  5166.043  ops/s
+c.f.j.p.xml.XMLStdReadBlackbird.readPojoMediaItem        thrpt   15  217342.280 ±  1664.959  ops/s
 --- msgpack --
+c.f.j.p.bson.BSONStdReadBlackbird.readPojoMediaItem      thrpt   15  242090.384 ±   863.311  ops/s
+c.f.j.p.ion.IonStdReadBlackbird.readPojoMediaItem        thrpt   15  115005.195 ±   806.534  ops/s
+c.f.j.p.props.PropsStdReadBlackbird.readPojoMediaItem    thrpt   15  100895.655 ±   755.677  ops/s
+c.f.j.p.toml.TOMLStdReadBlackbird.readPojoMediaItem      thrpt   15  141948.159 ±   519.282  ops/s
+c.f.j.p.yaml.YAMLStdReadBlackbird.readPojoMediaItem      thrpt   15   42386.476 ±   177.218  ops/s
 
 Read - Vanilla / 3.3.0 / home / 08-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdReadVan.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
@@ -79,9 +90,21 @@ c.f.j.p.props.PropsStdWriteAfterburner.writePojoMediaItem    thrpt   15   365736
 c.f.j.p.toml.TOMLStdWriteAfterburner.writePojoMediaItem      thrpt   15   483917.568 ± 3411.527  ops/s
 c.f.j.p.yaml.YAMLStdWriteAfterburner.writePojoMediaItem      thrpt   15    61607.794 ±  807.764  ops/s
 
-Write - Blackbird / 3.2.4 / home / 09-Nov-2026 / 17.0.19
+Write - Blackbird / 3.3.0 / home / 09-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdWriteBlack.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
+c.f.j.p.cbor.CBORStdWriteBlackbird.writePojoMediaItem      thrpt   15  1285592.704 ±  5331.656  ops/s
+c.f.j.p.protob.ProtobStdWriteBlackbird.writePojoMediaItem  thrpt   15  1246290.928 ± 17933.298  ops/s
+c.f.j.p.smile.SmileStdWriteBlackbird.writePojoMediaItem    thrpt   15  1163158.856 ±  3899.436  ops/s
+c.f.j.p.json.JsonStdWriteBlackbird.writePojoMediaItem      thrpt   15  1007356.927 ±  7910.129  ops/s
+c.f.j.p.csv.CsvStdWriteBlackbird.writePojoMediaItem        thrpt   15   763647.558 ±  9387.351  ops/s
+c.f.j.p.xml.XMLStdWriteBlackbird.writePojoMediaItem        thrpt   15   347098.565 ±  7529.121  ops/s
+c.f.j.p.avro.AvroStdWriteBlackbird.writePojoMediaItem      thrpt   15   534517.711 ±  4063.340  ops/s
+c.f.j.p.ion.IonStdWriteBlackbird.writePojoMediaItem        thrpt   15   393900.084 ±  1381.371  ops/s
 --- msgpack ---
+c.f.j.p.bson.BSONStdWriteBlackbird.writePojoMediaItem      thrpt   15   384781.121 ±  1784.379  ops/s
+c.f.j.p.props.PropsStdWriteBlackbird.writePojoMediaItem    thrpt   15   537689.626 ±  3256.477  ops/s
+c.f.j.p.toml.TOMLStdWriteBlackbird.writePojoMediaItem      thrpt   15   534147.794 ± 13488.292  ops/s
+c.f.j.p.yaml.YAMLStdWriteBlackbird.writePojoMediaItem      thrpt   15    63123.811 ±   283.412  ops/s
 
 Write - Vanilla / 3.3.0 / home / 08-Nov-2026 / 17.0.19
 java -Xmx256m -jar target/perf.jar ".*StdWriteVanil.*PojoMediaItem.*" -wi 3 -w 1 -i 5 -r 1 -f 3 -t 1
