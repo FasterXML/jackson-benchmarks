@@ -11,8 +11,6 @@ import tools.jackson.databind.*;
 import tools.jackson.dataformat.protobuf.ProtobufMapper;
 import tools.jackson.dataformat.protobuf.schema.ProtobufSchema;
 
-import tools.jackson.module.blackbird.BlackbirdModule;
-
 import com.fasterxml.jackson.perf.ReadPerfBaseBasicJackson;
 import com.fasterxml.jackson.perf.data.MinimalInputConverter;
 import com.fasterxml.jackson.perf.model.MediaItem;
@@ -22,8 +20,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class ProtobStdReadBlackbird
     extends ReadPerfBaseBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = ProtobufMapper.builder()
-            .addModule(new BlackbirdModule())
+    private static final ObjectMapper MAPPER = _withBlackbird(ProtobufMapper.builder())
             .build();
 
     private final static ProtobufSchema _mediaItemSchema = ProtobufHelper.mediaItemSchema();

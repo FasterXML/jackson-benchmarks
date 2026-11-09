@@ -7,8 +7,6 @@ import tools.jackson.databind.*;
 
 import tools.jackson.dataformat.ion.IonObjectMapper;
 
-import tools.jackson.module.blackbird.BlackbirdModule;
-
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
@@ -16,8 +14,7 @@ import com.fasterxml.jackson.perf.model.MediaItem;
 public class IonStdWriteBlackbird
     extends WritePerfBasicJackson<MediaItem>
 {
-    private static final ObjectMapper MAPPER = IonObjectMapper.builder()
-            .addModule(new BlackbirdModule())
+    private static final ObjectMapper MAPPER = _withBlackbird(IonObjectMapper.builder())
             .build();
 
     public IonStdWriteBlackbird() {

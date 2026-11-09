@@ -5,7 +5,6 @@ import org.openjdk.jmh.annotations.Scope;
 
 import tools.jackson.dataformat.avro.AvroMapper;
 import tools.jackson.dataformat.avro.AvroSchema;
-import tools.jackson.module.afterburner.AfterburnerModule;
 import com.fasterxml.jackson.perf.WritePerfBasicJackson;
 import com.fasterxml.jackson.perf.model.MediaItem;
 
